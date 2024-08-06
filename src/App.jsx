@@ -18,7 +18,10 @@ const Main = styled.div`
   /* width: calc(100% - 15.6rem); */
   max-width: 64rem;
   min-width: 20rem;
-  padding: 10rem 2rem;
+  padding: 15.6vw 2rem;
   text-align: center;
-  font-size: 2rem;
+  /* font-size: 2rem; */
+  @media screen and (min-width: 640px) {
+    padding-top: 10rem;
+  }
 `;
