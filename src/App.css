@@ -17,6 +17,12 @@ body {
   font-style: normal;
 }
 
+.abril-fatface {
+  font-family: "Abril Fatface", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .relative {
   position: relative;
 }
@@ -37,4 +43,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.t-24 {
+  top: 3.7vw;
+  @media screen and (min-width: 640px) {
+    top: 2.4rem;
+  }
+}
+
+.b-24 {
+  bottom: 3.7vw;
+  @media screen and (min-width: 640px) {
+    bottom: 2.4rem;
+  }
 }

@@ -22,8 +22,8 @@ function Title() {
           <span>Wedding</span>
           <span>Day</span>
         </Txt01> */}
-        <Txt02 className="aoboshi-one w-100 flex-col flex-center">
-          <CircleTxt className="absolute">
+        {/* <Txt02 className="aoboshi-one w-100 flex-col flex-center">
+          <CircleTxt className="absolute t-24">
             <p>Save our date</p>
           </CircleTxt>
           <BigTxt>
@@ -31,7 +31,7 @@ function Title() {
             <span className="second-title absolute">Wedding</span>
             <span className="third-title absolute">Day</span>
           </BigTxt>
-          <BottomTxt className="w-100 absolute">
+          <PosterTxt className="w-100 absolute b-24">
             <div>
               <span>Bo Gum</span>
               <span>&</span>
@@ -41,13 +41,26 @@ function Title() {
               <span>2024. 01. 27 Sat</span>
               <span>PM 1:30</span>
             </div>
-          </BottomTxt>
-        </Txt02>
-        {/* <div className="aoboshi-one txt-03">
-        <span>Happy</span>
-        <span>Wedding</span>
-        <span>Day</span>
-      </div> */}
+          </PosterTxt>
+        </Txt02> */}
+        <Txt03 className="flex-col flex-center abril-fatface">
+          <PosterTxt className="aoboshi-one w-100 absolute t-24">
+            <div>
+              <span>Bo Gum</span>
+              <span>&</span>
+              <span>Su ji</span>
+            </div>
+            <div>
+              <span>2024. 01. 27 Sat</span>
+              <span>PM 1:30</span>
+            </div>
+          </PosterTxt>
+          <BottomTitle className="absolute b-24 flex-col">
+            <span>We are</span>
+            <span>Getting</span>
+            <span>&#40;Married&#41;</span>
+          </BottomTitle>
+        </Txt03>
       </div>
     </TitleSec>
   );
@@ -103,7 +116,6 @@ const Txt01 = styled.div`
 const Txt02 = styled.div``;
 
 const CircleTxt = styled.div`
-  top: 3.7vw;
   color: white;
   p {
     font-size: 3.1vw;
@@ -112,7 +124,6 @@ const CircleTxt = styled.div`
     padding: 1.2vw 2.5vw 1.4vw;
   }
   @media screen and (min-width: 640px) {
-    top: 2.4rem;
     p {
       font-size: 2rem;
       padding: 0.8rem 1.6rem 0.9rem;
@@ -154,8 +165,7 @@ const BigTxt = styled.div`
   }
 `;
 
-const BottomTxt = styled.div`
-  bottom: 3.7vw;
+const PosterTxt = styled.div`
   color: white;
   padding: 0 4.5vw;
   div {
@@ -167,7 +177,6 @@ const BottomTxt = styled.div`
     font-size: 2.7vw;
   }
   @media screen and (min-width: 640px) {
-    bottom: 2.4rem;
     padding: 0 3rem;
     div {
       margin-top: 0.4rem;
@@ -179,3 +188,23 @@ const BottomTxt = styled.div`
 `;
 
 const Txt03 = styled.div``;
+
+const BottomTitle = styled.div`
+  color: white;
+  span:last-child {
+    color: #f32a2a;
+    margin-bottom: 0.5vw;
+  }
+  span {
+    font-size: 8vw;
+    line-height: 1.2;
+  }
+  @media screen and (min-width: 640px) {
+    span:last-child {
+      margin-bottom: 0.5vw;
+    }
+    span {
+      font-size: 5rem;
+    }
+  }
+`;
