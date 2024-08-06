@@ -9,6 +9,7 @@ body {
   /* width: 64rem; */
   max-width: 64rem;
   font-family: "Pretendard", sans-serif;
+  line-height: 1.4;
 }
 
 .aoboshi-one {
@@ -20,6 +21,11 @@ body {
 .abril-fatface {
   font-family: "Abril Fatface", sans-serif;
   font-weight: 400;
+  font-style: normal;
+}
+
+.maruburi {
+  font-family: "MaruBuri";
   font-style: normal;
 }
 

@@ -32,10 +32,10 @@ function Title() {
     }
   };
 
-  const getName = (gender) => {
-    const male = data.information[0].EngName.split(" ");
-    const female = data.information[1].EngName.split(" ");
-  };
+  // const getName = (gender) => {
+  //   const male = data.information[0].EngName.split(" ");
+  //   const female = data.information[1].EngName.split(" ");
+  // };
 
   return (
     <TitleSec>
@@ -105,10 +105,8 @@ function Title() {
 export default Title;
 
 const TitleSec = styled.div`
+  /* background-color: #fff8f0; */
   padding: 0 9vw;
-  /* height: 85vh; */
-  /* min-height: 110rem; */
-  /* max-height: 120rem; */
   @media screen and (min-width: 640px) {
     padding: 0 5.8rem;
   }
