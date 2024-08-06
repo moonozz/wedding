@@ -1,6 +1,5 @@
 {
-  "when": "2024년 01월 27일",
-  "week": "토요일",
+  "when": "2024.01.27",
   "time": "13:30",
   "img": ["title.jpg", "img01.jpg", "img02.jpg", "img03.jpg", "img04.jpg"],
   "date": "2017.03.16",
@@ -8,6 +7,7 @@
     {
       "type": "male",
       "name": "박보검",
+      "EngName": "Park Bo Gum",
       "phone": "01000000011",
       "account": ["우리은행", "1002-111-111111"],
       "father": "박보헌",
@@ -20,6 +20,7 @@
     {
       "type": "female",
       "name": "수지",
+      "EngName": "Su Ji",
       "phone": "01000000021",
       "account": ["카카오뱅크", "1002-222-111121"],
       "father": "수호현",

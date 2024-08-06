@@ -3,14 +3,48 @@ import styled from "styled-components";
 import data from "../data/data.json";
 
 function Title() {
+  const getKorDate = () => {
+    const when = new Date(data.when);
+    const year = when.getFullYear();
+    // const month = ("0" + (when.getMonth()+1)).slice(-2);
+    const month = when.getMonth() + 1;
+    const day = when.getDate();
+
+    return `${year}년 ${month}월 ${day}일`;
+  };
+
+  const getWeek = (i, lan) => {
+    const KorWeek = ["일", "월", "화", "수", "목", "금", "토"];
+    const EngWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const dayIndex = new Date(i).getDay();
+
+    return lan === "kor" ? `${KorWeek[dayIndex]}요일` : EngWeek[dayIndex];
+  };
+
+  const getTime = (i) => {
+    const time = data.time.split(":");
+
+    if (time[0] < 12) {
+      return `AM ${data.time}`;
+    } else {
+      const timeCal = time[0] - 12;
+      return `PM ${timeCal}:${time[1]}`;
+    }
+  };
+
+  const getName = (gender) => {
+    const male = data.information[0].EngName.split(" ");
+    const female = data.information[1].EngName.split(" ");
+  };
+
   return (
     <TitleSec>
-      <Date>
+      <TitleDate>
         <p>
-          {data.when} {data.week}
+          {getKorDate()} {getWeek(data.when, "kor")}
         </p>
         <p>{data.time}</p>
-      </Date>
+      </TitleDate>
       <div className="relative">
         <img
           src={`${process.env.PUBLIC_URL}/assets/${data.img[0]}`}
@@ -38,21 +72,23 @@ function Title() {
               <span>Su ji</span>
             </div>
             <div>
-              <span>2024. 01. 27 Sat</span>
-              <span>PM 1:30</span>
+              <span>{data.when} {getWeek(data.when, "Eng")}</span>
+              <span>{getTime()}</span>
             </div>
           </PosterTxt>
         </Txt02> */}
         <Txt03 className="flex-col flex-center abril-fatface">
           <PosterTxt className="aoboshi-one w-100 absolute t-24">
             <div>
-              <span>Bo Gum</span>
+              <span>{data.information[0].EngName}</span>
               <span>&</span>
-              <span>Su ji</span>
+              <span>{data.information[1].EngName}</span>
             </div>
             <div>
-              <span>2024. 01. 27 Sat</span>
-              <span>PM 1:30</span>
+              <span>
+                {data.when} {getWeek(data.when, "Eng")}
+              </span>
+              <span>{getTime()}</span>
             </div>
           </PosterTxt>
           <BottomTitle className="absolute b-24 flex-col">
@@ -78,7 +114,7 @@ const TitleSec = styled.div`
   }
 `;
 
-const Date = styled.div`
+const TitleDate = styled.div`
   margin-bottom: 8.8vw;
   text-align: center;
   p:first-child {
@@ -170,11 +206,18 @@ const PosterTxt = styled.div`
   padding: 0 4.5vw;
   div {
     display: flex;
-    justify-content: space-between;
     margin-top: 0.4rem;
   }
   span {
+    flex-grow: 1;
+    flex-basis: 33%;
     font-size: 2.7vw;
+  }
+  span:first-child {
+    text-align: left;
+  }
+  span:last-child {
+    text-align: right;
   }
   @media screen and (min-width: 640px) {
     padding: 0 3rem;
