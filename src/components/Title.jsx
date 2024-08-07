@@ -13,12 +13,14 @@ function Title() {
         <p>{data.time}</p>
       </TitleDate>
       <div className="relative">
-        <img
-          src={`${process.env.PUBLIC_URL}/assets/${data.img[0]}`}
-          alt="박보검과 수지의 청첩장 타이틀 이미지"
-          className="w-100"
-        />
-        {/* <Txt01 className="aoboshi-one flex-col">
+        <div className="relative img-box">
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/${data.img[0]}`}
+            alt="박보검과 수지의 청첩장 타이틀 이미지"
+            className="w-100"
+          />
+        </div>
+        {/* <Txt01 className="aoboshi-one flex-col absolute flex-center w-100">
           <span>Happy</span>
           <span>Wedding</span>
           <span>Day</span>
@@ -39,7 +41,9 @@ function Title() {
               <span>Su ji</span>
             </div>
             <div>
-              <span>{data.when} {getWeek(data.when, "Eng")}</span>
+              <span>
+                {data.when} {getWeek(data.when, "Eng")}
+              </span>
               <span>{getTime()}</span>
             </div>
           </PosterTxt>
@@ -119,8 +123,10 @@ const Txt01 = styled.div`
   font-size: 15.5vw;
   font-weight: 800;
   color: #de2b2b;
+  bottom: -21.87vw;
   @media screen and (min-width: 640px) {
     font-size: 10rem;
+    bottom: -14rem;
   }
 `;
 
