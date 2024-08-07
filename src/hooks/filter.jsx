@@ -19,7 +19,7 @@ export const getWeek = (i, lan) => {
   return lan === "kor" ? `${KorWeek[dayIndex]}요일` : EngWeek[dayIndex];
 };
 
-export const getTime = (i) => {
+export const getTime = () => {
   const time = data.time.split(":");
 
   if (time[0] < 12) {
@@ -30,4 +30,7 @@ export const getTime = (i) => {
   }
 };
 
-// export default filter
+export const getName = (gender) => {
+  const male = data.information[0].EngName.split(" ");
+  const female = data.information[1].EngName.split(" ");
+};

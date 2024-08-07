@@ -44,7 +44,7 @@ function Title() {
             </div>
           </PosterTxt>
         </Txt02> */}
-        <Txt03 className="flex-col flex-center abril-fatface">
+        {/* <Txt03 className="flex-col flex-center abril-fatface">
           <PosterTxt className="aoboshi-one w-100 absolute t-24">
             <div>
               <span>{data.information[0].EngName}</span>
@@ -61,7 +61,16 @@ function Title() {
           <BottomTitle className="absolute b-24 flex-col">
             <span>We are</span>
             <span>Getting</span>
-            <span>&#40;Married&#41;</span>
+            <RedTxt>&#40;Married&#41;</RedTxt>
+          </BottomTitle>
+        </Txt03> */}
+        <Txt03 className="flex-col flex-center abril-fatface w-100">
+          <BottomTitle className="flex-col flex-center">
+            <div className="flex-col absolute t-24">
+              <span>We are</span>
+              <span>Getting</span>
+            </div>
+            <RedTxt className="absolute b-24">&#40;Married&#41;</RedTxt>
           </BottomTitle>
         </Txt03>
       </div>
@@ -89,6 +98,7 @@ const TitleDate = styled.div`
   p:last-child {
     font-size: 19vw;
     font-weight: 100;
+    line-height: 1.1;
   }
 
   @media screen and (min-width: 640px) {
@@ -199,20 +209,18 @@ const Txt03 = styled.div``;
 
 const BottomTitle = styled.div`
   color: white;
-  span:last-child {
-    color: #f32a2a;
-    margin-bottom: 0.5vw;
-  }
   span {
     font-size: 8vw;
     line-height: 1.2;
   }
   @media screen and (min-width: 640px) {
-    span:last-child {
-      margin-bottom: 0.5vw;
-    }
     span {
       font-size: 5rem;
     }
   }
+`;
+
+const RedTxt = styled.span`
+  color: #f32a2a;
+  margin-bottom: 0.5vw;
 `;

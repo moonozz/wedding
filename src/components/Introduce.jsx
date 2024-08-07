@@ -7,7 +7,8 @@ function Introduce() {
   const introDataFemale = data.information[1];
 
   return (
-    <IntroSec className="maruburi">
+    // <IntroSec className="maruburi">
+    <IntroSec className="">
       <ScriptDiv>
         <p>
           작은 우연이 모여 서로를 알게 되고,
@@ -26,17 +27,18 @@ function Introduce() {
           함께 축복해주세요.
         </p>
       </ScriptDiv>
-      <Name>
+      <Name className="flex-col">
+        <p>👰🏻‍♀️❤️🤵🏻‍♂️</p>
         <div>
           <span>
-            {introDataMale.father} ∙ {introDataMale.mother}
+            {introDataMale.father}∙{introDataMale.mother}
           </span>
           <span>의 아들</span>
           <span>{introDataMale.name}</span>
         </div>
         <div>
           <span>
-            {introDataFemale.father} ∙ {introDataFemale.mother}
+            {introDataFemale.father}∙{introDataFemale.mother}
           </span>
           <span>의 딸</span>
           <span>{introDataFemale.name}</span>
@@ -69,4 +71,31 @@ const ScriptDiv = styled.div`
   }
 `;
 
-const Name = styled.div``;
+const Name = styled.div`
+  padding: 10.7vw 0 20.3vw;
+  gap: 2vw;
+  /* p {
+    margin-bottom: 2rem;
+  } */
+  p,
+  div > span {
+    font-size: 3.8vw;
+  }
+  span:nth-child(2) {
+    font-size: 3vw;
+    margin: 0 1.5vw;
+  }
+
+  @media screen and (min-width: 640px) {
+    padding: 7rem 0 13rem;
+    gap: 1.4rem;
+    p,
+    div > span {
+      font-size: 2.4rem;
+    }
+    span:nth-child(2) {
+      font-size: 2rem;
+      margin: 0 1rem;
+    }
+  }
+`;
