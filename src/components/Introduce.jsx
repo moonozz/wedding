@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
+import ScrollImg from "./ScrollImg";
 
 function Introduce() {
   const introDataMale = data.information[0];
   const introDataFemale = data.information[1];
+  console.log(data.img[7]);
 
   return (
     // <IntroSec className="maruburi">
@@ -44,6 +46,7 @@ function Introduce() {
           <span>{introDataFemale.name}</span>
         </div>
       </Name>
+      <ScrollImg imgUrl={data.img[7]} />
     </IntroSec>
   );
 }
@@ -51,9 +54,9 @@ function Introduce() {
 export default Introduce;
 
 const IntroSec = styled.section`
-  padding: 20.3vw 0;
+  padding: 17.2vw 0;
   @media screen and (min-width: 640px) {
-    padding: 13rem 0;
+    padding: 11rem 0;
   }
 `;
 
