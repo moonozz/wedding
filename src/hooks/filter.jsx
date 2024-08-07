@@ -19,14 +19,25 @@ export const getWeek = (i, lan) => {
   return lan === "kor" ? `${KorWeek[dayIndex]}요일` : EngWeek[dayIndex];
 };
 
-export const getTime = () => {
+export const getTime = (lan) => {
   const time = data.time.split(":");
+  const isAM = time[0] < 12;
+  const timeCal = time[0] % 12 || 12;
 
-  if (time[0] < 12) {
-    return `AM ${data.time}`;
+  // if (time[0] < 12 && lan === "eng") {
+  //   return `AM ${data.time}`;
+  // } else if (time[0] >= 12 && lan === "eng") {
+  //   return `PM ${timeCal}:${time[1]}`;
+  // } else if (time[0] < 12 && lan === "kor") {
+  //   return `오전 ${time[0]}시 ${time[1]}분`;
+  // } else {
+  //   return `오후 ${timeCal}시 ${time[1]}분`;
+  // }
+
+  if (lan === "eng") {
+    return `${isAM ? "AM" : "PM"} ${timeCal}:${time[1]}`;
   } else {
-    const timeCal = time[0] - 12;
-    return `PM ${timeCal}:${time[1]}`;
+    return `${isAM ? "오전" : "오후"} ${timeCal}시 ${time[1]}분`;
   }
 };
 

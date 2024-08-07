@@ -44,7 +44,7 @@ function Title() {
               <span>
                 {data.when} {getWeek(data.when, "Eng")}
               </span>
-              <span>{getTime()}</span>
+              <span>{getTime("eng")}</span>
             </div>
           </PosterTxt>
         </Txt02> */}
@@ -59,7 +59,7 @@ function Title() {
               <span>
                 {data.when} {getWeek(data.when, "Eng")}
               </span>
-              <span>{getTime()}</span>
+              <span>{getTime("eng")}</span>
             </div>
           </PosterTxt>
           <BottomTitle className="absolute b-24 flex-col">
@@ -78,6 +78,23 @@ function Title() {
           </BottomTitle>
         </Txt03>
       </div>
+      {/* <HallInfo className="maruburi"> */}
+      <HallInfo>
+        {/* <p className="abril-fatface">
+          &#40;{data.information[0].EngName}&#41;∙&#40;
+          {data.information[1].EngName}&#41;
+        </p> */}
+        <p className="abril-fatface">
+          {data.information[0].EngName}∙{data.information[1].EngName}
+        </p>
+        {/* <p>
+          {data.information[0].name}∙{data.information[1].name}
+        </p> */}
+        <p>
+          {getKorDate()} {getWeek(data.when, "kor")} {getTime("kor")}
+        </p>
+        <p>위더스 웨딩홀 8F</p>
+      </HallInfo>
     </TitleSec>
   );
 }
@@ -229,4 +246,28 @@ const BottomTitle = styled.div`
 const RedTxt = styled.span`
   color: #f32a2a;
   margin-bottom: 0.5vw;
+`;
+
+const HallInfo = styled.div`
+  margin-top: 9.3vw;
+  p:first-child {
+    font-size: 3.8vw;
+    margin-bottom: 3.1vw;
+    /* color: #f32a2a; */
+  }
+  p {
+    font-size: 3.1vw;
+  }
+
+  @media screen and (min-width: 640px) {
+    margin-top: 6rem;
+    p:first-child {
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+      /* color: #f32a2a; */
+    }
+    p {
+      font-size: 2rem;
+    }
+  }
 `;
