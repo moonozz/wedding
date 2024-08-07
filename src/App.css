@@ -10,6 +10,14 @@ body {
   max-width: 64rem;
   font-family: "Pretendard", sans-serif;
   line-height: 1.4;
+  overflow-x: hidden;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .aoboshi-one {
@@ -73,4 +81,12 @@ body {
   left: 0;
   content: "";
   background-color: rgb(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 4.6vw;
+  color: #f32a2a;
+  @media screen and (min-width: 640px) {
+    font-size: 3rem;
+  }
 }

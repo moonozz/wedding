@@ -20,6 +20,7 @@ const FixArea = styled.div`
   position: fixed;
   z-index: 10;
   bottom: 3.2vw;
+  /* bottom: 13.2vw; */
 
   button {
     padding: 1.3rem 1.4rem 1.1rem;
@@ -35,5 +36,6 @@ const FixArea = styled.div`
   @media screen and (min-width: 640px) {
     width: calc(64rem - 4rem);
     bottom: 2rem;
+    /* bottom: 7rem; */
   }
 `;

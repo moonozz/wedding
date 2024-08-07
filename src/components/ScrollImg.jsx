@@ -17,16 +17,16 @@ export default ScrollImg;
 const ScrollSec = styled.section`
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  height: 68.7vw;
+  height: 62.5vw;
   overflow: hidden;
   @media screen and (min-width: 640px) {
-    height: 44rem;
+    height: 40rem;
     margin-left: calc(50% - 32rem);
   }
 `;
 
 const Box = styled.div`
-  width: 100%;
+  width: 64rem;
   height: 100%;
   clip: rect(0, auto, auto, 0);
 `;
