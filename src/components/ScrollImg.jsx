@@ -32,11 +32,16 @@ const Box = styled.div`
 `;
 
 const Img = styled.div`
+  display: block;
+  height: 100%;
+  width: 100%;
   position: fixed;
   top: 0;
   background: url(${process.env.PUBLIC_URL}/assets/${(props) => props.$image})
     no-repeat center center;
   background-size: cover;
-  height: 100%;
-  width: 64rem;
+
+  @media screen and (min-width: 640px) {
+    width: 64rem;
+  }
 `;

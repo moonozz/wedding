@@ -54,9 +54,9 @@ function Introduce() {
 export default Introduce;
 
 const IntroSec = styled.section`
-  padding: 17.2vw 0;
+  padding: 14vw 0;
   @media screen and (min-width: 640px) {
-    padding: 11rem 0;
+    padding: 9rem 0;
   }
 `;
 
@@ -90,7 +90,7 @@ const Name = styled.div`
   }
 
   @media screen and (min-width: 640px) {
-    padding: 7rem 0 13rem;
+    padding: 7rem 0 10rem;
     gap: 1.4rem;
     p,
     div > span {
