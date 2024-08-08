@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
 import ScrollImg from "./ScrollImg";
+import { getSize, getVwSize } from "../utils/sThemeUtils";
+import { flex } from "../utils/sMixinUtils";
 
 function Introduce() {
   const introDataMale = data.information[0];
@@ -9,9 +11,8 @@ function Introduce() {
   console.log(data.img[7]);
 
   return (
-    // <IntroSec className="maruburi">
-    <IntroSec className="">
-      <ScriptDiv>
+    <Container>
+      <SScriptDiv>
         <p>
           작은 우연이 모여 서로를 알게 되고,
           <br />
@@ -28,8 +29,8 @@ function Introduce() {
           <br />
           함께 축복해주세요.
         </p>
-      </ScriptDiv>
-      <Name className="flex-col">
+      </SScriptDiv>
+      <SName>
         <p>👰🏻‍♀️❤️🤵🏻‍♂️</p>
         <div>
           <span>
@@ -45,59 +46,58 @@ function Introduce() {
           <span>의 딸</span>
           <span>{introDataFemale.name}</span>
         </div>
-      </Name>
+      </SName>
       <ScrollImg imgUrl={data.img[7]} />
-    </IntroSec>
+    </Container>
   );
 }
 
 export default Introduce;
 
-const IntroSec = styled.section`
-  padding: 14vw 0;
+const Container = styled.section`
+  padding: ${getVwSize(90)} 0;
   @media screen and (min-width: 640px) {
-    padding: 9rem 0;
+    padding: ${getSize(90)} 0;
   }
 `;
 
-const ScriptDiv = styled.div`
+const SScriptDiv = styled.div`
   line-height: 1.6;
   p {
-    font-size: 3.8vw;
-    margin-bottom: 3.8vw;
+    font-size: ${getVwSize(24)};
+    margin-bottom: ${getVwSize(24)};
   }
   @media screen and (min-width: 640px) {
     p {
-      font-size: 2.4rem;
-      margin-bottom: 2.4rem;
+      font-size: ${getSize(24)};
+      margin-bottom: ${getSize(24)};
     }
   }
 `;
 
-const Name = styled.div`
-  padding: 10.7vw 0 20.3vw;
+const SName = styled.div`
+  ${flex("column", "", "")};
+  padding: ${getVwSize(70)} 0 ${getVwSize(100)};
   gap: 2vw;
-  /* p {
-    margin-bottom: 2rem;
-  } */
+
   p,
   div > span {
-    font-size: 3.8vw;
+    font-size: ${getVwSize(24)};
   }
   span:nth-child(2) {
-    font-size: 3vw;
+    font-size: ${getVwSize(20)};
     margin: 0 1.5vw;
   }
 
   @media screen and (min-width: 640px) {
-    padding: 7rem 0 10rem;
+    padding: ${getSize(70)} 0 ${getSize(100)};
     gap: 1.4rem;
     p,
     div > span {
-      font-size: 2.4rem;
+      font-size: ${getSize(24)};
     }
     span:nth-child(2) {
-      font-size: 2rem;
+      font-size: ${getSize(20)};
       margin: 0 1rem;
     }
   }

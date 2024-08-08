@@ -2,44 +2,43 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { PhotoLiSwipe } from "../utils/photoList";
 import data from "../data/data.json";
-import { getSize, getVwSize } from "../\butils/themeUtils";
+import { getSize, getVwSize } from "../utils/sThemeUtils";
+import { boxSize, position, flex } from "../\butils/sMixinUtils";
 
 function Photo() {
   const imgData = data.img.slice(1);
 
   return (
-    <PhotoSec>
+    <SContainer>
       <h3 className="abril-fatface title">PHOTO</h3>
-      <Container>
-        <Inner>
+      <SWrapper>
+        <SInner>
           {imgData?.map((el) => {
             return <PhotoLiSwipe key={el} imgUrl={el} />;
           })}
-        </Inner>
-      </Container>
-    </PhotoSec>
+        </SInner>
+      </SWrapper>
+    </SContainer>
   );
 }
 
 export default Photo;
 
-const PhotoSec = styled.section`
+const SContainer = styled.section`
   padding: ${getSize(100)} 0;
 `;
 
-const Container = styled.div`
-  height: 120vw;
+const SWrapper = styled.div`
+  ${boxSize("", "120vw")};
+  ${position("relative")};
   overflow: hidden;
-  position: relative;
   touch-action: pan-x;
 `;
 
-const Inner = styled.ul`
-  width: calc(${data.img.length - 1} * 80vw);
+const SInner = styled.ul`
+  ${boxSize(`calc(${data.img.length - 1} * 80vw)`, "100%")};
+  ${flex("row", "", "")};
   /* width: 100%; */
-  height: 100%;
-  display: flex;
-  flex-direction: row;
   overflow: hidden;
   /* transition-property: transform; */
   gap: 2rem;

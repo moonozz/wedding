@@ -31,7 +31,7 @@ function OutTxt() {
       <SBottomTitle>
         <span>We are</span>
         <span>Getting</span>
-        <RedTxt>&#40;Married&#41;</RedTxt>
+        <SRedTxt>&#40;Married&#41;</SRedTxt>
       </SBottomTitle>
     </SContainer>
   );
@@ -68,6 +68,6 @@ const SBottomTitle = styled.div`
   }
 `;
 
-const RedTxt = styled.span`
+const SRedTxt = styled.span`
   color: #f32a2a;
 `;

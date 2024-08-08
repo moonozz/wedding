@@ -19,12 +19,12 @@ function OutTxt() {
       <SCircleTxt>
         <p>Save our date</p>
       </SCircleTxt>
-      <BigTxt>
+      <SBigTxt>
         <span className="first-title">Happy</span>
         <span className="second-title">Wedding</span>
         <span className="third-title">Day</span>
-      </BigTxt>
-      <PosterTxt>
+      </SBigTxt>
+      <SPosterTxt>
         <div>
           <span>Bo Gum</span>
           <span>&</span>
@@ -36,7 +36,7 @@ function OutTxt() {
           </span>
           <span>{getTime("eng")}</span>
         </div>
-      </PosterTxt>
+      </SPosterTxt>
     </SContainer>
   );
 }
@@ -56,7 +56,7 @@ const SCircleTxt = styled.div`
   ${circleTxt("white")}
 `;
 
-const BigTxt = styled.div`
+const SBigTxt = styled.div`
   font-size: ${getVwSize(100)};
   font-weight: 800;
   color: #ff511a;
@@ -78,7 +78,7 @@ const BigTxt = styled.div`
   }
 `;
 
-const PosterTxt = styled.div`
+const SPosterTxt = styled.div`
   ${position("absolute")};
   ${trbl("", "", "24", "")};
   ${boxSize("100%", "")};

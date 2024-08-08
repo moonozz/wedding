@@ -5,11 +5,12 @@ import Introduce from "./components/Introduce";
 import FixedBtn from "./components/FixedBtn";
 import Photo from "./components/Photo";
 import { getSize, getVwSize } from "./utils/sThemeUtils";
+import { flex, boxSize } from "./\butils/sMixinUtils";
 // import data from "./data/data.json";
 
 function App() {
   return (
-    <Main className="flex-col">
+    <Main>
       <Title />
       <Introduce />
       <Photo />
@@ -21,9 +22,10 @@ function App() {
 export default App;
 
 const Main = styled.div`
+  ${flex("column", "", "")}
   background-color: #f4f4f4;
   /* width: calc(100% - 2rem); */
-  width: 100vw;
+  ${boxSize("100vw", "")}
   max-width: ${getSize(640)};
   min-width: ${getSize(200)};
   padding: ${getVwSize(150)} ${getSize(20)} 0;
@@ -31,6 +33,6 @@ const Main = styled.div`
 
   @media screen and (min-width: 640px) {
     padding: ${getSize(130)} ${getSize(20)} 0;
-    width: 100%;
+    ${boxSize("100%", "")}
   }
 `;

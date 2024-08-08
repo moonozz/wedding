@@ -1,25 +1,26 @@
 import React from "react";
 import styled from "styled-components";
+import { getSize } from "../\butils/sThemeUtils";
+import { flex, position, trbl } from "../\butils/sMixinUtils";
 
 function EffectBtn() {
   return (
-    <FixArea>
+    <SFixArea>
       <button>🎉</button>
       <button>❤️</button>
-    </FixArea>
+    </SFixArea>
   );
 }
 
 export default EffectBtn;
 
-const FixArea = styled.div`
+const SFixArea = styled.div`
   width: calc(100% - 4rem);
-  display: flex;
-  justify-content: space-between;
-  font-size: 3.2rem;
-  position: fixed;
+  ${flex("", "", "space-between")}
+  ${position("fixed")};
+  ${trbl("", "", "20", "")}
+  font-size: ${getSize(32)};
   z-index: 10;
-  bottom: 3.2vw;
   /* bottom: 13.2vw; */
 
   button {
@@ -35,7 +36,6 @@ const FixArea = styled.div`
 
   @media screen and (min-width: 640px) {
     width: calc(64rem - 4rem);
-    bottom: 2rem;
     /* bottom: 7rem; */
   }
 `;
