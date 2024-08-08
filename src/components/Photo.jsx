@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { PhotoLiSwipe } from "../hooks/photoList";
+import { PhotoLiSwipe } from "../utils/photoList";
 import data from "../data/data.json";
+import { getSize, getVwSize } from "../\butils/themeUtils";
 
 function Photo() {
   const imgData = data.img.slice(1);
@@ -11,11 +12,6 @@ function Photo() {
       <h3 className="abril-fatface title">PHOTO</h3>
       <Container>
         <Inner>
-          {/* {data.img
-            .filter((el) => el !== "title.jpg")
-            .map((el) => {
-              return <PhotoLiSwipe imgUrl={el} />;
-            })} */}
           {imgData?.map((el) => {
             return <PhotoLiSwipe key={el} imgUrl={el} />;
           })}
@@ -28,7 +24,7 @@ function Photo() {
 export default Photo;
 
 const PhotoSec = styled.section`
-  padding: 10rem 0;
+  padding: ${getSize(100)} 0;
 `;
 
 const Container = styled.div`
