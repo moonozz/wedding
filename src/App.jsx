@@ -1,10 +1,10 @@
 import "./App.css";
 import styled from "styled-components";
-import Title from "./components/Title";
+import Title from "./components/title/Title";
 import Introduce from "./components/Introduce";
 import FixedBtn from "./components/FixedBtn";
 import Photo from "./components/Photo";
-import { getSize, getVwSize } from "./\butils/themeUtils";
+import { getSize, getVwSize } from "./utils/sThemeUtils";
 // import data from "./data/data.json";
 
 function App() {
@@ -26,7 +26,7 @@ const Main = styled.div`
   width: 100vw;
   max-width: ${getSize(640)};
   min-width: ${getSize(200)};
-  padding: ${getVwSize(130)} ${getSize(20)} 0;
+  padding: ${getVwSize(150)} ${getSize(20)} 0;
   text-align: center;
 
   @media screen and (min-width: 640px) {
