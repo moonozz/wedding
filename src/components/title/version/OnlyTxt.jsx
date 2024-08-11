@@ -6,7 +6,7 @@ import {
   boxSize,
   flex,
   fontFamily,
-  trbl,
+  xyValue,
 } from "../../../utils/sMixinUtils";
 
 function OutTxt() {
@@ -43,11 +43,11 @@ const SContainer = styled.div`
 const STitle = styled.div`
   ${flex("column", "", "")};
   ${position("absolute")};
-  ${trbl("24", "", "", "")};
+  ${xyValue("24", "", "", "")};
 `;
 
 const SRedTxt = styled.span`
   ${position("absolute")};
-  ${trbl("", "", "24", "")};
+  ${xyValue("", "", "24", "")};
   color: #f32a2a;
 `;

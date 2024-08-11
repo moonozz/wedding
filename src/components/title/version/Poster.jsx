@@ -8,7 +8,7 @@ import {
   boxSize,
   flex,
   fontFamily,
-  trbl,
+  xyValue,
   sPosterTxt,
 } from "../../../utils/sMixinUtils";
 
@@ -46,7 +46,7 @@ const SContainer = styled.div`
 const SPosterTxt = styled.div`
   ${fontFamily("Aoboshi One")};
   ${position("absolute")};
-  ${trbl("24", "", "", "")};
+  ${xyValue("24", "", "", "")};
   ${boxSize("100%", "")};
   ${sPosterTxt};
 `;
@@ -54,7 +54,7 @@ const SPosterTxt = styled.div`
 const SBottomTitle = styled.div`
   ${fontFamily("Abril Fatface")};
   ${position("absolute")};
-  ${trbl("", "", "24", "")};
+  ${xyValue("", "", "24", "")};
   ${flex("column", "", "")};
   color: white;
   span {

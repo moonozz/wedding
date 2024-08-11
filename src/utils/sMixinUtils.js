@@ -27,7 +27,12 @@ export const flex = (
   justify-content: ${justify};
 `;
 
-export const trbl = (top = "0", right = "0", bottom = "0", left = "0") => css`
+export const xyValue = (
+  top = "0",
+  right = "0",
+  bottom = "0",
+  left = "0"
+) => css`
   top: ${getVwSize(`${top}`)};
   right: ${getVwSize(`${right}`)};
   bottom: ${getVwSize(`${bottom}`)};

@@ -8,7 +8,7 @@ import {
   boxSize,
   flex,
   fontFamily,
-  trbl,
+  xyValue,
   sPosterTxt,
   circleTxt,
 } from "../../../utils/sMixinUtils";
@@ -51,7 +51,7 @@ const SContainer = styled.div`
 
 const SCircleTxt = styled.div`
   ${position("absolute")};
-  ${trbl("24", "", "", "")};
+  ${xyValue("24", "", "", "")};
   ${position("absolute")};
   ${circleTxt("white")}
 `;
@@ -62,15 +62,15 @@ const SBigTxt = styled.div`
   color: #ff511a;
   .first-title {
     ${position("absolute")};
-    ${trbl("100", "", "", "24")};
+    ${xyValue("100", "", "", "24")};
   }
   .second-title {
     ${position("absolute")};
-    ${trbl("260", "", "", "")};
+    ${xyValue("260", "", "", "")};
   }
   .third-title {
     ${position("absolute")};
-    ${trbl("350", "", "", "100")};
+    ${xyValue("350", "", "", "100")};
   }
 
   @media screen and (min-width: 640px) {
@@ -80,7 +80,7 @@ const SBigTxt = styled.div`
 
 const SPosterTxt = styled.div`
   ${position("absolute")};
-  ${trbl("", "", "24", "")};
+  ${xyValue("", "", "24", "")};
   ${boxSize("100%", "")};
   ${sPosterTxt};
 `;

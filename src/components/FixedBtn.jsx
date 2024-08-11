@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { getSize } from "../\butils/sThemeUtils";
-import { flex, position, trbl } from "../\butils/sMixinUtils";
+import { flex, position, xyValue } from "../\butils/sMixinUtils";
 
 function EffectBtn() {
   return (
@@ -18,7 +18,7 @@ const SFixArea = styled.div`
   width: calc(100% - 4rem);
   ${flex("", "", "space-between")}
   ${position("fixed")};
-  ${trbl("", "", "20", "")}
+  ${xyValue("", "", "20", "")}
   font-size: ${getSize(32)};
   z-index: 10;
   /* bottom: 13.2vw; */
