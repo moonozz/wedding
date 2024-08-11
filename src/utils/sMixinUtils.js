@@ -10,9 +10,10 @@ export const position = (position = "relative") => css`
   position: ${position};
 `;
 
-export const fontFamily = (family = "Aoboshi One") => css`
+export const fontFamily = (family = "Aoboshi One", weight = "400") => css`
   font-family: ${family}, sans-serif;
   font-style: normal;
+  font-weight: ${weight};
   //"Aoboshi One", "Abril Fatface", "MaruBuri",
 `;
 
@@ -101,6 +102,32 @@ export const circleTxt = (color = "white") => css`
     p {
       font-size: ${getSize(20)};
       padding: 0.8rem 1.6rem 0.9rem;
+    }
+  }
+`;
+
+export const secTitle = (color = "black") => css`
+  color: ${color};
+  font-size: ${getVwSize(30)};
+  @media screen and (min-width: 640px) {
+    font-size: ${getSize(30)};
+  }
+`;
+
+export const defaultTxtStyle = (
+  lineHight = "1.8",
+  fontSize = "2.4rem",
+  marginB = "4rem"
+) => css`
+  line-height: ${lineHight};
+  p {
+    font-size: ${getVwSize(`${fontSize}`)};
+    margin-bottom: ${getVwSize(`${marginB}`)};
+  }
+  @media screen and (min-width: 640px) {
+    p {
+      font-size: ${getSize(`${fontSize}`)};
+      margin-bottom: ${getSize(`${marginB}`)};
     }
   }
 `;
