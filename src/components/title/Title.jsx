@@ -1,20 +1,43 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../../data/data.json";
+import SSubTitle from "../SSubTitle";
 import { getKorDate, getWeek, getTime } from "../../utils/filter";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
-import { position, boxSize, dim } from "../../utils/sMixinUtils";
+import {
+  position,
+  boxSize,
+  dim,
+  fontFamily,
+  xyValue,
+} from "../../utils/sMixinUtils";
 import BottomOutTxt from "./version/BottomOutTxt";
 import OutTxt from "./version/OutTxt";
 import Poster from "./version/Poster";
 import OnlyTxt from "./version/OnlyTxt";
 
 function Title() {
+  const TitleSection = (i) => {
+    switch (i) {
+      case "bottom":
+        return <BottomOutTxt />;
+        break;
+      case "out":
+        return <OutTxt />;
+        break;
+      case "poster":
+        return <Poster />;
+        break;
+      default:
+        return <OnlyTxt />;
+    }
+  };
+
   return (
     <SContainer>
       <SDate>
         <p>
-          {getKorDate()} {getWeek(data.when, "kor")}
+          {getKorDate(2)} {getWeek(data.when, "kor")}
         </p>
         <p>{data.time}</p>
       </SDate>
@@ -23,24 +46,20 @@ function Title() {
           <Img
             src={`${process.env.PUBLIC_URL}/assets/${data.img[0]}`}
             alt="박보검과 수지의 청첩장 타이틀 이미지"
-            // className="w-100"
           />
         </SImgBox>
-
-        {/* <BottomOutTxt /> */}
-        {/* <OutTxt /> */}
-        {/* <Poster /> */}
-        <OnlyTxt />
+        {TitleSection("")}
       </SInner>
       <SHallInfo>
-        <p className="abril-fatface">
-          {data.information[0].EngName}∙{data.information[1].EngName}
+        <p>
+          {data.information[0].EngName} ∙ {data.information[1].EngName}
         </p>
         <p>
           {getKorDate()} {getWeek(data.when, "kor")} {getTime("kor")}
         </p>
         <p>위더스 웨딩홀 8F</p>
       </SHallInfo>
+      <SSubTitle text={"***"} />
     </SContainer>
   );
 }
@@ -49,6 +68,7 @@ export default Title;
 
 const SContainer = styled.section`
   padding: 0 ${getVwSize(60)};
+
   @media screen and (min-width: 640px) {
     padding: 0 ${getSize(60)};
   }
@@ -84,33 +104,38 @@ const SInner = styled.div`
 `;
 
 const SImgBox = styled.div`
-  ::after {
+  &::after {
+    ${boxSize("100%", "99.5%")};
     ${dim}
   }
 `;
 
 const Img = styled.img`
-  ${boxSize("100%", "")};
+  ${boxSize("100%", "auto")};
 `;
 
 const SHallInfo = styled.div`
-  margin-top: 9.3vw;
+  padding: ${getVwSize(60)} 0 ${getVwSize(90)};
+  /* border-bottom: 0.5px solid rgb(0, 0, 0, 0.2); */
+
   p:first-child {
-    font-size: 3.8vw;
-    margin-bottom: 3.1vw;
+    ${fontFamily("MaruBuri", "900")};
+    font-size: ${getVwSize(24)};
+    margin-bottom: ${getVwSize(20)};
   }
   p {
-    font-size: 3.1vw;
+    ${fontFamily("MaruBuri", "300")};
+    font-size: ${getVwSize(20)};
   }
 
   @media screen and (min-width: 640px) {
-    margin-top: 6rem;
+    padding: ${getSize(60)} 0 ${getSize(90)};
     p:first-child {
-      font-size: 2.4rem;
-      margin-bottom: 2rem;
+      font-size: ${getSize(24)};
+      margin-bottom: ${getSize(20)};
     }
     p {
-      font-size: 2rem;
+      font-size: ${getSize(20)};
     }
   }
 `;
