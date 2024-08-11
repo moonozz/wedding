@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
+import SName from "./name/SName";
 import ScrollImg from "./ScrollImg";
 import SSubTitle from "./SSubTitle";
+import HeartIcon from "./icon/Heart";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
-import { flex, fontFamily, defaultTxtStyle } from "../utils/sMixinUtils";
+import { fontFamily, defaultTxtStyle } from "../utils/sMixinUtils";
 
 function Introduce() {
-  const introDataMale = data.information[0];
-  const introDataFemale = data.information[1];
+  // const heartSvg = "/assets/heart.svg";
 
   return (
     <Container>
@@ -31,23 +32,17 @@ function Introduce() {
         </p>
       </SScriptDiv>
       <ScrollImg imgUrl={data.img[7]} margin={100} />
-      <SSubTitle text={"♡"} />
-      <SName>
-        <div>
-          <span>
-            {introDataMale.father}∙{introDataMale.mother}
-          </span>
-          <span>의 아들</span>
-          <span>{introDataMale.name}</span>
-        </div>
-        <div>
-          <span>
-            {introDataFemale.father}∙{introDataFemale.mother}
-          </span>
-          <span>의 딸</span>
-          <span>{introDataFemale.name}</span>
-        </div>
-      </SName>
+      <SSubTitle
+        text={
+          <HeartIcon
+            stroke="#f32a2a"
+            color="#f32a2a"
+            width={40}
+            height={"auto"}
+          />
+        }
+      />
+      <SName />
       {/* <ScrollImg imgUrl={data.img[7]} /> */}
     </Container>
   );
@@ -65,34 +60,4 @@ const Container = styled.section`
 
 const SScriptDiv = styled.div`
   ${defaultTxtStyle("1.8", "24", "40")};
-`;
-
-const SName = styled.div`
-  ${flex("column", "", "")};
-  /* padding: ${getVwSize(70)} 0 ${getVwSize(100)}; */
-  gap: 2vw;
-  ${fontFamily("MaruBuri", "600")};
-
-  p,
-  div > span {
-    font-size: ${getVwSize(24)};
-  }
-  span:nth-child(2) {
-    font-size: ${getVwSize(20)};
-    margin: 0 1.5vw;
-    ${fontFamily("MaruBuri", "400")};
-  }
-
-  @media screen and (min-width: 640px) {
-    /* padding: ${getSize(70)} 0 ${getSize(100)}; */
-    gap: 1.4rem;
-    p,
-    div > span {
-      font-size: ${getSize(24)};
-    }
-    span:nth-child(2) {
-      font-size: ${getSize(20)};
-      margin: 0 1rem;
-    }
-  }
 `;

@@ -1,9 +1,23 @@
 import React from "react";
 import styled from "styled-components";
+import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { secTitle, fontFamily } from "../\butils/sMixinUtils";
 
 function SSubTitle({ text }) {
-  return <STitle>{text}</STitle>;
+  return (
+    <STitle>
+      {/* {typeof text === "string" ? (
+        text.endsWith(".svg") ? (
+          <img src={text} alt="" />
+        ) : (
+          text
+        )
+      ) : (
+        text
+      )} */}
+      {text}
+    </STitle>
+  );
 }
 
 export default SSubTitle;
@@ -11,4 +25,11 @@ export default SSubTitle;
 const STitle = styled.p`
   ${secTitle("#f32a2a")};
   ${fontFamily("Abril Fatface", "")};
+  img {
+    width: ${getVwSize(40)};
+    height: auto;
+    @media screen and (min-width: 640px) {
+      width: ${getSize(40)};
+    }
+  }
 `;

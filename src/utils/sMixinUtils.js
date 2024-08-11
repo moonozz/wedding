@@ -108,9 +108,9 @@ export const circleTxt = (color = "white") => css`
 
 export const secTitle = (color = "black") => css`
   color: ${color};
-  font-size: ${getVwSize(30)};
+  font-size: ${getVwSize(32)};
   @media screen and (min-width: 640px) {
-    font-size: ${getSize(30)};
+    font-size: ${getSize(32)};
   }
 `;
 
