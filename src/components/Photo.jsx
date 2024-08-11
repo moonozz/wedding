@@ -2,15 +2,22 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { PhotoLiSwipe } from "../utils/photoList";
 import data from "../data/data.json";
+import SSubTitle from "./SSubTitle";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
-import { boxSize, position, flex } from "../\butils/sMixinUtils";
+import {
+  boxSize,
+  position,
+  flex,
+  secTitle,
+  fontFamily,
+} from "../\butils/sMixinUtils";
 
 function Photo() {
   const imgData = data.img.slice(1);
 
   return (
     <SContainer>
-      <h3 className="abril-fatface title">PHOTO</h3>
+      <SSubTitle text={"PHOTO"} />
       <SWrapper>
         <SInner>
           {imgData?.map((el) => {

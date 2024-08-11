@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
 import ScrollImg from "./ScrollImg";
+import SSubTitle from "./SSubTitle";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
-import { flex } from "../utils/sMixinUtils";
+import { flex, fontFamily, defaultTxtStyle } from "../utils/sMixinUtils";
 
 function Introduce() {
   const introDataMale = data.information[0];
   const introDataFemale = data.information[1];
-  console.log(data.img[7]);
 
   return (
     <Container>
@@ -30,8 +30,9 @@ function Introduce() {
           함께 축복해주세요.
         </p>
       </SScriptDiv>
+      <ScrollImg imgUrl={data.img[7]} />
+      <SSubTitle text={"♡"} />
       <SName>
-        <p>👰🏻‍♀️❤️🤵🏻‍♂️</p>
         <div>
           <span>
             {introDataMale.father}∙{introDataMale.mother}
@@ -47,7 +48,7 @@ function Introduce() {
           <span>{introDataFemale.name}</span>
         </div>
       </SName>
-      <ScrollImg imgUrl={data.img[7]} />
+      {/* <ScrollImg imgUrl={data.img[7]} /> */}
     </Container>
   );
 }
@@ -56,29 +57,21 @@ export default Introduce;
 
 const Container = styled.section`
   padding: ${getVwSize(90)} 0;
+  ${fontFamily("MaruBuri", "400")};
   @media screen and (min-width: 640px) {
     padding: ${getSize(90)} 0;
   }
 `;
 
 const SScriptDiv = styled.div`
-  line-height: 1.6;
-  p {
-    font-size: ${getVwSize(24)};
-    margin-bottom: ${getVwSize(24)};
-  }
-  @media screen and (min-width: 640px) {
-    p {
-      font-size: ${getSize(24)};
-      margin-bottom: ${getSize(24)};
-    }
-  }
+  ${defaultTxtStyle("1.8", "24", "40")};
 `;
 
 const SName = styled.div`
   ${flex("column", "", "")};
-  padding: ${getVwSize(70)} 0 ${getVwSize(100)};
+  /* padding: ${getVwSize(70)} 0 ${getVwSize(100)}; */
   gap: 2vw;
+  ${fontFamily("MaruBuri", "600")};
 
   p,
   div > span {
@@ -87,10 +80,11 @@ const SName = styled.div`
   span:nth-child(2) {
     font-size: ${getVwSize(20)};
     margin: 0 1.5vw;
+    ${fontFamily("MaruBuri", "400")};
   }
 
   @media screen and (min-width: 640px) {
-    padding: ${getSize(70)} 0 ${getSize(100)};
+    /* padding: ${getSize(70)} 0 ${getSize(100)}; */
     gap: 1.4rem;
     p,
     div > span {
