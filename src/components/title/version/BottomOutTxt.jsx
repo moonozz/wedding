@@ -24,7 +24,7 @@ const SContainer = styled.div`
   ${boxSize("100%", "")};
   ${flex("column", "", "")};
   ${position("absolute")};
-  ${fontFamily("Aoboshi One")};
+  ${fontFamily("Aoboshi One", "")};
   font-size: ${getVwSize(100)};
   font-weight: 800;
   color: #de2b2b;

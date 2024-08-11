@@ -16,7 +16,7 @@ function OutTxt() {
         <span>We are</span>
         <span>Getting</span>
       </STitle>
-      <SRedTxt className="absolute b-24">&#40;Married&#41;</SRedTxt>
+      <SRedTxt>&#40;Married&#41;</SRedTxt>
     </SContainer>
   );
 }
@@ -25,7 +25,7 @@ export default OutTxt;
 
 const SContainer = styled.div`
   ${flex("column", "center", "center")}
-  ${fontFamily("Abril Fatface")};
+  ${fontFamily("Abril Fatface", "")};
   ${boxSize("100%", "")};
 
   color: white;

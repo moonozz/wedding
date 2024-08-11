@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import data from "../data/data.json";
+import { getSize, getVwSize } from "./sThemeUtils";
+import { boxSize } from "./sMixinUtils";
 
 export const PhotoLiSwipe = ({ imgUrl }) => {
   return (
@@ -8,7 +10,6 @@ export const PhotoLiSwipe = ({ imgUrl }) => {
         <Image
           src={`${process.env.PUBLIC_URL}/assets/${imgUrl}`}
           alt={imgUrl}
-          className="w-100"
         />
         <p>{imgUrl}</p>
       </div>
@@ -33,6 +34,7 @@ const ImgLi = styled.li`
 `;
 
 const Image = styled.img`
+  ${boxSize("100%", "")};
   /* object-fit: contain; */
   object-fit: cover;
   /* height: 100%; */

@@ -44,7 +44,7 @@ function OutTxt() {
 export default OutTxt;
 
 const SContainer = styled.div`
-  ${fontFamily("Aoboshi One")};
+  ${fontFamily("Aoboshi One", "")};
   ${boxSize("100%", "")};
   ${flex("col", "center", "center")};
 `;

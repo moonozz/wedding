@@ -24,7 +24,7 @@ const SFixArea = styled.div`
   /* bottom: 13.2vw; */
 
   button {
-    padding: 1.3rem 1.4rem 1.1rem;
+    padding: 1.3rem 1.4rem 1.3rem;
     border-radius: 100%;
     border: none;
     background-color: rgb(26, 26, 26, 0.1);

@@ -12,7 +12,7 @@ import {
   sPosterTxt,
 } from "../../../utils/sMixinUtils";
 
-function OutTxt() {
+function Poster() {
   return (
     <SContainer>
       <SPosterTxt>
@@ -37,14 +37,14 @@ function OutTxt() {
   );
 }
 
-export default OutTxt;
+export default Poster;
 
 const SContainer = styled.div`
   ${flex("col", "center", "center")}
 `;
 
 const SPosterTxt = styled.div`
-  ${fontFamily("Aoboshi One")};
+  ${fontFamily("Aoboshi One", "")};
   ${position("absolute")};
   ${xyValue("24", "", "", "")};
   ${boxSize("100%", "")};
@@ -52,7 +52,7 @@ const SPosterTxt = styled.div`
 `;
 
 const SBottomTitle = styled.div`
-  ${fontFamily("Abril Fatface")};
+  ${fontFamily("Abril Fatface", "")};
   ${position("absolute")};
   ${xyValue("", "", "24", "")};
   ${flex("column", "", "")};

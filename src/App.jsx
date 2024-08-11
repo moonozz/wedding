@@ -28,11 +28,11 @@ const Main = styled.div`
   ${boxSize("100vw", "")}
   max-width: ${getSize(640)};
   min-width: ${getSize(200)};
-  padding: ${getVwSize(150)} ${getSize(20)} 0;
+  padding: ${getVwSize(80)} ${getSize(20)} 0;
   text-align: center;
 
   @media screen and (min-width: 640px) {
-    padding: ${getSize(130)} ${getSize(20)} 0;
+    padding: ${getSize(80)} ${getSize(20)} 0;
     ${boxSize("100%", "")}
   }
 `;
