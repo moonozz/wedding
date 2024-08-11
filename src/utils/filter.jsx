@@ -1,14 +1,16 @@
 import React from "react";
 import data from "../data/data.json";
 
-export const getKorDate = () => {
+export const getKorDate = (yearlength) => {
   const when = new Date(data.when);
   const year = when.getFullYear();
   // const month = ("0" + (when.getMonth()+1)).slice(-2);
   const month = when.getMonth() + 1;
   const day = when.getDate();
 
-  return `${year}년 ${month}월 ${day}일`;
+  if (yearlength === 2) {
+    return `${year.toString().slice(-2)}년 ${month}월 ${day}일`;
+  } else return `${year}년 ${month}월 ${day}일`;
 };
 
 export const getWeek = (i, lan) => {
@@ -23,16 +25,6 @@ export const getTime = (lan) => {
   const time = data.time.split(":");
   const isAM = time[0] < 12;
   const timeCal = time[0] % 12 || 12;
-
-  // if (time[0] < 12 && lan === "eng") {
-  //   return `AM ${data.time}`;
-  // } else if (time[0] >= 12 && lan === "eng") {
-  //   return `PM ${timeCal}:${time[1]}`;
-  // } else if (time[0] < 12 && lan === "kor") {
-  //   return `오전 ${time[0]}시 ${time[1]}분`;
-  // } else {
-  //   return `오후 ${timeCal}시 ${time[1]}분`;
-  // }
 
   if (lan === "eng") {
     return `${isAM ? "AM" : "PM"} ${timeCal}:${time[1]}`;
