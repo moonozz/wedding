@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
-import { boxSize, position, trbl } from "../\butils/sMixinUtils";
+import { boxSize, position, xyValue } from "../\butils/sMixinUtils";
 
 function ScrollImg({ imgUrl }) {
   return (
@@ -22,15 +22,14 @@ const SContainer = styled.section`
   margin-left: calc(-50vw + 50%);
   overflow: hidden;
   @media screen and (min-width: 640px) {
-    ${boxSize("", "40rem")}
+    ${boxSize("64rem", "40rem")};
     margin-left: calc(50% - 32rem);
   }
 `;
 
 const SImgBox = styled.div`
-  background-color: black;
   ${position("absolute")};
-  ${boxSize("64rem", "100%")};
+  ${boxSize("100%", "100%")};
   clip: rect(0, auto, auto, 0);
 `;
 
@@ -38,13 +37,16 @@ const SImg = styled.div`
   display: block;
   ${boxSize("100%", "100%")};
   ${position("fixed")};
-  ${trbl("0", "", "", "")};
-  background: url(${process.env.PUBLIC_URL}/assets/${(props) => props.$image})
-    no-repeat center center;
+  transform: translateZ(0);
+  will-change: transform;
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-image: url(${process.env.PUBLIC_URL}/assets/${(props) =>
+    props.$image});
+  top: 0;
 
   @media screen and (min-width: 640px) {
     ${boxSize("64rem", "")};
-    /* width: 64rem; */
   }
 `;
