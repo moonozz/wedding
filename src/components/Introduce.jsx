@@ -30,7 +30,7 @@ function Introduce() {
           함께 축복해주세요.
         </p>
       </SScriptDiv>
-      <ScrollImg imgUrl={data.img[7]} />
+      <ScrollImg imgUrl={data.img[7]} margin={100} />
       <SSubTitle text={"♡"} />
       <SName>
         <div>
