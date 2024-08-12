@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Title from "./components/title/Title";
 import Introduce from "./components/Introduce";
 import FixedBtn from "./components/FixedBtn";
-import Photo from "./components/Photo";
+import Photo from "./components/photo/Photo";
 import { getSize, getVwSize } from "./utils/sThemeUtils";
 import { flex, boxSize } from "./\butils/sMixinUtils";
 // import data from "./data/data.json";

@@ -131,3 +131,10 @@ export const defaultTxtStyle = (
     }
   }
 `;
+
+export const paddingIgnore = css`
+  margin-left: calc(-50vw + 50%) !important;
+  @media screen and (min-width: 640px) {
+    margin-left: calc(50% - 32rem) !important;
+  }
+`;
