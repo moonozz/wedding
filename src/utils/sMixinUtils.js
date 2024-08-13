@@ -138,3 +138,11 @@ export const paddingIgnore = css`
     margin-left: calc(50% - 32rem) !important;
   }
 `;
+
+export const photoTrans = (trans = "10") => css`
+  transform: translate(${getVwSize(`${trans}`)});
+
+  @media screen and (min-width: 640px) {
+    transform: translate(${getSize(`${trans}`)});
+  }
+`;
