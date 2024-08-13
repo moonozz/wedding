@@ -146,3 +146,8 @@ export const photoTrans = (trans = "10") => css`
     transform: translate(${getSize(`${trans}`)});
   }
 `;
+
+export const absoluteCenter = css`
+  left: 50%;
+  transform: translateX(-50%);
+`;

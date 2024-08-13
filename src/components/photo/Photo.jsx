@@ -4,7 +4,7 @@ import PhotoSwipe from "./version/PhotoSwipe";
 import data from "../../data/data.json";
 import SSubTitle from "../SSubTitle";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
-import { paddingIgnore, defaultTxtStyle } from "../../utils/sMixinUtils";
+import { paddingIgnore, fontFamily } from "../../utils/sMixinUtils";
 
 function Photo() {
   return (
@@ -29,6 +29,7 @@ const Container = styled.section`
 `;
 
 const Discript = styled.p`
+  ${fontFamily("MaruBuri", "400")};
   font-size: ${getVwSize(24)};
   margin: ${getVwSize(40)} 0;
 

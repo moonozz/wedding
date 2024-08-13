@@ -6,6 +6,7 @@ const color = {
 };
 
 const size = {
+  0: "0rem",
   16: "1.6rem",
   18: "1.8rem",
   20: "2rem",

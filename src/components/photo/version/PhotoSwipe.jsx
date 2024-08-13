@@ -2,7 +2,14 @@ import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import data from "../../../data/data.json";
 import { getSize, getVwSize } from "../../../utils/sThemeUtils";
-import { boxSize, position, flex } from "../../../utils/sMixinUtils";
+import {
+  boxSize,
+  position,
+  flex,
+  fontFamily,
+  xyValue,
+  absoluteCenter,
+} from "../../../utils/sMixinUtils";
 
 function PhotoSwipe({ imgUrl }) {
   const containerRef = useRef(null);
@@ -48,18 +55,14 @@ function PhotoSwipe({ imgUrl }) {
         {imgData?.map((el) => {
           return (
             <ImgLi key={el}>
-              <div>
-                <Image
-                  src={`${process.env.PUBLIC_URL}/assets/${el}`}
-                  alt={el}
-                />
-                <p>{el}</p>
-              </div>
+              <Image src={`${process.env.PUBLIC_URL}/assets/${el}`} alt={el} />
             </ImgLi>
           );
         })}
       </Inner>
-      {currentId + 1} / {imgData.length}
+      <Page>
+        {currentId + 1} / {imgData.length}
+      </Page>
     </Container>
   );
 }
@@ -67,18 +70,16 @@ function PhotoSwipe({ imgUrl }) {
 export default PhotoSwipe;
 
 const Container = styled.div`
+  ${boxSize("100%", "110vw")};
   ${position("relative")};
   overflow-x: hidden;
-  touch-action: pan-x;
   user-select: none;
   -webkit-user-drag: none;
   touch-action: auto;
-
-  width: calc(100vw - 5rem);
-  transform: translateX(5rem);
+  padding-left: 12vw; // 사진 가운데 배치용
 
   @media screen and (min-width: 640px) {
-    width: calc(64rem - 5rem);
+    padding-left: 4rem;
   }
 `;
 
@@ -87,13 +88,13 @@ const Inner = styled.ul`
   ${flex("row", "", "")};
   ${position("relative")};
   ${boxSize(`calc(${data.img.length - 1} * 80vw)`, "100%")};
-  -webkit-box-orient: horizontal;
-  transition-property: transform;
+  /* -webkit-box-orient: horizontal; */
+  /* transition-property: transform; */
   transform: ${({ $transform }) => `translateX(-${$transform * 80}vw)`};
   transition: ${({ $trans }) => ($trans ? "transform 0.3s ease" : "none")};
 
   @media screen and (min-width: 640px) {
-    transform: ${({ $transform }) => `translateX(-${$transform * 60}vw)`};
+    transform: ${({ $transform }) => `translateX(-${$transform * 58}rem)`};
   }
 `;
 
@@ -102,15 +103,26 @@ const ImgLi = styled.li`
   ${position("relative")};
   overflow: hidden;
   width: 80vw;
-  height: 120vw;
+  height: 100vw;
   margin-right: 2rem;
 
   @media screen and (min-width: 640px) {
-    width: 60rem;
+    width: 56rem;
   }
 `;
 
 const Image = styled.img`
   ${boxSize("100%", "auto")};
   object-fit: cover;
+`;
+
+const Page = styled.p`
+  ${position("absolute")};
+  ${xyValue("", "", "0", "")};
+  ${absoluteCenter};
+  ${fontFamily("MaruBuri", "400")};
+  font-size: ${getVwSize(20)};
+  @media screen and (min-width: 640px) {
+    font-size: ${getSize(20)};
+  }
 `;
