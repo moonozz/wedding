@@ -22,34 +22,34 @@
   "information": [
     {
       "type": "male",
-      "name": "박보검",
-      "EngName": "Park Bo Gum",
+      "name": "양승역",
+      "EngName": "Yang Seung Yeok",
       "phone": "01000000011",
       "account": ["우리은행", "1002-111-111111"],
-      "father": "박보헌",
-      "father-phone": "01000000012",
-      "father-account": ["우리은행", "1002-111-111112"],
-      "mother": "김보화",
-      "mother-phone": "01000000013",
-      "mother-account": ["우리은행", "1002-111-111113"]
+      "father": "양영식",
+      "fatherPhone": "01000000012",
+      "fatherAccount": ["우리은행", "1002-111-111112"],
+      "mother": "민정애",
+      "motherPhone": "01000000013",
+      "motherAccount": ["우리은행", "1002-111-111113"]
     },
     {
       "type": "female",
-      "name": "수지",
-      "EngName": "Su Ji",
+      "name": "이정민",
+      "EngName": "Lee Jeong Min",
       "phone": "01000000021",
       "account": ["카카오뱅크", "1002-222-111121"],
-      "father": "수호현",
-      "father-phone": "01000000022",
-      "father-account": ["국민은행", "1002-111-111122"],
-      "mother": "이수희",
-      "mother-phone": "01000000023",
-      "mother-account": ["우리은행", "1002-111-111123"]
+      "father": "故 이용길",
+      "fatherPhone": "01000000022",
+      "fatherAccount": ["국민은행", "1002-111-111122"],
+      "mother": "문명숙",
+      "motherPhone": "01000000023",
+      "motherAccount": ["우리은행", "1002-111-111123"]
     }
   ],
   "location": {
     "address": "서울 성동구 왕십리광장로 17 5층, 6층, 7층",
-    "wedding-hall": "디노체컨벤션웨딩홀",
+    "weddingHall": "디노체컨벤션웨딩홀",
     "subway": {
       "경의중앙선, 분당선": "왕십리역 12번 출구 개찰구를 나오셔서 좌측 안쪽 엘리베이터 이용",
       "2, 5호선": "왕십리역 6-1번 출구로 나오셔서 횡단보도 건너 롯데리아 옆 엘리베이터 이용"

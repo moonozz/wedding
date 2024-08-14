@@ -32,7 +32,7 @@ export default SName;
 
 const Name = styled.div`
   ${flex("column", "", "")};
-  padding: ${getVwSize(40)} 0 ${getVwSize(60)};
+  padding: ${getVwSize(40)} 0 ${getVwSize(80)};
   gap: 2vw;
   ${fontFamily("MaruBuri", "600")};
 
@@ -47,7 +47,7 @@ const Name = styled.div`
   }
 
   @media screen and (min-width: 640px) {
-    padding: ${getSize(40)} 0 ${getSize(60)};
+    padding: ${getSize(40)} 0 ${getSize(80)};
     gap: 1.4rem;
     p,
     div > span {

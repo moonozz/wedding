@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
 import SName from "./name/SName";
+import SCall from "./name/SCall";
 import ScrollImg from "./ScrollImg";
 import SSubTitle from "./SSubTitle";
 import HeartIcon from "./icon/Heart";
@@ -9,8 +10,6 @@ import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { fontFamily, defaultTxtStyle } from "../utils/sMixinUtils";
 
 function Introduce() {
-  // const heartSvg = "/assets/heart.svg";
-
   return (
     <Container>
       <SScriptDiv>
@@ -44,6 +43,7 @@ function Introduce() {
       />
       <SName />
       {/* <ScrollImg imgUrl={data.img[7]} /> */}
+      <SCall />
     </Container>
   );
 }
