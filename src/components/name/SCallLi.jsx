@@ -28,9 +28,9 @@ const Container = styled.li`
   }
 
   a {
-    font-size: ${getVwSize(24)};
+    font-size: ${getVwSize(20)};
     @media screen and (min-width: 640px) {
-      font-size: ${getSize(24)};
+      font-size: ${getSize(20)};
     }
   }
 `;

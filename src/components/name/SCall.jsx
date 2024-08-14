@@ -54,7 +54,7 @@ const Container = styled.div`
   ${boxSize("100%", "auto")}
   gap: ${getVwSize(10)};
   ${fontFamily("MaruBuri", "400")};
-  ${defaultTxtStyle("", "24", "20")}
+  ${defaultTxtStyle("", "24", "30")}
 
   @media screen and (min-width: 640px) {
     gap: ${getSize(10)};
@@ -63,8 +63,12 @@ const Container = styled.div`
 
 const Group = styled.div`
   p:first-child {
-    padding-bottom: 2rem;
+    padding-bottom: ${getVwSize(24)};
     border-bottom: 0.5px solid rgb(0, 0, 0, 0.5);
+
+    @media screen and (min-width: 640px) {
+      padding-bottom: ${getSize(24)};
+    }
   }
   padding: ${getVwSize(30)} ${getVwSize(70)};
   ${flex("column", "", "")};
