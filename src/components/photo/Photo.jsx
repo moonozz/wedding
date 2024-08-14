@@ -19,7 +19,7 @@ function Photo() {
 export default Photo;
 
 const Container = styled.section`
-  padding: ${getSize(100)} 0;
+  padding: ${getSize(30)} 0;
   ${paddingIgnore};
   width: ${getVwSize(640)};
 

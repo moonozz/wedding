@@ -1,13 +1,32 @@
 import React from "react";
 import styled from "styled-components";
+import JSConfetti from "js-confetti";
 import { getSize } from "../\butils/sThemeUtils";
 import { flex, position, xyValue } from "../\butils/sMixinUtils";
 
 function EffectBtn() {
+  const jsConfetti = new JSConfetti();
+
+  const handleConfetti = (emoji) => {
+    let emojisArray = [];
+
+    if (emoji === "heart") {
+      emojisArray = ["❤️"];
+    } else if (emoji === "party") {
+      emojisArray = ["🎉"];
+    }
+
+    jsConfetti.addConfetti({
+      emojis: emojisArray,
+      emojiSize: 70,
+      confettiNumber: 30,
+    });
+  };
+
   return (
     <SFixArea>
-      <button>🎉</button>
-      <button>❤️</button>
+      <button onClick={() => handleConfetti("party")}>🎉</button>
+      <button onClick={() => handleConfetti("heart")}>❤️</button>
     </SFixArea>
   );
 }
@@ -21,17 +40,17 @@ const SFixArea = styled.div`
   ${xyValue("", "", "20", "")}
   font-size: ${getSize(32)};
   z-index: 10;
-  /* bottom: 13.2vw; */
 
   button {
     padding: 1.3rem 1.4rem 1.3rem;
     border-radius: 100%;
     border: none;
     background-color: rgb(26, 26, 26, 0.1);
-    /* padding: 3.1vw 3.1vw 2.2vw; */
     backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
     cursor: pointer;
+  }
+  button:hover {
+    background-color: rgb(26, 26, 26, 0.2);
   }
 
   @media screen and (min-width: 640px) {
