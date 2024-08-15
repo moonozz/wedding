@@ -11,11 +11,12 @@ function Photo({ modal, setModal }) {
   return (
     <Container>
       <SSubTitle text={"PHOTO"} />
-      <PhotoList
+      <PhotoSwipe discript={"사진을 넘겨보세요."} />
+      {/* <PhotoList
         discript={"사진을 클릭해보세요."}
         modal={modal}
         setModal={setModal}
-      />
+      /> */}
     </Container>
   );
 }
