@@ -1,10 +1,11 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Title from "./section/Title";
 import Introduce from "./section/Introduce";
 import FixedBtn from "./section/FixedBtn";
 import Photo from "./section/Photo";
+import OurDay from "./section/OurDay";
 import { getSize, getVwSize } from "./utils/sThemeUtils";
 import { flex, boxSize, position } from "./\butils/sMixinUtils";
 // import data from "./data/data.json";
@@ -12,11 +13,18 @@ import { flex, boxSize, position } from "./\butils/sMixinUtils";
 function App() {
   const [modal, setModal] = useState(false);
 
+  useEffect(() => {
+    document.oncontextmenu = function () {
+      return false;
+    };
+  }, []);
+
   return (
     <Main>
       <Title />
       <Introduce />
       <Photo modal={modal} setModal={setModal} />
+      <OurDay />
       <FixedBtn />
     </Main>
   );

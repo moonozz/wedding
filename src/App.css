@@ -11,8 +11,11 @@ body {
   font-family: "Pretendard", sans-serif;
   line-height: 1.4;
   overflow-x: hidden;
-  /* overflow-y: scroll; */
-  /* -webkit-overflow-scrolling: touch; */
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 ol,
