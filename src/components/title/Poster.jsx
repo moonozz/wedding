@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import data from "../../../data/data.json";
-import { getWeek, getTime } from "../../../utils/filter";
-import { getSize, getVwSize } from "../../../utils/sThemeUtils";
+import data from "../../data/data.json";
+import { getWeek, getTime } from "../../utils/filter";
+import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import {
   position,
   boxSize,
@@ -10,7 +10,7 @@ import {
   fontFamily,
   xyValue,
   sPosterTxt,
-} from "../../../utils/sMixinUtils";
+} from "../../utils/sMixinUtils";
 
 function Poster() {
   return (

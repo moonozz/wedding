@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
-import SName from "./name/SName";
-import SCall from "./name/SCall";
-import ScrollImg from "./ScrollImg";
-import SSubTitle from "./SSubTitle";
-import HeartIcon from "./icon/Heart";
+import SName from "../components/name/SName";
+import SCall from "../components/name/SCall";
+import ScrollImg from "../components/ScrollImg";
+import SSubTitle from "../components/SSubTitle";
+import HeartIcon from "../components/icon/Heart";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { fontFamily, defaultTxtStyle } from "../utils/sMixinUtils";
 

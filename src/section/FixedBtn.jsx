@@ -3,7 +3,7 @@ import styled from "styled-components";
 import JSConfetti from "js-confetti";
 import { getSize } from "../\butils/sThemeUtils";
 import { flex, position, xyValue } from "../\butils/sMixinUtils";
-import Button from "./Button";
+import Button from "../components/Button";
 
 function EffectBtn() {
   const jsConfetti = new JSConfetti();

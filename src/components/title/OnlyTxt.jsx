@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { getSize, getVwSize } from "../../../utils/sThemeUtils";
+import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import {
   position,
   boxSize,
   flex,
   fontFamily,
   xyValue,
-} from "../../../utils/sMixinUtils";
+} from "../../utils/sMixinUtils";
 
 function OutTxt() {
   return (

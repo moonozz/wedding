@@ -1,10 +1,10 @@
 import "./App.css";
 import React, { useState } from "react";
 import styled from "styled-components";
-import Title from "./components/title/Title";
-import Introduce from "./components/Introduce";
-import FixedBtn from "./components/FixedBtn";
-import Photo from "./components/photo/Photo";
+import Title from "./section/Title";
+import Introduce from "./section/Introduce";
+import FixedBtn from "./section/FixedBtn";
+import Photo from "./section/Photo";
 import { getSize, getVwSize } from "./utils/sThemeUtils";
 import { flex, boxSize, position } from "./\butils/sMixinUtils";
 // import data from "./data/data.json";

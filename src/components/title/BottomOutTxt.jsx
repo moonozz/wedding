@@ -1,12 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { getSize, getVwSize } from "../../../utils/sThemeUtils";
-import {
-  position,
-  boxSize,
-  flex,
-  fontFamily,
-} from "../../../utils/sMixinUtils";
+import { getSize, getVwSize } from "../../utils/sThemeUtils";
+import { position, boxSize, flex, fontFamily } from "../../utils/sMixinUtils";
 
 function BottomOutTxt() {
   return (

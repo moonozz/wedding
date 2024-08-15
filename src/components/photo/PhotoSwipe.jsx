@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import data from "../../../data/data.json";
-import { getSize, getVwSize } from "../../../utils/sThemeUtils";
+import data from "../../data/data.json";
+import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import {
   boxSize,
   position,
@@ -9,7 +9,7 @@ import {
   fontFamily,
   xyValue,
   absoluteCenter,
-} from "../../../utils/sMixinUtils";
+} from "../../utils/sMixinUtils";
 
 function PhotoSwipe({ imgUrl, discript }) {
   // const containerRef = useRef(null);

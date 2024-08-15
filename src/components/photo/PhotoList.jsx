@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import data from "../../../data/data.json";
-import Modal from "../../Modal";
-import { recordImg } from "../../../utils/filter";
-import { getSize, getVwSize } from "../../../utils/sThemeUtils";
-import {
-  boxSize,
-  position,
-  flex,
-  fontFamily,
-} from "../../../utils/sMixinUtils";
+import data from "../../data/data.json";
+import Modal from "../Modal";
+import { recordImg } from "../../utils/filter";
+import { getSize, getVwSize } from "../../utils/sThemeUtils";
+import { boxSize, position, flex, fontFamily } from "../../utils/sMixinUtils";
 
 function PhotoList({ imgUrl, discript, modal, setModal }) {
   const [currentImg, setCurrentImg] = useState("");

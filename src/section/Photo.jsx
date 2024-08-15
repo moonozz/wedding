@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import PhotoSwipe from "./version/PhotoSwipe";
-import PhotoList from "./version/PhotoList";
-import data from "../../data/data.json";
-import SSubTitle from "../SSubTitle";
-import { getSize, getVwSize } from "../../utils/sThemeUtils";
-import { paddingIgnore, fontFamily, boxSize } from "../../utils/sMixinUtils";
+import data from "../data/data.json";
+import PhotoSwipe from "../components/photo/PhotoSwipe";
+import PhotoList from "../components/photo/PhotoList";
+import SSubTitle from "../components/SSubTitle";
+import { getSize, getVwSize } from "../utils/sThemeUtils";
+import { paddingIgnore, fontFamily, boxSize } from "../utils/sMixinUtils";
 
 function Photo({ modal, setModal }) {
   return (

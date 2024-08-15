@@ -1,20 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import data from "../../data/data.json";
-import SSubTitle from "../SSubTitle";
-import { getKorDate, getWeek, getTime } from "../../utils/filter";
-import { getSize, getVwSize } from "../../utils/sThemeUtils";
+import data from "../data/data.json";
+import SSubTitle from "../components/SSubTitle";
+import { getKorDate, getWeek, getTime } from "../utils/filter";
+import { getSize, getVwSize } from "../utils/sThemeUtils";
 import {
   position,
   boxSize,
   dim,
   fontFamily,
   xyValue,
-} from "../../utils/sMixinUtils";
-import BottomOutTxt from "./version/BottomOutTxt";
-import OutTxt from "./version/OutTxt";
-import Poster from "./version/Poster";
-import OnlyTxt from "./version/OnlyTxt";
+} from "../utils/sMixinUtils";
+import BottomOutTxt from "../components/title/BottomOutTxt";
+import OutTxt from "../components/title/OutTxt";
+import Poster from "../components/title/Poster";
+import OnlyTxt from "../components/title/OnlyTxt";
 
 function Title() {
   const TitleSection = (i) => {
