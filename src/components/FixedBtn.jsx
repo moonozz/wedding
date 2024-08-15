@@ -3,6 +3,7 @@ import styled from "styled-components";
 import JSConfetti from "js-confetti";
 import { getSize } from "../\butils/sThemeUtils";
 import { flex, position, xyValue } from "../\butils/sMixinUtils";
+import Button from "./Button";
 
 function EffectBtn() {
   const jsConfetti = new JSConfetti();
@@ -25,8 +26,8 @@ function EffectBtn() {
 
   return (
     <SFixArea>
-      <button onClick={() => handleConfetti("party")}>🎉</button>
-      <button onClick={() => handleConfetti("heart")}>❤️</button>
+      <Button onClick={() => handleConfetti("party")} text={"🎉"} />
+      <Button onClick={() => handleConfetti("heart")} text={"❤️"} />
     </SFixArea>
   );
 }
@@ -41,20 +42,7 @@ const SFixArea = styled.div`
   font-size: ${getSize(32)};
   z-index: 10;
 
-  button {
-    padding: 1.3rem 1.4rem 1.3rem;
-    border-radius: 100%;
-    border: none;
-    background-color: rgb(26, 26, 26, 0.1);
-    backdrop-filter: blur(50px);
-    cursor: pointer;
-  }
-  button:hover {
-    background-color: rgb(26, 26, 26, 0.2);
-  }
-
   @media screen and (min-width: 640px) {
     width: calc(64rem - 4rem);
-    /* bottom: 7rem; */
   }
 `;
