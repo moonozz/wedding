@@ -11,9 +11,9 @@ function EffectBtn() {
     let emojisArray = [];
 
     if (emoji === "heart") {
-      emojisArray = ["❤️"];
+      emojisArray = ["❤️", "🍀"];
     } else if (emoji === "party") {
-      emojisArray = ["🎉"];
+      emojisArray = ["🎉", "😎"];
     }
 
     jsConfetti.addConfetti({

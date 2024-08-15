@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import data from "../../../data/data.json";
 import { getSize, getVwSize } from "../../../utils/sThemeUtils";
@@ -11,8 +11,8 @@ import {
   absoluteCenter,
 } from "../../../utils/sMixinUtils";
 
-function PhotoSwipe({ imgUrl }) {
-  const containerRef = useRef(null);
+function PhotoSwipe({ imgUrl, discript }) {
+  // const containerRef = useRef(null);
   const imgData = data.img.slice(1);
 
   const [start, setStart] = useState(0);
@@ -45,7 +45,9 @@ function PhotoSwipe({ imgUrl }) {
   };
 
   return (
-    <Container ref={containerRef}>
+    <Container>
+      <Discript>{discript}</Discript>
+
       <Inner
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
@@ -70,7 +72,7 @@ function PhotoSwipe({ imgUrl }) {
 export default PhotoSwipe;
 
 const Container = styled.div`
-  ${boxSize("100%", "110vw")};
+  ${boxSize("100%", "auto")};
   ${position("relative")};
   overflow-x: hidden;
   user-select: none;
@@ -80,6 +82,19 @@ const Container = styled.div`
 
   @media screen and (min-width: 640px) {
     padding-left: 4rem;
+  }
+`;
+
+const Discript = styled.p`
+  ${fontFamily("MaruBuri", "400")};
+  font-size: ${getVwSize(24)};
+  margin: ${getVwSize(40)} 0;
+  padding-right: 12vw; // 사진 가운데 배치용
+
+  @media screen and (min-width: 640px) {
+    font-size: ${getSize(24)};
+    margin: ${getSize(40)} 0;
+    padding-right: 4rem;
   }
 `;
 
@@ -117,12 +132,12 @@ const Image = styled.img`
 `;
 
 const Page = styled.p`
-  ${position("absolute")};
-  ${xyValue("", "", "0", "")};
-  ${absoluteCenter};
   ${fontFamily("MaruBuri", "400")};
   font-size: ${getVwSize(20)};
+  padding: ${getVwSize(40)} 12vw 0 0;
+
   @media screen and (min-width: 640px) {
     font-size: ${getSize(20)};
+    padding: ${getSize(40)} ${getSize(40)} 0 0;
   }
 `;

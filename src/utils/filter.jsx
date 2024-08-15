@@ -37,3 +37,16 @@ export const getName = (gender) => {
   const male = data.information[0].EngName.split(" ");
   const female = data.information[1].EngName.split(" ");
 };
+
+export const recordImg = (img) => {
+  const recordImg = [];
+
+  for (let i = 0; i < img.length; i += 2) {
+    recordImg.push(img[i]);
+  }
+  for (let i = 1; i < img.length; i += 2) {
+    recordImg.push(img[i]);
+  }
+
+  return recordImg;
+};
