@@ -26,8 +26,8 @@ function EffectBtn() {
 
   return (
     <SFixArea>
-      <Button onClick={() => handleConfetti("party")} text={"🎉"} />
-      <Button onClick={() => handleConfetti("heart")} text={"❤️"} />
+      <Button onClick={() => handleConfetti("party")}>🎉</Button>
+      <Button onClick={() => handleConfetti("heart")}>❤️</Button>
     </SFixArea>
   );
 }
