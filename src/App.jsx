@@ -1,19 +1,22 @@
 import "./App.css";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Title from "./components/title/Title";
 import Introduce from "./components/Introduce";
 import FixedBtn from "./components/FixedBtn";
 import Photo from "./components/photo/Photo";
 import { getSize, getVwSize } from "./utils/sThemeUtils";
-import { flex, boxSize } from "./\butils/sMixinUtils";
+import { flex, boxSize, position } from "./\butils/sMixinUtils";
 // import data from "./data/data.json";
 
 function App() {
+  const [modal, setModal] = useState(false);
+
   return (
     <Main>
       <Title />
       <Introduce />
-      <Photo />
+      <Photo modal={modal} setModal={setModal} />
       <FixedBtn />
     </Main>
   );
@@ -22,6 +25,7 @@ function App() {
 export default App;
 
 const Main = styled.div`
+  ${position("relative")}
   ${flex("column", "", "")}
   background-color: #f4f4f4;
   /* width: calc(100% - 2rem); */

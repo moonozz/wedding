@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import data from "../../../data/data.json";
+import Modal from "../../Modal";
 import { recordImg } from "../../../utils/filter";
 import { getSize, getVwSize } from "../../../utils/sThemeUtils";
 import {
@@ -10,13 +11,22 @@ import {
   fontFamily,
 } from "../../../utils/sMixinUtils";
 
-function PhotoList({ imgUrl, discript }) {
+function PhotoList({ imgUrl, discript, modal, setModal }) {
+  const [currentImg, setCurrentImg] = useState("");
+
   const imgData = data.img.slice(1);
 
-  // useEffect(() => {
-  //   console.log(imgData);
-  //   console.log(recordImg(imgData));
-  // }, []);
+  const handleModalOpen = (img) => {
+    setModal(true);
+    setCurrentImg(img);
+    // console.log(currentImg);
+  };
+
+  useEffect(() => {
+    // console.log(imgData);
+    // console.log(recordImg(imgData));
+    // console.log(currentImg);
+  }, []);
 
   return (
     <Container>
@@ -25,12 +35,26 @@ function PhotoList({ imgUrl, discript }) {
         {recordImg(imgData).map((el) => {
           return (
             <ImgLi key={el}>
-              <Image src={`${process.env.PUBLIC_URL}/assets/${el}`} alt={el} />
+              <Image
+                src={`${process.env.PUBLIC_URL}/assets/${el}`}
+                alt={el}
+                onClick={() => handleModalOpen(el)}
+              />
               {/* <p>{el}</p> */}
             </ImgLi>
           );
         })}
       </ImageContainer>
+      {modal ? (
+        <Modal
+          imgUrl={currentImg}
+          modal={modal}
+          setModal={setModal}
+          setCurrentImg={setCurrentImg}
+        />
+      ) : (
+        ""
+      )}
     </Container>
   );
 }
@@ -41,7 +65,8 @@ const Container = styled.div`
   ${boxSize("100%", "auto")};
   padding: 0 ${getVwSize(50)};
   flex-flow: column wrap;
-  ${flex("column", "", "")}
+  ${flex("column", "", "")};
+  ${position("relative")};
 
   @media screen and (min-width: 640px) {
     padding: 0 ${getSize(50)};
