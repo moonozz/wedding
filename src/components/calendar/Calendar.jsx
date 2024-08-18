@@ -95,7 +95,7 @@ function Calendar() {
 export default Calendar;
 
 const Scontainer = styled.div`
-  ${boxSize("90%", "auto")};
+  ${boxSize("80%", "auto")};
   ${flex("column", "", "")};
   ${defaultTxtStyle("1.6", "24", "0")}
   ${fontFamily("MaruBuri", "")};
