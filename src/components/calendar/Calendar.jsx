@@ -85,7 +85,7 @@ function Calendar() {
           </SWeekUl>
         </li>
         {month.map((el, idx) => {
-          return <Week key={idx} el={el}>{`${el}`}</Week>;
+          return <Week key={idx} el={el} />;
         })}
       </SMonthUl>
     </Scontainer>
