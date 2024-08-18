@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import data from "../../data/data.json";
 import Modal from "../Modal";
@@ -14,14 +14,7 @@ function PhotoList({ imgUrl, discript, modal, setModal }) {
   const handleModalOpen = (img) => {
     setModal(true);
     setCurrentImg(img);
-    // console.log(currentImg);
   };
-
-  useEffect(() => {
-    // console.log(imgData);
-    // console.log(recordImg(imgData));
-    // console.log(currentImg);
-  }, []);
 
   return (
     <SContainer>
@@ -35,7 +28,6 @@ function PhotoList({ imgUrl, discript, modal, setModal }) {
                 alt={el}
                 onClick={() => handleModalOpen(el)}
               />
-              {/* <p>{el}</p> */}
             </SImgLi>
           );
         })}

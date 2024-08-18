@@ -97,7 +97,6 @@ const Img = styled.img`
 
 const SHallInfo = styled.div`
   padding: ${getVwSize(60)} 0 ${getVwSize(90)};
-  /* border-bottom: 0.5px solid rgb(0, 0, 0, 0.2); */
 
   p:first-child {
     ${fontFamily("MaruBuri", "900")};

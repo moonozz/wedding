@@ -23,17 +23,15 @@ function PhotoSwipe({ imgUrl, discript }) {
     const offset = start - touchEnd;
 
     if (offset > 50 && currentId < imgData.length - 1) {
+      // 아래 페이지 표기가 이미지갯수보다 넘지 않게 하기 (예: 15/14)
       setTrans(true);
       setCurrentId((prev) => prev + 1);
       setTimeout(() => setTrans(false), 300);
-      // console.log(`offset>50 ${offset}`);
-      // console.log(`currentId ${currentId}`);
     } else if (offset < -50 && currentId > 0) {
+      // 아래 페이지 표기가 1 아래로 표기되지 않게 하기(예:0/14)
       setTrans(true);
       setCurrentId((prev) => prev - 1);
       setTimeout(() => setTrans(false), 300);
-      // console.log(`offset<-50 ${offset}`);
-      // console.log(`currentId ${currentId}`);
     }
   };
 
@@ -98,7 +96,10 @@ const SInner = styled.ul`
   ${boxSize(`calc(${data.img.length - 1} * 80vw)`, "100%")};
   /* -webkit-box-orient: horizontal; */
   /* transition-property: transform; */
-  transform: ${({ $transform }) => `translateX(-${$transform * 80}vw)`};
+  transform: ${({ $transform }) =>
+    `translateX(-${
+      $transform * 80
+    }vw)`}; //만약 이미지 사이즈만큼하게 하려면 state를 추가해서 그걸 80에 대입해야할 것 같음
   transition: ${({ $trans }) => ($trans ? "transform 0.3s ease" : "none")};
 
   @media screen and (min-width: 640px) {
