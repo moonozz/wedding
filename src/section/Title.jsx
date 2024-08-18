@@ -11,28 +11,9 @@ import {
   fontFamily,
   xyValue,
 } from "../utils/sMixinUtils";
-import BottomOutTxt from "../components/title/BottomOutTxt";
-import OutTxt from "../components/title/OutTxt";
-import Poster from "../components/title/Poster";
-import OnlyTxt from "../components/title/OnlyTxt";
+import { TitleSection } from "../components/titleSection";
 
 function Title() {
-  const TitleSection = (i) => {
-    switch (i) {
-      case "bottom":
-        return <BottomOutTxt />;
-        break;
-      case "out":
-        return <OutTxt />;
-        break;
-      case "poster":
-        return <Poster />;
-        break;
-      default:
-        return <OnlyTxt />;
-    }
-  };
-
   return (
     <SContainer>
       <SDate>
