@@ -17,24 +17,26 @@ function Modal({ imgUrl, modal, setModal, setCurrentImg }) {
   }, []);
 
   return (
-    <ModalCom $isOpen={modal}>
-      <ModalContainer>
-        <BtnBox>
+    <SModalCom $isOpen={modal}>
+      <SModalContainer>
+        <SBtnBox>
           <Button onClick={handleClose}>
             <Close width="24" height="24" stroke="black" strokeWidth="2" />
           </Button>
-        </BtnBox>
-        <Content>
-          {imgUrl && <Img src={`${process.env.PUBLIC_URL}/assets/${imgUrl}`} />}
-        </Content>
-      </ModalContainer>
-    </ModalCom>
+        </SBtnBox>
+        <SContent>
+          {imgUrl && (
+            <SImg src={`${process.env.PUBLIC_URL}/assets/${imgUrl}`} />
+          )}
+        </SContent>
+      </SModalContainer>
+    </SModalCom>
   );
 }
 
 export default Modal;
 
-const ModalCom = styled.div`
+const SModalCom = styled.div`
   ${boxSize("100vw", "100vh")};
   ${position("fixed")};
   z-index: 100;
@@ -48,20 +50,20 @@ const ModalCom = styled.div`
   -webkit-backdrop-filter: blur(40px); // safari에서 blur 안먹혀서 추가
 `;
 
-const ModalContainer = styled.div``;
+const SModalContainer = styled.div``;
 
-const BtnBox = styled.div`
+const SBtnBox = styled.div`
   ${position("absolute")};
   ${xyValue("0", "0", "", "")};
   z-index: 101;
   margin: 2rem;
 `;
 
-const Content = styled.div`
+const SContent = styled.div`
   ${boxSize("100%", "100%")};
 `;
 
-const Img = styled.img`
+const SImg = styled.img`
   ${boxSize("90vw", "auto")};
   max-height: 70vh;
   object-fit: contain;

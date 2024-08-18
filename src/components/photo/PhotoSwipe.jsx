@@ -2,14 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import data from "../../data/data.json";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
-import {
-  boxSize,
-  position,
-  flex,
-  fontFamily,
-  xyValue,
-  absoluteCenter,
-} from "../../utils/sMixinUtils";
+import { boxSize, position, flex, fontFamily } from "../../utils/sMixinUtils";
 
 function PhotoSwipe({ imgUrl, discript }) {
   // const containerRef = useRef(null);
@@ -45,10 +38,10 @@ function PhotoSwipe({ imgUrl, discript }) {
   };
 
   return (
-    <Container>
-      <Discript>{discript}</Discript>
+    <SContainer>
+      <SDiscript>{discript}</SDiscript>
 
-      <Inner
+      <SInner
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         $transform={currentId}
@@ -56,22 +49,22 @@ function PhotoSwipe({ imgUrl, discript }) {
       >
         {imgData?.map((el) => {
           return (
-            <ImgLi key={el}>
-              <Image src={`${process.env.PUBLIC_URL}/assets/${el}`} alt={el} />
-            </ImgLi>
+            <SImgLi key={el}>
+              <SImage src={`${process.env.PUBLIC_URL}/assets/${el}`} alt={el} />
+            </SImgLi>
           );
         })}
-      </Inner>
-      <Page>
+      </SInner>
+      <SPage>
         {currentId + 1} / {imgData.length}
-      </Page>
-    </Container>
+      </SPage>
+    </SContainer>
   );
 }
 
 export default PhotoSwipe;
 
-const Container = styled.div`
+const SContainer = styled.div`
   ${boxSize("100%", "auto")};
   ${position("relative")};
   overflow-x: hidden;
@@ -85,7 +78,7 @@ const Container = styled.div`
   }
 `;
 
-const Discript = styled.p`
+const SDiscript = styled.p`
   ${fontFamily("MaruBuri", "400")};
   font-size: ${getVwSize(24)};
   margin: ${getVwSize(40)} 0;
@@ -98,7 +91,7 @@ const Discript = styled.p`
   }
 `;
 
-const Inner = styled.ul`
+const SInner = styled.ul`
   display: block;
   ${flex("row", "", "")};
   ${position("relative")};
@@ -113,7 +106,7 @@ const Inner = styled.ul`
   }
 `;
 
-const ImgLi = styled.li`
+const SImgLi = styled.li`
   ${flex("row", "center", "center")};
   ${position("relative")};
   overflow: hidden;
@@ -126,12 +119,12 @@ const ImgLi = styled.li`
   }
 `;
 
-const Image = styled.img`
+const SImage = styled.img`
   ${boxSize("100%", "auto")};
   object-fit: cover;
 `;
 
-const Page = styled.p`
+const SPage = styled.p`
   ${fontFamily("MaruBuri", "400")};
   font-size: ${getVwSize(20)};
   padding: ${getVwSize(40)} 12vw 0 0;

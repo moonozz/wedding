@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../../data/data.json";
-import SCallLi from "./SCallLi";
+import CallLi from "./CallLi";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import {
   flex,
@@ -10,46 +10,46 @@ import {
   defaultTxtStyle,
 } from "../../utils/sMixinUtils";
 
-function SCall() {
+function Call() {
   const groom = data.information[0];
   const bride = data.information[1];
 
   return (
-    <Container>
-      <Group>
+    <SContainer>
+      <SGroup>
         <p>신랑측</p>
         <ul>
-          <SCallLi tag={"신랑"} name={groom.name} phone={groom.phone} />
-          <SCallLi
+          <CallLi tag={"신랑"} name={groom.name} phone={groom.phone} />
+          <CallLi
             tag={"신랑 아버지"}
             name={groom.father}
             phone={groom.fatherPhone}
           />
-          <SCallLi
+          <CallLi
             tag={"신랑 어머니"}
             name={groom.mother}
             phone={groom.motherPhone}
           />
         </ul>
-      </Group>
-      <Group>
+      </SGroup>
+      <SGroup>
         <p>신부측</p>
         <ul>
-          <SCallLi tag={"신부"} name={bride.name} phone={bride.phone} />
-          <SCallLi
+          <CallLi tag={"신부"} name={bride.name} phone={bride.phone} />
+          <CallLi
             tag={"신부 어머니"}
             name={bride.mother}
             phone={bride.motherPhone}
           />
         </ul>
-      </Group>
-    </Container>
+      </SGroup>
+    </SContainer>
   );
 }
 
-export default SCall;
+export default Call;
 
-const Container = styled.div`
+const SContainer = styled.div`
   ${flex("column", "", "")};
   ${boxSize("100%", "auto")}
   gap: ${getVwSize(10)};
@@ -61,7 +61,7 @@ const Container = styled.div`
   }
 `;
 
-const Group = styled.div`
+const SGroup = styled.div`
   p:first-child {
     padding-bottom: ${getVwSize(24)};
     border-bottom: 0.5px solid rgb(0, 0, 0, 0.5);

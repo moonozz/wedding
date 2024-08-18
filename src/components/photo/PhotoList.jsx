@@ -24,22 +24,22 @@ function PhotoList({ imgUrl, discript, modal, setModal }) {
   }, []);
 
   return (
-    <Container>
-      <Discript>{discript}</Discript>
-      <ImageContainer>
+    <SContainer>
+      <SDiscript>{discript}</SDiscript>
+      <SImageContainer>
         {recordImg(imgData).map((el) => {
           return (
-            <ImgLi key={el}>
-              <Image
+            <SImgLi key={el}>
+              <SImage
                 src={`${process.env.PUBLIC_URL}/assets/${el}`}
                 alt={el}
                 onClick={() => handleModalOpen(el)}
               />
               {/* <p>{el}</p> */}
-            </ImgLi>
+            </SImgLi>
           );
         })}
-      </ImageContainer>
+      </SImageContainer>
       {modal ? (
         <Modal
           imgUrl={currentImg}
@@ -50,13 +50,13 @@ function PhotoList({ imgUrl, discript, modal, setModal }) {
       ) : (
         ""
       )}
-    </Container>
+    </SContainer>
   );
 }
 
 export default PhotoList;
 
-const Container = styled.div`
+const SContainer = styled.div`
   ${boxSize("100%", "auto")};
   padding: 0 ${getVwSize(50)};
   flex-flow: column wrap;
@@ -68,12 +68,12 @@ const Container = styled.div`
   }
 `;
 
-const ImageContainer = styled.ul`
+const SImageContainer = styled.ul`
   columns: 2;
   column-gap: 3rem;
 `;
 
-const Discript = styled.p`
+const SDiscript = styled.p`
   ${fontFamily("MaruBuri", "400")};
   font-size: ${getVwSize(24)};
   margin: ${getVwSize(40)} 0;
@@ -84,14 +84,14 @@ const Discript = styled.p`
   }
 `;
 
-const ImgLi = styled.li`
+const SImgLi = styled.li`
   ${flex("row", "center", "center")};
   ${position("relative")};
   ${boxSize("100%", "auto")}
   margin-bottom: ${getSize(40)};
 `;
 
-const Image = styled.img`
+const SImage = styled.img`
   ${boxSize("100%", "auto")};
   object-fit: cover;
   border-radius: ${getVwSize(10)};

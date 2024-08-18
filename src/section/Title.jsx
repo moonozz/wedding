@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
-import SSubTitle from "../components/SSubTitle";
+import SubTitle from "../components/SubTitle";
 import { getKorDate, getWeek, getTime } from "../utils/filter";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import {
@@ -59,7 +59,7 @@ function Title() {
         </p>
         <p>위더스 웨딩홀 8F</p>
       </SHallInfo>
-      <SSubTitle text={"***"} />
+      <SubTitle text={"***"} />
     </SContainer>
   );
 }

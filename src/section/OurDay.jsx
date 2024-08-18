@@ -1,20 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import SSubTitle from "../components/SSubTitle";
+import SubTitle from "../components/SubTitle";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { fontFamily, boxSize } from "../utils/sMixinUtils";
 
 function OurDay() {
   return (
-    <Container>
-      <SSubTitle text={"OUR DAY"} />
-    </Container>
+    <SContainer>
+      <SubTitle text={"OUR DAY"} />
+    </SContainer>
   );
 }
 
 export default OurDay;
 
-const Container = styled.div`
+const SContainer = styled.div`
   padding: ${getSize(60)} 0 ${getSize(90)};
   /* width: ${getVwSize(640)}; */
   ${boxSize("100%", "auto")};

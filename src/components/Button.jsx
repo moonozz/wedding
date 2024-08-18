@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 function Button({ onClick, children }) {
-  return <Btn onClick={onClick}>{children}</Btn>;
+  return <SBtn onClick={onClick}>{children}</SBtn>;
 }
 
 export default Button;
 
-const Btn = styled.button`
+const SBtn = styled.button`
   padding: 1.3rem 1.4rem 1.3rem;
   border-radius: 100%;
   border: none;

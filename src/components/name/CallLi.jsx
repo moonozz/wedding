@@ -3,19 +3,19 @@ import styled from "styled-components";
 import { flex } from "../../utils/sMixinUtils";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 
-function SCallLi({ tag, name, phone }) {
+function CallLi({ tag, name, phone }) {
   return (
-    <Container>
+    <SContainer>
       <span>{tag}</span>
       <p>{name}</p>
       <a href={`tel:${phone}`}>전화걸기</a>
-    </Container>
+    </SContainer>
   );
 }
 
-export default SCallLi;
+export default CallLi;
 
-const Container = styled.li`
+const SContainer = styled.li`
   ${flex("row", "baseline", "space-between")};
 
   span {

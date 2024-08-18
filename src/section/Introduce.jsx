@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
-import SName from "../components/name/SName";
-import SCall from "../components/name/SCall";
+import Name from "../components/name/Name";
+import Call from "../components/name/Call";
 import ScrollImg from "../components/ScrollImg";
-import SSubTitle from "../components/SSubTitle";
+import SubTitle from "../components/SubTitle";
 import HeartIcon from "../components/icon/Heart";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { fontFamily, defaultTxtStyle } from "../utils/sMixinUtils";
@@ -31,7 +31,7 @@ function Introduce() {
         </p>
       </SScriptDiv>
       <ScrollImg imgUrl={data.img[7]} margin={100} />
-      <SSubTitle
+      <SubTitle
         text={
           <HeartIcon
             stroke="#f32a2a"
@@ -41,9 +41,9 @@ function Introduce() {
           />
         }
       />
-      <SName />
+      <Name />
       {/* <ScrollImg imgUrl={data.img[7]} /> */}
-      <SCall />
+      <Call />
     </Container>
   );
 }

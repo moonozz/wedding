@@ -4,12 +4,12 @@ import data from "../../data/data.json";
 import { flex, fontFamily } from "../../utils/sMixinUtils";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 
-function SName() {
+function Name() {
   const introDataMale = data.information[0];
   const introDataFemale = data.information[1];
 
   return (
-    <Name>
+    <SContainer>
       <div>
         <span>
           {introDataMale.father}∙{introDataMale.mother}
@@ -24,13 +24,13 @@ function SName() {
         <span>의 딸</span>
         <span>{introDataFemale.name}</span>
       </div>
-    </Name>
+    </SContainer>
   );
 }
 
-export default SName;
+export default Name;
 
-const Name = styled.div`
+const SContainer = styled.div`
   ${flex("column", "", "")};
   padding: ${getVwSize(40)} 0 ${getVwSize(80)};
   gap: 2vw;
