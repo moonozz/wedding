@@ -10,7 +10,7 @@ import { paddingIgnore, fontFamily, boxSize } from "../utils/sMixinUtils";
 function Photo({ modal, setModal }) {
   return (
     <SContainer>
-      <SubTitle text={"PHOTO"} />
+      <SubTitle text={"Photo"} />
       <PhotoSwipe discript={"사진을 넘겨보세요."} />
       {/* <PhotoList
         discript={"사진을 클릭해보세요."}

@@ -6,6 +6,7 @@ import Introduce from "./section/Introduce";
 import FixedBtn from "./section/FixedBtn";
 import Photo from "./section/Photo";
 import OurDay from "./section/OurDay";
+import Location from "./section/Location";
 import { getSize, getVwSize } from "./utils/sThemeUtils";
 import { flex, boxSize, position } from "./\butils/sMixinUtils";
 // import data from "./data/data.json";
@@ -25,6 +26,7 @@ function App() {
       <Introduce />
       <Photo modal={modal} setModal={setModal} />
       <OurDay />
+      <Location />
       <FixedBtn />
     </Main>
   );

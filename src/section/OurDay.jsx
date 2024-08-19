@@ -24,7 +24,7 @@ function OurDay() {
   };
   return (
     <SContainer>
-      <SubTitle text={"OUR DAY"} />
+      <SubTitle text={"Our Day"} />
       <Calendar />
       <SDDay>
         <p>{`${groom}, ${bride}의 결혼식이`}&nbsp;</p>
