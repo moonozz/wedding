@@ -3,13 +3,7 @@ import styled from "styled-components";
 import data from "../data/data.json";
 import SubTitle from "../components/SubTitle";
 import List from "../components/locationSection/List";
-import {
-  boxSize,
-  flex,
-  fontFamily,
-  defaultTxtStyle,
-  paddingIgnore,
-} from "../utils/sMixinUtils";
+import { boxSize, flex, fontFamily, paddingIgnore } from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
 function Location() {
@@ -24,6 +18,7 @@ function Location() {
       </SAddress>
       <SMap />
       <List type={"subway"} title={"지하철"} el={locationData.subway} />
+      <List type={"bus"} title={"버스"} el={locationData.bus} />
     </SContainer>
   );
 }
@@ -39,7 +34,6 @@ const SContainer = styled.div`
 
 const SAddress = styled.div`
   ${flex("column", "", "")};
-  /* ${defaultTxtStyle("", "20", "")}; */
   padding: ${getSize(40)} 0 ${getSize(40)};
 `;
 

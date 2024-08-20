@@ -1,26 +1,32 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
-import { defaultTxtStyle, flex, fontFamily } from "../../utils/sMixinUtils";
+import {
+  boxSize,
+  defaultTxtStyle,
+  flex,
+  fontFamily,
+} from "../../utils/sMixinUtils";
 import ColorTag from "./ColorTag";
 
 function List({ type, title, el }) {
   useEffect(() => {
     console.log(el);
+    console.log(el[0].number);
   }, []);
 
   return (
     <SContainer>
       <STitle>{title}</STitle>
-      {type === "subway" || "parking" ? (
+      {type === "subway" ? (
         <SContent>
-          {el.map((i) => {
+          {el.map((i, idx) => {
             return (
-              <SContentLi>
+              <SContentLi key={idx}>
                 <SColorTag>
-                  {i.line.map((e) => {
+                  {i.line.map((e, idx) => {
                     return (
-                      <STagGroup>
+                      <STagGroup key={idx}>
                         <ColorTag lineColor={e} /> <STagP>{e}</STagP>
                       </STagGroup>
                     );
@@ -30,6 +36,27 @@ function List({ type, title, el }) {
               </SContentLi>
             );
           })}
+        </SContent>
+      ) : type === "bus" ? (
+        <SContent>
+          {el.map((i, idx) => {
+            return (
+              <SContentLi key={idx}>
+                <p>{i.name}</p>
+                <SColorTag>
+                  {i.number?.map((e, idx) => {
+                    // 그런데 저 물음표가 꼭 붙어야만 되는 이유가 뭐야?
+                    return (
+                      <STagGroup key={idx}>
+                        <ColorTag lineColor={e[0]} /> <STagP>{e[1]}</STagP>
+                      </STagGroup>
+                    );
+                  })}
+                </SColorTag>
+              </SContentLi>
+            );
+          })}
+          <SDiscript>{el[el.length - 1]}</SDiscript>
         </SContent>
       ) : (
         <ColorTag>{}</ColorTag>
@@ -42,13 +69,13 @@ export default List;
 
 const SContainer = styled.div`
   border-top: 0.5px solid rgb(0, 0, 0, 0.2);
-  padding: ${getVwSize(60)} 0;
+  padding: ${getVwSize(60)} 0 ${getVwSize(24)};
   margin: 0 ${getSize(20)};
   ${flex("column", "flex-start", "")};
   ${fontFamily("MaruBuri", "")};
 
   @media screen and (min-width: 640px) {
-    padding: ${getSize(60)} 0;
+    padding: ${getSize(60)} 0 ${getSize(24)};
   }
 `;
 
@@ -64,11 +91,12 @@ const STitle = styled.p`
 `;
 
 const SContent = styled.ul`
+  ${boxSize("100%", "auto")};
   ${defaultTxtStyle("", "20", "")};
 `;
 
 const SContentLi = styled.li`
-  ${flex("column", "", "")};
+  ${flex("column", "flex-start", "")};
 `;
 
 const SColorTag = styled.div`
@@ -80,6 +108,7 @@ const STagGroup = styled.div`
 `;
 
 const SDiscript = styled.p`
+  /* ${boxSize("100%", "auto")}; */
   text-align: left;
   line-height: 1.8;
   padding: ${getVwSize(10)} 0 0 ${getVwSize(26)};
