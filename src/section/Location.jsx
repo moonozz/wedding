@@ -1,13 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
+import useCopy from "../hook/useCopy";
 import SubTitle from "../components/SubTitle";
 import List from "../components/location/List";
-import { boxSize, flex, fontFamily, paddingIgnore } from "../utils/sMixinUtils";
+import {
+  boxSize,
+  flex,
+  fontFamily,
+  paddingIgnore,
+  buttonLine,
+} from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
 function Location() {
+  const [isCopy, onCopy] = useCopy();
+
   const locationData = data.location;
+
+  const handleCopy = (txt) => {
+    onCopy(txt);
+  };
 
   return (
     <SContainer>
@@ -15,6 +28,9 @@ function Location() {
       <SAddress>
         <SHallName>{locationData.weddingHall}</SHallName>
         <SHallAddress>{locationData.address}</SHallAddress>
+        <SCopy onClick={() => handleCopy(`${locationData.address}`)}>
+          주소 복사하기
+        </SCopy>
       </SAddress>
       <SMap />
       <List type={"subway"} title={"지하철"} el={locationData.subway} />
@@ -34,7 +50,7 @@ const SContainer = styled.div`
 `;
 
 const SAddress = styled.div`
-  ${flex("column", "", "")};
+  ${flex("column", "center", "")};
   padding: ${getVwSize(40)} 0 ${getVwSize(26)};
 
   @media screen and (min-width: 640px) {
@@ -52,10 +68,20 @@ const SHallName = styled.p`
 
 const SHallAddress = styled.p`
   font-size: ${getVwSize(20)};
-  margin: ${getSize(10)} 0;
+  margin: ${getSize(10)} 0 0;
 
   @media screen and (min-width: 640px) {
     font-size: ${getSize(20)};
+  }
+`;
+
+const SCopy = styled.button`
+  ${fontFamily("MaruBuri", "")}
+  ${buttonLine("20", "black")}
+  margin: ${getVwSize(8)} 0 ${getVwSize(10)};
+
+  @media screen and (min-width: 640px) {
+    margin: ${getSize(8)} 0 ${getSize(10)};
   }
 `;
 

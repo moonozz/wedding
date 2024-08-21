@@ -151,3 +151,13 @@ export const absoluteCenter = css`
   left: 50%;
   transform: translateX(-50%);
 `;
+
+export const buttonLine = (fontSize = "2rem", color = "black") => css`
+  border-bottom: 0.05rem solid ${color};
+  width: fit-content;
+  font-size: ${getVwSize(`${fontSize}`)};
+
+  @media screen and (min-width: 640px) {
+    font-size: ${getSize(`${fontSize}`)};
+  }
+`;
