@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
+import { useScrollEvent } from "../hook/useScrollEvent";
 import SubTitle from "../components/SubTitle";
 import Calendar from "../components/calendar/Calendar";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
@@ -9,9 +10,12 @@ import {
   flex,
   defaultTxtStyle,
   fontFamily,
+  animation,
 } from "../utils/sMixinUtils";
 
 function OurDay() {
+  const { ref, isView } = useScrollEvent();
+
   const groom = data.information[0].name.slice(-2);
   const bride = data.information[1].name.slice(-2);
 
@@ -23,7 +27,7 @@ function OurDay() {
     return Math.floor(dday / (1000 * 60 * 60 * 24));
   };
   return (
-    <SContainer>
+    <SContainer ref={ref} className={isView ? "frame-in" : ""}>
       <SubTitle text={"Our Day"} />
       <Calendar />
       <SDDay>
@@ -39,12 +43,11 @@ export default OurDay;
 
 const SContainer = styled.div`
   padding: ${getSize(60)} 0 ${getSize(90)};
-  /* width: ${getVwSize(640)}; */
   ${boxSize("100%", "auto")};
   ${flex("column", "center", "center")};
 
-  @media screen and (min-width: 640px) {
-    /* width: ${getSize(640)}; */
+  &.frame-in {
+    ${animation}
   }
 `;
 

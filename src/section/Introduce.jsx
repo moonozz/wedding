@@ -1,17 +1,19 @@
-import React from "react";
+import { useRef } from "react";
 import styled from "styled-components";
-import data from "../data/data.json";
+import { useScrollEvent } from "../hook/useScrollEvent";
 import Name from "../components/name/Name";
 import Call from "../components/name/Call";
-import ScrollImg from "../components/ScrollImg";
 import SubTitle from "../components/SubTitle";
 import HeartIcon from "../components/icon/Heart";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
-import { fontFamily, defaultTxtStyle } from "../utils/sMixinUtils";
+import { fontFamily, animation } from "../utils/sMixinUtils";
 
 function Introduce() {
+  // const ref = useRef(null);
+  const { ref, isView } = useScrollEvent();
+
   return (
-    <Container>
+    <SContainer ref={ref} className={isView ? "frame-in" : ""}>
       <SubTitle
         text={
           <HeartIcon
@@ -25,20 +27,21 @@ function Introduce() {
       <Name />
       {/* <ScrollImg imgUrl={data.img[7]} /> */}
       <Call />
-    </Container>
+    </SContainer>
   );
 }
 
 export default Introduce;
 
-const Container = styled.section`
+const SContainer = styled.section`
   padding: ${getVwSize(90)} 0;
   ${fontFamily("MaruBuri", "400")};
+
+  &.frame-in {
+    ${animation};
+  }
+
   @media screen and (min-width: 640px) {
     padding: ${getSize(90)} 0;
   }
-`;
-
-const SScriptDiv = styled.div`
-  ${defaultTxtStyle("1.8", "24", "40")};
 `;

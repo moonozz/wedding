@@ -1,14 +1,16 @@
-import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
+import { useScrollEvent } from "../hook/useScrollEvent";
 import ScrollImg from "../components/ScrollImg";
 import SubTitle from "../components/SubTitle";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
-import { fontFamily, defaultTxtStyle } from "../utils/sMixinUtils";
+import { fontFamily, defaultTxtStyle, animation } from "../utils/sMixinUtils";
 
 function Introduce() {
+  const { ref, isView } = useScrollEvent();
+
   return (
-    <Container>
+    <SContainer ref={ref} className={isView ? "frame-in" : ""}>
       <SubTitle text={"***"} />
       <SScriptDiv>
         <p>
@@ -29,17 +31,21 @@ function Introduce() {
         </p>
       </SScriptDiv>
       <ScrollImg imgUrl={data.img[7]} margin={100} />
-    </Container>
+    </SContainer>
   );
 }
 
 export default Introduce;
 
-const Container = styled.section`
+const SContainer = styled.section`
   padding: ${getVwSize(90)} 0;
   ${fontFamily("MaruBuri", "400")};
   @media screen and (min-width: 640px) {
     padding: ${getSize(90)} 0;
+  }
+
+  &.frame-in {
+    ${animation};
   }
 `;
 

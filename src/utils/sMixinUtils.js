@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css, keyframes } from "styled-components";
 import { getSize, getVwSize } from "./sThemeUtils";
 
 export const boxSize = (width = "100%", height = "100%") => css`
@@ -160,4 +160,20 @@ export const buttonLine = (fontSize = "2rem", color = "black") => css`
   @media screen and (min-width: 640px) {
     font-size: ${getSize(`${fontSize}`)};
   }
+`;
+
+const frameAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translate(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0%);
+  }
+`;
+
+export const animation = css`
+  animation: ${frameAnimation} 1.5s forwards;
 `;

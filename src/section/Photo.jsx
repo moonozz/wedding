@@ -1,15 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import data from "../data/data.json";
+import { useScrollEvent } from "../hook/useScrollEvent";
 import PhotoSwipe from "../components/photo/PhotoSwipe";
 import PhotoList from "../components/photo/PhotoList";
 import SubTitle from "../components/SubTitle";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
-import { paddingIgnore, fontFamily, boxSize } from "../utils/sMixinUtils";
+import { paddingIgnore, animation } from "../utils/sMixinUtils";
 
 function Photo({ modal, setModal }) {
+  const { ref, isView } = useScrollEvent();
+
   return (
-    <SContainer>
+    <SContainer ref={ref} className={isView ? "frame-in" : ""}>
       <SubTitle text={"Photo"} />
       <PhotoSwipe discript={"사진을 넘겨보세요."} />
       {/* <PhotoList
@@ -27,6 +29,10 @@ const SContainer = styled.section`
   padding: ${getSize(30)} 0 ${getSize(90)};
   ${paddingIgnore};
   width: ${getVwSize(640)};
+
+  &.frame-in {
+    ${animation};
+  }
 
   @media screen and (min-width: 640px) {
     width: ${getSize(640)};
