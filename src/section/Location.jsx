@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
-import useCopy from "../hook/useCopy";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+// import { useCopy } from "../hook/useCopy";
 import SubTitle from "../components/SubTitle";
 import List from "../components/location/List";
 import {
@@ -14,13 +15,13 @@ import {
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
 function Location() {
-  const [isCopy, onCopy] = useCopy();
+  // const { onCopy } = useCopy();
 
   const locationData = data.location;
 
-  const handleCopy = (txt) => {
-    onCopy(txt);
-  };
+  // const handleCopy = (txt) => {
+  // onCopy(txt);
+  // };
 
   return (
     <SContainer>
@@ -28,9 +29,17 @@ function Location() {
       <SAddress>
         <SHallName>{locationData.weddingHall}</SHallName>
         <SHallAddress>{locationData.address}</SHallAddress>
-        <SCopy onClick={() => handleCopy(`${locationData.address}`)}>
+        {/* <SCopy onClick={() => handleCopy(`${locationData.address}`)}>
           주소 복사하기
-        </SCopy>
+        </SCopy> */}
+        <CopyToClipboard
+          text={`${locationData.address}`}
+          onCopy={() => {
+            alert("주소가 복사되었습니다.");
+          }}
+        >
+          <SCopy>주소 복사하기</SCopy>
+        </CopyToClipboard>
       </SAddress>
       <SMap />
       <List type={"subway"} title={"지하철"} el={locationData.subway} />
