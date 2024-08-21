@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
 import SubTitle from "../components/SubTitle";
-import List from "../components/locationSection/List";
+import List from "../components/location/List";
 import { boxSize, flex, fontFamily, paddingIgnore } from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
@@ -19,6 +19,7 @@ function Location() {
       <SMap />
       <List type={"subway"} title={"지하철"} el={locationData.subway} />
       <List type={"bus"} title={"버스"} el={locationData.bus} />
+      <List type={"parking"} title={"주차장 안내"} el={locationData.parking} />
     </SContainer>
   );
 }
@@ -34,7 +35,11 @@ const SContainer = styled.div`
 
 const SAddress = styled.div`
   ${flex("column", "", "")};
-  padding: ${getSize(40)} 0 ${getSize(40)};
+  padding: ${getVwSize(40)} 0 ${getVwSize(26)};
+
+  @media screen and (min-width: 640px) {
+    padding: ${getSize(40)} 0;
+  }
 `;
 
 const SHallName = styled.p`
@@ -55,10 +60,11 @@ const SHallAddress = styled.p`
 `;
 
 const SMap = styled.div`
-  ${boxSize("100vw", "35rem")};
+  ${boxSize("100vw", "70vw")};
   background-color: black;
   ${paddingIgnore};
   margin-bottom: ${getVwSize(60)};
+
   @media screen and (min-width: 640px) {
     ${boxSize("64rem", "35rem")};
     margin-bottom: ${getSize(60)};
