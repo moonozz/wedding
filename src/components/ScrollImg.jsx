@@ -18,13 +18,13 @@ export default ScrollImg;
 const SContainer = styled.section`
   ${position("relative")};
   ${boxSize("100vw", "62.5vw")};
-  margin: ${({ $margin }) => getVwSize($margin)} 0;
+  /* margin: ${({ $margin }) => getVwSize($margin)} 0; */
   ${paddingIgnore};
   /* margin-left: calc(-50vw + 50%); */
   overflow: hidden;
   @media screen and (min-width: 640px) {
     ${boxSize("64rem", "40rem")};
-    margin: ${({ $margin }) => getSize($margin)} 0;
+    /* margin: ${({ $margin }) => getSize($margin)} 0; */
     /* margin-left: calc(50% - 32rem); */
   }
 `;

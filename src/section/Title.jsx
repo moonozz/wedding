@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
-import SubTitle from "../components/SubTitle";
 import { getKorDate, getWeek, getTime } from "../utils/filter";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import {
@@ -40,7 +39,6 @@ function Title() {
         </p>
         <p>위더스 웨딩홀 8F</p>
       </SHallInfo>
-      <SubTitle text={"***"} />
     </SContainer>
   );
 }
@@ -96,7 +94,7 @@ const Img = styled.img`
 `;
 
 const SHallInfo = styled.div`
-  padding: ${getVwSize(60)} 0 ${getVwSize(90)};
+  padding: ${getVwSize(60)} 0 0;
 
   p:first-child {
     ${fontFamily("MaruBuri", "900")};
@@ -109,7 +107,7 @@ const SHallInfo = styled.div`
   }
 
   @media screen and (min-width: 640px) {
-    padding: ${getSize(60)} 0 ${getSize(90)};
+    padding: ${getSize(60)} 0 0;
     p:first-child {
       font-size: ${getSize(24)};
       margin-bottom: ${getSize(20)};

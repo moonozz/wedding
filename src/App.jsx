@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Title from "./section/Title";
+import TitleComment from "./section/TitleComment";
 import Introduce from "./section/Introduce";
 import FixedBtn from "./section/FixedBtn";
 import Photo from "./section/Photo";
@@ -23,6 +24,7 @@ function App() {
   return (
     <Main>
       <Title />
+      <TitleComment />
       <Introduce />
       <Photo modal={modal} setModal={setModal} />
       <OurDay />
