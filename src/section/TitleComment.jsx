@@ -10,26 +10,28 @@ function Introduce() {
   const { ref, isView } = useScrollEvent();
 
   return (
-    <SContainer ref={ref} className={isView ? "frame-in" : ""}>
-      <SubTitle text={"***"} />
-      <SScriptDiv>
-        <p>
-          작은 우연이 모여 서로를 알게 되고,
-          <br />
-          작은 순간들에 사랑이 스며들어
-          <br />
-          서로를 바라보게 되었습니다.
-        </p>
-        <p>
-          이제 같은 시간 속에서 <br />
-          평생을 함께 하려고 합니다.
-        </p>
-        <p>
-          저희 두 사람의 새 출발을
-          <br />
-          함께 축복해주세요.
-        </p>
-      </SScriptDiv>
+    <SContainer>
+      <div ref={ref} className={isView ? "frame-in" : ""}>
+        <SubTitle text={"***"} />
+        <SScriptDiv>
+          <p>
+            작은 우연이 모여 서로를 알게 되고,
+            <br />
+            작은 순간들에 사랑이 스며들어
+            <br />
+            서로를 바라보게 되었습니다.
+          </p>
+          <p>
+            이제 같은 시간 속에서 <br />
+            평생을 함께 하려고 합니다.
+          </p>
+          <p>
+            저희 두 사람의 새 출발을
+            <br />
+            함께 축복해주세요.
+          </p>
+        </SScriptDiv>
+      </div>
       <ScrollImg imgUrl={data.img[7]} margin={100} />
     </SContainer>
   );

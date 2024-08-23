@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import { useScrollEvent } from "../../hook/useScrollEvent";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import {
+  animation,
   boxSize,
   defaultTxtStyle,
   flex,
@@ -11,12 +13,10 @@ import {
 import { Subway, Bus, Parking } from "./ListSection";
 
 function List({ type, title, el }) {
-  useEffect(() => {
-    console.log(el);
-  }, []);
+  const { ref, isView } = useScrollEvent();
 
   return (
-    <SContainer>
+    <SContainer ref={ref} className={isView ? "frame-in" : ""}>
       <STitle>{title}</STitle>
       {type === "subway" ? (
         // <SContent>
@@ -75,6 +75,10 @@ const SContainer = styled.div`
   margin: 0 ${getSize(20)};
   ${flex("column", "flex-start", "")};
   ${fontFamily("MaruBuri", "")};
+
+  &.frame-in {
+    ${animation};
+  }
 
   @media screen and (min-width: 640px) {
     padding: ${getSize(60)} 0 ${getSize(24)};

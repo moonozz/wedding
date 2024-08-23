@@ -164,13 +164,13 @@ export const buttonLine = (fontSize = "2rem", color = "black") => css`
 
 const frameAnimation = keyframes`
   0% {
-    opacity: 0;
-    transform: translate(100%);
+    opacity: 0.5;
+    transform: translateY(50%);
   }
 
   100% {
     opacity: 1;
-    transform: translate(0%);
+    transform: translateY(0%);
   }
 `;
 
