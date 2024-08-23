@@ -165,7 +165,7 @@ export const buttonLine = (fontSize = "2rem", color = "black") => css`
 const frameAnimation = keyframes`
   0% {
     opacity: 0.5;
-    transform: translateY(50%);
+    transform: translateY(30%);
   }
 
   100% {

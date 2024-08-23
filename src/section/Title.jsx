@@ -25,7 +25,7 @@ function Title() {
         <SImgBox>
           <Img
             src={`${process.env.PUBLIC_URL}/assets/${data.img[0]}`}
-            alt="박보검과 수지의 청첩장 타이틀 이미지"
+            alt="양승역과 이정민의 청첩장 타이틀 이미지"
           />
         </SImgBox>
         {TitleSection("")}
