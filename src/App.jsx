@@ -8,6 +8,7 @@ import FixedBtn from "./section/FixedBtn";
 import Photo from "./section/Photo";
 import OurDay from "./section/OurDay";
 import Location from "./section/Location";
+import Account from "./section/Account";
 import { getSize, getVwSize } from "./utils/sThemeUtils";
 import { flex, boxSize, position } from "./\butils/sMixinUtils";
 // import data from "./data/data.json";
@@ -29,6 +30,7 @@ function App() {
       <Photo modal={modal} setModal={setModal} />
       <OurDay />
       <Location />
+      <Account />
       <FixedBtn />
     </Main>
   );
