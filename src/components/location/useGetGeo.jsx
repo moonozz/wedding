@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import addressData from "../../data/data";
 
 const useGetGeo = () => {
-  const [geoData, setGeoData] = useState(null);
+  const [geoData, setGeoData] = useState({ x: 0, y: 0 });
+  const [locationData, setLocationData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState(null);
   const hallAddress = addressData.location.address;
@@ -24,7 +25,9 @@ const useGetGeo = () => {
         );
 
         const data = await response.json();
-        setGeoData(data);
+        setLocationData(data);
+        setGeoData({ x: data.documents[0].x, y: data.documents[0].y });
+        // console.log(data.documents[0]);
       } catch (err) {
         setErr(err);
       } finally {
@@ -34,10 +37,10 @@ const useGetGeo = () => {
 
     fetchAddress();
     // console.log(geoData.documents[0]);
-    console.log(geoData);
+    // console.log(geoData);
   }, [hallAddress]);
 
-  return { geoData, loading, err };
+  return { geoData, locationData, loading, err };
 };
 
 export default useGetGeo;

@@ -4,6 +4,7 @@ import data from "../data/data.json";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 // import { useCopy } from "../hook/useCopy";
 import SubTitle from "../components/SubTitle";
+import Map from "../components/location/Map";
 import List from "../components/location/List";
 import {
   boxSize,
@@ -42,6 +43,7 @@ function Location() {
         </CopyToClipboard>
       </SAddress>
       <SMap />
+      <Map />
       <List type={"subway"} title={"지하철"} el={locationData.subway} />
       <List type={"bus"} title={"버스"} el={locationData.bus} />
       <List type={"parking"} title={"주차장 안내"} el={locationData.parking} />
