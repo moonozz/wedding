@@ -6,13 +6,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import SubTitle from "../components/SubTitle";
 import Map from "../components/location/Map";
 import List from "../components/location/List";
-import {
-  boxSize,
-  flex,
-  fontFamily,
-  paddingIgnore,
-  buttonLine,
-} from "../utils/sMixinUtils";
+import { boxSize, flex, fontFamily, buttonLine } from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
 function Location() {
@@ -42,7 +36,6 @@ function Location() {
           <SCopy>주소 복사하기</SCopy>
         </CopyToClipboard>
       </SAddress>
-      <SMap />
       <Map />
       <List type={"subway"} title={"지하철"} el={locationData.subway} />
       <List type={"bus"} title={"버스"} el={locationData.bus} />
@@ -93,17 +86,5 @@ const SCopy = styled.button`
 
   @media screen and (min-width: 640px) {
     margin: ${getSize(8)} 0 ${getSize(10)};
-  }
-`;
-
-const SMap = styled.div`
-  ${boxSize("100vw", "70vw")};
-  background-color: black;
-  ${paddingIgnore};
-  margin-bottom: ${getVwSize(60)};
-
-  @media screen and (min-width: 640px) {
-    ${boxSize("64rem", "35rem")};
-    margin-bottom: ${getSize(60)};
   }
 `;

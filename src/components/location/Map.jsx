@@ -26,7 +26,7 @@ function Map() {
   useEffect(() => {
     if (geoData.x !== 0 && geoData.y !== 0) {
       const map = new naver.maps.Map(mapRef.current, mapOptions);
-      const marker = new naver.maps.Marker({
+      new naver.maps.Marker({
         position: location,
         map: map,
       });
@@ -40,7 +40,7 @@ export default Map;
 
 const SContainer = styled.div`
   ${boxSize("100vw", "70vw")};
-  background-color: black;
+  /* background-color: black; */
   ${paddingIgnore};
   margin-bottom: ${getVwSize(60)};
 
