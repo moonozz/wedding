@@ -72,13 +72,13 @@ function ColorTag({ lineColor }) {
 
   const bgColorClass = getBgNm(lineColor);
 
-  return <STag bgColor={bgColorClass}>●</STag>;
+  return <STag $bgColor={bgColorClass}>●</STag>;
 }
 
 export default ColorTag;
 
 const STag = styled.span`
-  color: ${({ theme, bgColor }) => theme.color[bgColor]};
+  color: ${({ theme, $bgColor }) => theme.color[$bgColor]};
   font-size: ${getVwSize(20)};
   margin-right: ${getVwSize(4)};
 
