@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { secTitle, fontFamily } from "../\butils/sMixinUtils";
 
-function SSubTitle({ text }) {
+function SubTitle({ text, font }) {
   return (
     <STitle>
       {/* {typeof text === "string" ? (
@@ -20,7 +20,7 @@ function SSubTitle({ text }) {
   );
 }
 
-export default SSubTitle;
+export default SubTitle;
 
 const STitle = styled.p`
   ${secTitle("#f32a2a")};
