@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { flex } from "../../utils/sMixinUtils";
+import { flex, fontSize } from "../../utils/sMixinUtils";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 
 function CallLi({ tag, name, phone }) {
@@ -20,17 +20,13 @@ const SContainer = styled.li`
 
   span {
     min-width: ${getVwSize(100)};
-    font-size: ${getVwSize(20)};
+    ${fontSize("20")};
     @media screen and (min-width: 640px) {
       min-width: ${getSize(100)};
-      font-size: ${getSize(20)};
     }
   }
 
   a {
-    font-size: ${getVwSize(20)};
-    @media screen and (min-width: 640px) {
-      font-size: ${getSize(20)};
-    }
+    ${fontSize("20")};
   }
 `;

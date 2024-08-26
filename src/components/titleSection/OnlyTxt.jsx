@@ -7,6 +7,7 @@ import {
   flex,
   fontFamily,
   xyValue,
+  fontSize,
 } from "../../utils/sMixinUtils";
 
 function OutTxt() {
@@ -30,13 +31,8 @@ const SContainer = styled.div`
 
   color: white;
   span {
-    font-size: ${getVwSize(50)};
+    ${fontSize("50")}
     line-height: 1.2;
-  }
-  @media screen and (min-width: 640px) {
-    span {
-      font-size: ${getSize(50)};
-    }
   }
 `;
 

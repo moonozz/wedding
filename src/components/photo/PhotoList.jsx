@@ -4,7 +4,13 @@ import data from "../../data/data.json";
 import Modal from "../Modal";
 import { recordImg } from "../../utils/filter";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
-import { boxSize, position, flex, fontFamily } from "../../utils/sMixinUtils";
+import {
+  boxSize,
+  position,
+  flex,
+  fontFamily,
+  fontSize,
+} from "../../utils/sMixinUtils";
 
 function PhotoList({ imgUrl, discript, modal, setModal }) {
   const [currentImg, setCurrentImg] = useState("");
@@ -67,11 +73,10 @@ const SImageContainer = styled.ul`
 
 const SDiscript = styled.p`
   ${fontFamily("MaruBuri", "400")};
-  font-size: ${getVwSize(24)};
+  ${fontSize("24")}
   margin: ${getVwSize(40)} 0;
 
   @media screen and (min-width: 640px) {
-    font-size: ${getSize(24)};
     margin: ${getSize(40)} 0;
   }
 `;

@@ -1,7 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
-import { position, boxSize, flex, fontFamily } from "../../utils/sMixinUtils";
+import {
+  position,
+  boxSize,
+  flex,
+  fontFamily,
+  fontSize,
+} from "../../utils/sMixinUtils";
 
 function BottomOutTxt() {
   return (
@@ -20,13 +26,12 @@ const SContainer = styled.div`
   ${flex("column", "", "")};
   ${position("absolute")};
   ${fontFamily("Aoboshi One", "")};
-  font-size: ${getVwSize(100)};
+  ${fontSize("100")}
   font-weight: 800;
   color: #de2b2b;
   bottom: -${getVwSize(130)};
 
   @media screen and (min-width: 640px) {
-    font-size: ${getSize(100)};
     bottom: -${getSize(130)};
   }
 `;

@@ -6,7 +6,13 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import SubTitle from "../components/SubTitle";
 import Map from "../components/location/Map";
 import List from "../components/location/List";
-import { boxSize, flex, fontFamily, buttonLine } from "../utils/sMixinUtils";
+import {
+  boxSize,
+  flex,
+  fontFamily,
+  buttonLine,
+  fontSize,
+} from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
 function Location() {
@@ -63,20 +69,12 @@ const SAddress = styled.div`
 `;
 
 const SHallName = styled.p`
-  font-size: ${getVwSize(24)};
-
-  @media screen and (min-width: 640px) {
-    font-size: ${getSize(24)};
-  }
+  ${fontSize("24")};
 `;
 
 const SHallAddress = styled.p`
-  font-size: ${getVwSize(20)};
+  ${fontSize("20")};
   margin: ${getSize(10)} 0 0;
-
-  @media screen and (min-width: 640px) {
-    font-size: ${getSize(20)};
-  }
 `;
 
 const SCopy = styled.button`

@@ -8,6 +8,7 @@ import {
   defaultTxtStyle,
   flex,
   fontFamily,
+  fontSize,
 } from "../../utils/sMixinUtils";
 // import ColorTag from "./ColorTag";
 import { Subway, Bus, Parking } from "./ListSection";
@@ -86,12 +87,11 @@ const SContainer = styled.div`
 `;
 
 const STitle = styled.p`
-  font-size: ${getVwSize(24)};
+  ${fontSize("24")}
   margin-bottom: ${getVwSize(32)};
   font-weight: 900;
 
   @media screen and (min-width: 640px) {
-    font-size: ${getSize(24)};
     margin-bottom: ${getSize(40)};
   }
 `;

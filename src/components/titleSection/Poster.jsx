@@ -10,6 +10,7 @@ import {
   fontFamily,
   xyValue,
   sPosterTxt,
+  fontSize,
 } from "../../utils/sMixinUtils";
 
 function Poster() {
@@ -58,13 +59,8 @@ const SBottomTitle = styled.div`
   ${flex("column", "", "")};
   color: white;
   span {
-    font-size: ${getVwSize(50)};
+    ${fontSize("50")}
     line-height: 1.2;
-  }
-  @media screen and (min-width: 640px) {
-    span {
-      font-size: ${getSize(50)};
-    }
   }
 `;
 

@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import data from "../../data/data.json";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
-import { boxSize, position, flex, fontFamily } from "../../utils/sMixinUtils";
+import {
+  boxSize,
+  position,
+  flex,
+  fontFamily,
+  fontSize,
+} from "../../utils/sMixinUtils";
 
 function PhotoSwipe({ imgUrl, discript }) {
   // const containerRef = useRef(null);
@@ -78,12 +84,11 @@ const SContainer = styled.div`
 
 const SDiscript = styled.p`
   ${fontFamily("MaruBuri", "400")};
-  font-size: ${getVwSize(24)};
+  ${fontSize("24")}
   margin: ${getVwSize(40)} 0;
   padding-right: 12vw; // 사진 가운데 배치용
 
   @media screen and (min-width: 640px) {
-    font-size: ${getSize(24)};
     margin: ${getSize(40)} 0;
     padding-right: 4rem;
   }
@@ -127,11 +132,11 @@ const SImage = styled.img`
 
 const SPage = styled.p`
   ${fontFamily("MaruBuri", "400")};
-  font-size: ${getVwSize(20)};
+  ${fontSize("20")}
+
   padding: ${getVwSize(40)} 12vw 0 0;
 
   @media screen and (min-width: 640px) {
-    font-size: ${getSize(20)};
     padding: ${getSize(40)} ${getSize(40)} 0 0;
   }
 `;

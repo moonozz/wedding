@@ -11,6 +11,7 @@ import {
   xyValue,
   sPosterTxt,
   circleTxt,
+  fontSize,
 } from "../../utils/sMixinUtils";
 
 function OutTxt() {
@@ -57,7 +58,7 @@ const SCircleTxt = styled.div`
 `;
 
 const SBigTxt = styled.div`
-  font-size: ${getVwSize(100)};
+  ${fontSize("100")}
   font-weight: 800;
   color: #ff511a;
   .first-title {
@@ -71,10 +72,6 @@ const SBigTxt = styled.div`
   .third-title {
     ${position("absolute")};
     ${xyValue("350", "", "", "100")};
-  }
-
-  @media screen and (min-width: 640px) {
-    font-size: ${getSize(100)};
   }
 `;
 

@@ -17,6 +17,14 @@ export const fontFamily = (family = "Aoboshi One", weight = "400") => css`
   //"Aoboshi One", "Abril Fatface", "MaruBuri",
 `;
 
+export const fontSize = (size = "20") => css`
+  font-size: ${getVwSize(`${size}`)};
+
+  @media screen and (min-width: 640px) {
+    font-size: ${getSize(`${size}`)};
+  }
+`;
+
 export const flex = (
   direction = "row",
   align = "center",

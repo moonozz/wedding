@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
+import { fontSize } from "../../utils/sMixinUtils";
 
 function ColorTag({ lineColor }) {
   const getBgNm = (lineTxt) => {
@@ -79,11 +80,10 @@ export default ColorTag;
 
 const STag = styled.span`
   color: ${({ theme, $bgColor }) => theme.color[$bgColor]};
-  font-size: ${getVwSize(20)};
+  ${fontSize("20")};
   margin-right: ${getVwSize(4)};
 
   @media screen and (min-width: 640px) {
-    font-size: ${getSize(20)};
     margin-right: ${getVwSize(4)};
   }
 `;

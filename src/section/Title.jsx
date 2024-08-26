@@ -8,7 +8,7 @@ import {
   boxSize,
   dim,
   fontFamily,
-  xyValue,
+  fontSize,
 } from "../utils/sMixinUtils";
 import { TitleSection } from "../components/titleSection";
 
@@ -57,11 +57,11 @@ const SDate = styled.div`
   margin-bottom: ${getVwSize(56)};
   text-align: center;
   p:first-child {
-    font-size: ${getVwSize(30)};
+    ${fontSize("30")};
     font-weight: 300;
   }
   p:last-child {
-    font-size: ${getVwSize(150)};
+    ${fontSize("150")};
     font-weight: 200;
     line-height: 1.1;
   }
@@ -69,12 +69,6 @@ const SDate = styled.div`
   @media screen and (min-width: 640px) {
     margin-bottom: ${getSize(56)};
     text-align: center;
-    p:first-child {
-      font-size: ${getSize(30)};
-    }
-    p:last-child {
-      font-size: ${getSize(150)};
-    }
   }
 `;
 
@@ -98,22 +92,18 @@ const SHallInfo = styled.div`
 
   p:first-child {
     ${fontFamily("MaruBuri", "900")};
-    font-size: ${getVwSize(24)};
+    ${fontSize("24")};
     margin-bottom: ${getVwSize(20)};
   }
   p {
     ${fontFamily("MaruBuri", "300")};
-    font-size: ${getVwSize(20)};
+    ${fontSize("20")};
   }
 
   @media screen and (min-width: 640px) {
     padding: ${getSize(60)} 0 0;
     p:first-child {
-      font-size: ${getSize(24)};
       margin-bottom: ${getSize(20)};
-    }
-    p {
-      font-size: ${getSize(20)};
     }
   }
 `;

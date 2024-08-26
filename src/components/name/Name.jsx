@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../../data/data.json";
-import { flex, fontFamily } from "../../utils/sMixinUtils";
+import { flex, fontFamily, fontSize } from "../../utils/sMixinUtils";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 
 function Name() {
@@ -38,10 +38,11 @@ const SContainer = styled.div`
 
   p,
   div > span {
-    font-size: ${getVwSize(24)};
+    ${fontSize("24")};
   }
   span:nth-child(2) {
-    font-size: ${getVwSize(20)};
+    ${fontSize("20")};
+
     margin: 0 1.5vw;
     ${fontFamily("MaruBuri", "400")};
   }
@@ -49,13 +50,5 @@ const SContainer = styled.div`
   @media screen and (min-width: 640px) {
     padding: ${getSize(40)} 0 ${getSize(80)};
     gap: 1.4rem;
-    p,
-    div > span {
-      font-size: ${getSize(24)};
-    }
-    span:nth-child(2) {
-      font-size: ${getSize(20)};
-      margin: 0 1rem;
-    }
   }
 `;
