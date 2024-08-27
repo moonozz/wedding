@@ -16,8 +16,6 @@ function Dropdown({ title, info }) {
 
   const handleClick = () => {
     setDropdown(!dropdown);
-    console.log(dropdown);
-    console.log(info);
   };
 
   return (
@@ -26,7 +24,8 @@ function Dropdown({ title, info }) {
         <STitle>{title}측 계좌번호</STitle>
         <STitleSvg $dropdown={dropdown} />
       </STitleDiv>
-      <SGroup className={dropdown ? "" : "none"}>
+      {/* <SGroup className={dropdown ? "show" : "none"}> */}
+      <SGroup $dropdown={dropdown}>
         {info.map((el, idx) => {
           return (
             <SLi key={idx}>
@@ -85,10 +84,10 @@ const STitle = styled.p`
 
 const SGroup = styled.ul`
   ${boxSize("100%", "auto")};
-
-  &.none {
-    display: none;
-  }
+  overflow: hidden;
+  max-height: ${({ $dropdown }) => ($dropdown ? "1000px" : "0px")};
+  opacity: ${({ $dropdown }) => ($dropdown ? "1" : "0")};
+  transition: max-height 0.2s ease, opacity 0.3s ease;
 `;
 
 const SLi = styled.li`
