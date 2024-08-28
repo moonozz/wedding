@@ -9,6 +9,7 @@ import Photo from "./section/Photo";
 import OurDay from "./section/OurDay";
 import Location from "./section/Location";
 import Account from "./section/Account";
+import Footer from "./section/Footer";
 import { getSize, getVwSize } from "./utils/sThemeUtils";
 import { flex, boxSize, position } from "./\butils/sMixinUtils";
 // import data from "./data/data.json";
@@ -31,6 +32,7 @@ function App() {
       <OurDay />
       <Location />
       <Account />
+      <Footer />
       <FixedBtn />
     </Main>
   );
