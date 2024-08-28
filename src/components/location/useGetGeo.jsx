@@ -27,7 +27,6 @@ const useGetGeo = () => {
         const data = await response.json();
         setLocationData(data);
         setGeoData({ x: data.documents[0].x, y: data.documents[0].y });
-        // console.log(data.documents[0]);
       } catch (err) {
         setErr(err);
       } finally {
@@ -36,8 +35,6 @@ const useGetGeo = () => {
     };
 
     fetchAddress();
-    // console.log(geoData.documents[0]);
-    // console.log(geoData);
   }, [hallAddress]);
 
   return { geoData, locationData, loading, err };
