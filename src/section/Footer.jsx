@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { flex } from "../utils/sMixinUtils";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import {
+  flex,
+  boxSize,
+  paddingIgnore,
+  fontSize,
+  fontFamily,
+} from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
 function Footer() {
@@ -9,9 +16,16 @@ function Footer() {
       <SBtn $bgColor={"#fce777"} $fontColor={"black"}>
         카카오톡 공유하기
       </SBtn>
-      <SBtn $bgColor={"black"} $fontColor={"white"}>
-        청첩장 링크 복사하기
-      </SBtn>
+      <CopyToClipboard
+        text={"http://localhost:3000"}
+        onCopy={() => {
+          alert("청첩장 링크가 복사되었습니다.");
+        }}
+      >
+        <SBtn $bgColor={"black"} $fontColor={"white"}>
+          청첩장 링크 복사하기
+        </SBtn>
+      </CopyToClipboard>
       <Stxt>ⓒweddingmoon</Stxt>
     </SContainer>
   );
@@ -20,15 +34,31 @@ function Footer() {
 export default Footer;
 
 const SContainer = styled.section`
-  background-color: ${({ theme }) => theme.color.white};
+  ${paddingIgnore};
+  ${boxSize("100vw", "auto")};
   ${flex("column", "center", "center")};
-  padding: ${getVwSize(40)};
+  ${fontFamily("MaruBuri")};
+  background-color: ${({ theme }) => theme.color.white};
+  padding: ${getVwSize(50)} ${getVwSize(40)};
 
   @media screen and (min-width: 640px) {
-    padding: ${getSize(40)};
+    ${boxSize("640px", "auto")};
+    padding: ${getSize(50)} ${getSize(40)};
   }
 `;
 
-const SBtn = styled.button``;
+const SBtn = styled.button`
+  ${boxSize("100%", "auto")};
+  ${fontSize(20)};
+  ${fontFamily("MaruBuri")};
+  border-radius: ${getVwSize(8)};
+  padding: ${getVwSize(16)};
+  margin-bottom: ${getVwSize(16)};
+  background-color: ${({ $bgColor }) => $bgColor};
+  color: ${({ $fontColor }) => $fontColor};
+`;
 
-const Stxt = styled.p``;
+const Stxt = styled.p`
+  ${fontSize(18)};
+  padding: ${getVwSize(60)} 0 ${getVwSize(20)};
+`;
