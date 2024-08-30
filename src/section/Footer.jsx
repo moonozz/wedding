@@ -1,6 +1,7 @@
-import React from "react";
 import styled from "styled-components";
+import data from "../data/data.json";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { useShare } from "../hook/useShare";
 import {
   flex,
   boxSize,
@@ -11,9 +12,16 @@ import {
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
 function Footer() {
+  const { handleShare } = useShare();
+  const imgUrl = `${process.env.PUBLIC_URL}/assets/${data.img[0]}`;
+
   return (
     <SContainer>
-      <SBtn $bgColor={"#fce777"} $fontColor={"black"}>
+      <SBtn
+        $bgColor={"#fce777"}
+        $fontColor={"black"}
+        onClick={() => handleShare(imgUrl)}
+      >
         카카오톡 공유하기
       </SBtn>
       <CopyToClipboard
