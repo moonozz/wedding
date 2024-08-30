@@ -22,21 +22,21 @@
   "information": [
     {
       "type": "male",
-      "name": "양승역",
-      "EngName": "Yang Seung Yeok",
+      "name": "박보검",
+      "EngName": "Park Bo Gum",
       "phone": "01000000011",
-      "father": "양영식",
+      "father": "박형식",
       "fatherPhone": "01000000012",
-      "mother": "민정애",
+      "mother": "김은혜",
       "motherPhone": "01000000013"
     },
     {
       "type": "female",
-      "name": "이정민",
-      "EngName": "Lee Jeong Min",
+      "name": "수지",
+      "EngName": "Su Ji",
       "phone": "01000000021",
-      "father": "故 이용길",
-      "mother": "문명숙",
+      "father": "故 수혁",
+      "mother": "이효은",
       "motherPhone": "01000000023"
     }
   ],
@@ -44,29 +44,29 @@
     [
       {
         "tag": "신랑",
-        "name": "양승역",
+        "name": "박보검",
         "account": ["우리은행", "1002-111-111111"]
       },
       {
         "tag": "아버지",
-        "name": "양영식",
+        "name": "박형식",
         "account": ["우리은행", "1002-111-111112"]
       },
       {
         "tag": "어머니",
-        "name": "민정애",
+        "name": "김은혜",
         "account": ["우리은행", "1002-111-111113"]
       }
     ],
     [
       {
         "tag": "신부",
-        "name": "이정민",
+        "name": "수지",
         "account": ["우리은행", "1002-111-111121"]
       },
       {
         "tag": "어머니",
-        "name": "문명숙",
+        "name": "이효은",
         "account": ["우리은행", "1002-111-111123"]
       }
     ]

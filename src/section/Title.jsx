@@ -25,7 +25,7 @@ function Title() {
         <SImgBox>
           <Img
             src={`${process.env.PUBLIC_URL}/assets/${data.img[0]}`}
-            alt="양승역과 이정민의 청첩장 타이틀 이미지"
+            alt={`${data.information[0].name}과 ${data.information[1].name}의 청첩장 타이틀 이미지`}
           />
         </SImgBox>
         {TitleSection("")}
@@ -37,7 +37,7 @@ function Title() {
         <p>
           {getKorDate()} {getWeek(data.when, "kor")} {getTime("kor")}
         </p>
-        <p>위더스 웨딩홀 8F</p>
+        <p>{data.location.weddingHall}</p>
       </SHallInfo>
     </SContainer>
   );
