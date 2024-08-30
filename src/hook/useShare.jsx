@@ -22,8 +22,8 @@ export const useShare = () => {
         content: {
           title: title,
           description: subTxt,
-          // imageUrl: imgUrl,
-          imageUrl: `${process.env.PUBLIC_URL}/assets/${data.img[0]}`,
+          imageUrl: imgUrl,
+          // imageUrl: `${process.env.PUBLIC_URL}/assets/${data.img[0]}`,
           link: {
             mobileWebUrl: "http://192.168.35.233:3000",
             webUrl: "http://localhost:3000",

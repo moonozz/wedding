@@ -13,7 +13,8 @@ import { getSize, getVwSize } from "../utils/sThemeUtils";
 
 function Footer() {
   const { handleShare } = useShare();
-  const imgUrl = `${process.env.PUBLIC_URL}/assets/${data.img[0]}`;
+  // const imgUrl = `${process.env.PUBLIC_URL}/assets/${data.img[0]}`;
+  const imgUrl = "https://ifh.cc/g/zSRt9K.jpg";
 
   return (
     <SContainer>
