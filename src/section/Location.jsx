@@ -56,7 +56,7 @@ const SContainer = styled.div`
   ${boxSize("100%", "auto")};
   ${flex("column", "", "")};
   ${fontFamily("MaruBuri", "")}
-  padding: ${getSize(60)} 0 ${getSize(90)};
+  padding: ${getSize(60)} 0;
 `;
 
 const SAddress = styled.div`
