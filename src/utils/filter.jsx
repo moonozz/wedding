@@ -49,3 +49,11 @@ export const recordImg = (img) => {
 
   return recordImg;
 };
+
+export const getDday = () => {
+  const weddingDay = new Date(data.when);
+  const today = new Date();
+  const dday = weddingDay - today;
+
+  return Math.floor(dday / (1000 * 60 * 60 * 24));
+};

@@ -4,6 +4,7 @@ import data from "../data/data.json";
 import { useScrollEvent } from "../hook/useScrollEvent";
 import SubTitle from "../components/SubTitle";
 import Calendar from "../components/calendar/Calendar";
+import { getDday } from "../utils/filter";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import {
   boxSize,
@@ -19,20 +20,13 @@ function OurDay() {
   const groom = data.information[0].name.slice(-2);
   const bride = data.information[1].name.slice(-2);
 
-  const dayCalculator = () => {
-    const weddingDay = new Date(data.when);
-    const today = new Date();
-    const dday = weddingDay - today;
-
-    return Math.floor(dday / (1000 * 60 * 60 * 24));
-  };
   return (
     <SContainer ref={ref} className={isView ? "frame-in" : ""}>
       <SubTitle text={"Our Day"} />
       <Calendar />
       <SDDay>
         <p>{`${groom}, ${bride}의 결혼식이`}&nbsp;</p>
-        <p>{dayCalculator()}</p>
+        <p>{getDday()}</p>
         <p>일 남았습니다.</p>
       </SDDay>
     </SContainer>
