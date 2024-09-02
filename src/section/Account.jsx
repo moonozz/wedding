@@ -1,23 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
+import { useScrollEvent } from "../hook/useScrollEvent";
 import SubTitle from "../components/SubTitle";
 import Dropdown from "../components/Dropdown";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
-import {
-  boxSize,
-  flex,
-  fontFamily,
-  defaultTxtStyle,
-} from "../utils/sMixinUtils";
+import { boxSize, flex, fontFamily, animation } from "../utils/sMixinUtils";
 
 function Account() {
+  const { ref, isView } = useScrollEvent();
+
   const infoData = data.account;
   const groomInfo = infoData[0];
   const brideInfo = infoData[1];
 
   return (
-    <SContainer>
+    <SContainer ref={ref} className={isView ? "frame-in" : ""}>
       <SubTitle text={"Account"} />
       <SDropdownGroup>
         <Dropdown title={"신랑"} info={groomInfo} />
@@ -34,6 +32,9 @@ const SContainer = styled.section`
   ${flex("column", "", "")};
   ${fontFamily("MaruBuri", "")};
   padding: ${getSize(60)} 0 ${getSize(90)};
+  &.frame-in {
+    ${animation};
+  }
 `;
 
 const SDropdownGroup = styled.div`
