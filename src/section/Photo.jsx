@@ -12,7 +12,7 @@ function Photo({ modal, setModal }) {
 
   return (
     <SContainer ref={ref} className={isView ? "frame-in" : ""}>
-      <SubTitle text={"Photo"} />
+      <SubTitle text={"Photo"} font={"Abril Fatface"} />
       <PhotoSwipe discript={"사진을 넘겨보세요."} />
       {/* <PhotoList
         discript={"사진을 클릭해보세요."}

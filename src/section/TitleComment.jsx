@@ -12,7 +12,7 @@ function Introduce() {
   return (
     <SContainer>
       <div ref={ref} className={isView ? "frame-in" : ""}>
-        <SubTitle text={"***"} />
+        <SubTitle text={"***"} font={"Abril Fatface"} />
         <SScriptDiv>
           <p>
             작은 우연이 모여 서로를 알게 되고,

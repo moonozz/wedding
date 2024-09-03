@@ -5,7 +5,7 @@ import { secTitle, fontFamily } from "../\butils/sMixinUtils";
 
 function SubTitle({ text, font }) {
   return (
-    <STitle>
+    <STitle $font={font}>
       {/* {typeof text === "string" ? (
         text.endsWith(".svg") ? (
           <img src={text} alt="" />
@@ -24,7 +24,7 @@ export default SubTitle;
 
 const STitle = styled.p`
   ${secTitle("#f32a2a")};
-  ${fontFamily("Abril Fatface", "")};
+  font-family: ${({ $font }) => `${$font}`}, sans-serif;
   img {
     width: ${getVwSize(40)};
     height: auto;

@@ -16,7 +16,7 @@ function Account() {
 
   return (
     <SContainer ref={ref} className={isView ? "frame-in" : ""}>
-      <SubTitle text={"Account"} />
+      <SubTitle text={"Account"} font={"Abril Fatface"} />
       <SDropdownGroup>
         <Dropdown title={"신랑"} info={groomInfo} />
         <Dropdown title={"신부"} info={brideInfo} />

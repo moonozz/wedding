@@ -22,7 +22,7 @@ function OurDay() {
 
   return (
     <SContainer ref={ref} className={isView ? "frame-in" : ""}>
-      <SubTitle text={"Our Day"} />
+      <SubTitle text={"Our Day"} font={"Abril Fatface"} />
       <Calendar />
       <SDDay>
         <p>{`${groom}, ${bride}의 결혼식이`}&nbsp;</p>

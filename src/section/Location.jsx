@@ -26,7 +26,7 @@ function Location() {
 
   return (
     <SContainer>
-      <SubTitle text={"Location"} />
+      <SubTitle text={"Location"} font={"Abril Fatface"} />
       <SAddress>
         <SHallName>{locationData.weddingHall}</SHallName>
         <SHallAddress>{locationData.address}</SHallAddress>
