@@ -10,7 +10,6 @@ import {
   boxSize,
   flex,
   defaultTxtStyle,
-  fontFamily,
   animation,
 } from "../utils/sMixinUtils";
 
@@ -47,7 +46,6 @@ const SContainer = styled.div`
 
 const SDDay = styled.div`
   ${flex("row", "", "")};
-  ${fontFamily("MaruBuri", "")};
   ${defaultTxtStyle("1.6", "20", "")};
   p:nth-child(2) {
     color: ${({ theme }) => theme.color.red};

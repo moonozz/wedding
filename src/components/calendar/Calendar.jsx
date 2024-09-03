@@ -3,12 +3,7 @@ import styled from "styled-components";
 import data from "../../data/data.json";
 import Week from "./Week";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
-import {
-  flex,
-  boxSize,
-  defaultTxtStyle,
-  fontFamily,
-} from "../../utils/sMixinUtils";
+import { flex, boxSize, defaultTxtStyle } from "../../utils/sMixinUtils";
 
 function Calendar() {
   const date = data.when;
@@ -98,7 +93,6 @@ const Scontainer = styled.div`
   ${boxSize("80%", "auto")};
   ${flex("column", "", "")};
   ${defaultTxtStyle("1.6", "24", "0")}
-  ${fontFamily("MaruBuri", "")};
   margin: ${getVwSize(20)} 0;
 `;
 

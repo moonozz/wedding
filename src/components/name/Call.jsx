@@ -3,12 +3,7 @@ import styled from "styled-components";
 import data from "../../data/data.json";
 import CallLi from "./CallLi";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
-import {
-  flex,
-  fontFamily,
-  boxSize,
-  defaultTxtStyle,
-} from "../../utils/sMixinUtils";
+import { flex, boxSize, defaultTxtStyle } from "../../utils/sMixinUtils";
 
 function Call() {
   const groom = data.information[0];
@@ -53,7 +48,6 @@ const SContainer = styled.div`
   ${flex("column", "", "")};
   ${boxSize("100%", "auto")}
   gap: ${getVwSize(10)};
-  ${fontFamily("MaruBuri", "400")};
   ${defaultTxtStyle("", "24", "30")}
 
   @media screen and (min-width: 640px) {

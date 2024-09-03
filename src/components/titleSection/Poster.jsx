@@ -7,7 +7,6 @@ import {
   position,
   boxSize,
   flex,
-  fontFamily,
   xyValue,
   sPosterTxt,
   fontSize,
@@ -16,7 +15,7 @@ import {
 function Poster() {
   return (
     <SContainer>
-      <SPosterTxt>
+      <SPosterTxt $font={"Aoboshi One"}>
         <div>
           <span>Bo Gum</span>
           <span>&</span>
@@ -29,7 +28,7 @@ function Poster() {
           <span>{getTime("eng")}</span>
         </div>
       </SPosterTxt>
-      <SBottomTitle>
+      <SBottomTitle $font={"Abril Fatface"}>
         <span>We are</span>
         <span>Getting</span>
         <SRedTxt>&#40;Married&#41;</SRedTxt>
@@ -45,7 +44,7 @@ const SContainer = styled.div`
 `;
 
 const SPosterTxt = styled.div`
-  ${fontFamily("Aoboshi One", "")};
+  font-family: ${({ $font }) => `${$font}`}, sans-serif;
   ${position("absolute")};
   ${xyValue("24", "", "", "")};
   ${boxSize("100%", "")};
@@ -53,7 +52,7 @@ const SPosterTxt = styled.div`
 `;
 
 const SBottomTitle = styled.div`
-  ${fontFamily("Abril Fatface", "")};
+  font-family: ${({ $font }) => `${$font}`}, sans-serif;
   ${position("absolute")};
   ${xyValue("", "", "24", "")};
   ${flex("column", "", "")};

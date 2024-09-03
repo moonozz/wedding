@@ -10,12 +10,12 @@ export const position = (position = "relative") => css`
   position: ${position};
 `;
 
-export const fontFamily = (family = "Aoboshi One", weight = "400") => css`
-  font-family: ${family}, sans-serif;
-  font-style: normal;
-  font-weight: ${weight};
-  //"Aoboshi One", "Abril Fatface", "MaruBuri",
-`;
+// export const fontFamily = (family = "Aoboshi One", weight = "400") => css`
+//   font-family: ${family}, sans-serif;
+//   font-style: normal;
+//   font-weight: ${weight};
+//   //"Aoboshi One", "Abril Fatface", "MaruBuri",
+// `;
 
 export const fontSize = (size = "20") => css`
   font-size: ${getVwSize(`${size}`)};

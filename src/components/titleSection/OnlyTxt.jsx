@@ -5,14 +5,13 @@ import {
   position,
   boxSize,
   flex,
-  fontFamily,
   xyValue,
   fontSize,
 } from "../../utils/sMixinUtils";
 
-function OutTxt() {
+function OutTxt({ font }) {
   return (
-    <SContainer>
+    <SContainer $font={font}>
       <STitle>
         <span>We are</span>
         <span>Getting</span>
@@ -26,7 +25,7 @@ export default OutTxt;
 
 const SContainer = styled.div`
   ${flex("column", "center", "center")}
-  ${fontFamily("Abril Fatface", "")};
+  font-family: ${({ $font }) => `${$font}`}, sans-serif;
   ${boxSize("100%", "")};
 
   color: white;

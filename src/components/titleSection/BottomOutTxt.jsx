@@ -1,17 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
-import {
-  position,
-  boxSize,
-  flex,
-  fontFamily,
-  fontSize,
-} from "../../utils/sMixinUtils";
+import { position, boxSize, flex, fontSize } from "../../utils/sMixinUtils";
 
-function BottomOutTxt() {
+function BottomOutTxt({ font }) {
   return (
-    <SContainer>
+    <SContainer $font={font}>
       <span>Happy</span>
       <span>Wedding</span>
       <span>Day</span>
@@ -25,7 +19,7 @@ const SContainer = styled.div`
   ${boxSize("100%", "")};
   ${flex("column", "", "")};
   ${position("absolute")};
-  ${fontFamily("Aoboshi One", "")};
+  font-family: ${({ $font }) => `${$font}`}, sans-serif;
   ${fontSize("100")}
   font-weight: 800;
   color: #de2b2b;

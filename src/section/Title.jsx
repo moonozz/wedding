@@ -3,19 +3,13 @@ import styled from "styled-components";
 import data from "../data/data.json";
 import { getKorDate, getWeek, getTime } from "../utils/filter";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
-import {
-  position,
-  boxSize,
-  dim,
-  fontFamily,
-  fontSize,
-} from "../utils/sMixinUtils";
+import { position, boxSize, dim, fontSize } from "../utils/sMixinUtils";
 import { TitleSection } from "../components/titleSection";
 
-function Title() {
+function Title({ font }) {
   return (
     <SContainer>
-      <SDate>
+      <SDate $font={font}>
         <p>
           {getKorDate(2)} {getWeek(data.when, "kor")}
         </p>
@@ -54,6 +48,7 @@ const SContainer = styled.section`
 `;
 
 const SDate = styled.div`
+  font-family: ${({ $font }) => `${$font}`}, sans-serif;
   margin: ${getVwSize(80)} 0 ${getVwSize(56)};
   text-align: center;
   p:first-child {
@@ -91,12 +86,11 @@ const SHallInfo = styled.div`
   padding: ${getVwSize(60)} 0 0;
 
   p:first-child {
-    ${fontFamily("MaruBuri", "900")};
+    font-weight: 900;
     ${fontSize("24")};
     margin-bottom: ${getVwSize(20)};
   }
   p {
-    ${fontFamily("MaruBuri", "300")};
     ${fontSize("20")};
   }
 

@@ -2,13 +2,7 @@ import styled from "styled-components";
 import data from "../data/data.json";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useShare } from "../hook/useShare";
-import {
-  flex,
-  boxSize,
-  paddingIgnore,
-  fontSize,
-  fontFamily,
-} from "../utils/sMixinUtils";
+import { flex, boxSize, paddingIgnore, fontSize } from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
 function Footer() {
@@ -46,7 +40,6 @@ const SContainer = styled.section`
   ${paddingIgnore};
   ${boxSize("100vw", "auto")};
   ${flex("column", "center", "center")};
-  ${fontFamily("MaruBuri")};
   background-color: ${({ theme }) => theme.color.white};
   padding: ${getVwSize(50)} ${getVwSize(40)};
 
@@ -59,7 +52,7 @@ const SContainer = styled.section`
 const SBtn = styled.button`
   ${boxSize("100%", "auto")};
   ${fontSize(20)};
-  ${fontFamily("MaruBuri")};
+  font-family: "MaruBuri", sans-serif;
   border-radius: ${getVwSize(8)};
   padding: ${getVwSize(16)};
   margin-bottom: ${getVwSize(16)};

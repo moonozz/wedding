@@ -6,7 +6,7 @@ import Call from "../components/name/Call";
 import SubTitle from "../components/SubTitle";
 import HeartIcon from "../components/icon/Heart";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
-import { fontFamily, animation } from "../utils/sMixinUtils";
+import { animation } from "../utils/sMixinUtils";
 
 function Introduce() {
   // const ref = useRef(null);
@@ -35,7 +35,6 @@ export default Introduce;
 
 const SContainer = styled.section`
   padding: ${getVwSize(90)} 0;
-  ${fontFamily("MaruBuri", "400")};
 
   &.frame-in {
     ${animation};

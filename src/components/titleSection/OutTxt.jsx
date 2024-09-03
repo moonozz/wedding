@@ -7,16 +7,15 @@ import {
   position,
   boxSize,
   flex,
-  fontFamily,
   xyValue,
   sPosterTxt,
   circleTxt,
   fontSize,
 } from "../../utils/sMixinUtils";
 
-function OutTxt() {
+function OutTxt({ font }) {
   return (
-    <SContainer>
+    <SContainer $font={font}>
       <SCircleTxt>
         <p>Save our date</p>
       </SCircleTxt>
@@ -45,7 +44,7 @@ function OutTxt() {
 export default OutTxt;
 
 const SContainer = styled.div`
-  ${fontFamily("Aoboshi One", "")};
+  font-family: ${({ $font }) => `${$font}`}, sans-serif;
   ${boxSize("100%", "")};
   ${flex("col", "center", "center")};
 `;

@@ -4,7 +4,7 @@ import { useScrollEvent } from "../hook/useScrollEvent";
 import ScrollImg from "../components/ScrollImg";
 import SubTitle from "../components/SubTitle";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
-import { fontFamily, defaultTxtStyle, animation } from "../utils/sMixinUtils";
+import { defaultTxtStyle, animation } from "../utils/sMixinUtils";
 
 function Introduce() {
   const { ref, isView } = useScrollEvent();
@@ -41,7 +41,6 @@ export default Introduce;
 
 const SContainer = styled.section`
   padding: ${getVwSize(90)} 0;
-  ${fontFamily("MaruBuri", "400")};
   @media screen and (min-width: 640px) {
     padding: ${getSize(90)} 0;
   }

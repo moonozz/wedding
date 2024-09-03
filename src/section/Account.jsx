@@ -5,7 +5,7 @@ import { useScrollEvent } from "../hook/useScrollEvent";
 import SubTitle from "../components/SubTitle";
 import Dropdown from "../components/Dropdown";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
-import { boxSize, flex, fontFamily, animation } from "../utils/sMixinUtils";
+import { boxSize, flex, animation } from "../utils/sMixinUtils";
 
 function Account() {
   const { ref, isView } = useScrollEvent();
@@ -30,7 +30,6 @@ export default Account;
 const SContainer = styled.section`
   ${boxSize("100%", "auto")};
   ${flex("column", "", "")};
-  ${fontFamily("MaruBuri", "")};
   padding: ${getSize(60)} 0 ${getSize(90)};
   &.frame-in {
     ${animation};

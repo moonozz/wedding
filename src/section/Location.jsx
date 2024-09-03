@@ -6,13 +6,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import SubTitle from "../components/SubTitle";
 import Map from "../components/location/Map";
 import List from "../components/location/List";
-import {
-  boxSize,
-  flex,
-  fontFamily,
-  buttonLine,
-  fontSize,
-} from "../utils/sMixinUtils";
+import { boxSize, flex, buttonLine, fontSize } from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
 function Location() {
@@ -55,7 +49,6 @@ export default Location;
 const SContainer = styled.div`
   ${boxSize("100%", "auto")};
   ${flex("column", "", "")};
-  ${fontFamily("MaruBuri", "")}
   padding: ${getSize(60)} 0;
 `;
 
@@ -78,7 +71,6 @@ const SHallAddress = styled.p`
 `;
 
 const SCopy = styled.button`
-  ${fontFamily("MaruBuri", "")}
   ${buttonLine("20", "black")}
   margin: ${getVwSize(8)} 0 ${getVwSize(10)};
 

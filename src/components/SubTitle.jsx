@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
-import { secTitle, fontFamily } from "../\butils/sMixinUtils";
+import { secTitle } from "../\butils/sMixinUtils";
 
 function SubTitle({ text, font }) {
   return (

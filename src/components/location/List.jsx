@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useScrollEvent } from "../../hook/useScrollEvent";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
-import { animation, flex, fontFamily, fontSize } from "../../utils/sMixinUtils";
+import { animation, flex, fontSize } from "../../utils/sMixinUtils";
 import { Subway, Bus, Parking } from "./ListSection";
 
 function List({ type, title, el }) {
@@ -29,7 +29,6 @@ const SContainer = styled.div`
   padding: ${getVwSize(60)} 0 ${getVwSize(24)};
   margin: 0 ${getSize(20)};
   ${flex("column", "flex-start", "")};
-  ${fontFamily("MaruBuri", "")};
 
   &.frame-in {
     ${animation};

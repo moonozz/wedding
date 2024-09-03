@@ -7,16 +7,15 @@ import {
   position,
   boxSize,
   dim,
-  fontFamily,
   fontSize,
   paddingIgnore,
   flex,
 } from "../../utils/sMixinUtils";
 
-function Title() {
+function Title({ font }) {
   return (
     <SContainer>
-      <SDate>
+      <SDate $font={font}>
         <p>
           {getKorDate(2)} {getWeek(data.when, "kor")}
         </p>
@@ -63,6 +62,7 @@ const SDate = styled.div`
   ${boxSize("100%", "auto")};
   ${position("absolute")};
   ${flex("column", "", "center")};
+  font-family: ${({ $font }) => `${$font}`}, sans-serif;
   z-index: 10;
   color: white;
   margin: ${getVwSize(80)} 0 ${getVwSize(56)};
@@ -142,12 +142,11 @@ const SHallInfo = styled.div`
   padding: ${getVwSize(60)} 0 0;
 
   p:first-child {
-    ${fontFamily("MaruBuri", "900")};
+    font-weight: 900;
     ${fontSize("24")};
     margin-bottom: ${getVwSize(20)};
   }
   p {
-    ${fontFamily("MaruBuri", "300")};
     ${fontSize("20")};
   }
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Title from "./Title";
-// import Title from "../../section/Title";
+// import Title from "./Title";
+import Title from "../../section/Title";
 import TitleComment from "../../section/TitleComment";
 import Introduce from "../../section/Introduce";
 import Photo from "../../section/Photo";
@@ -18,7 +18,7 @@ function Sample01() {
 
   return (
     <Main>
-      <Title />
+      <Title font={"Pretendard"} />
       <TitleComment />
       <Introduce />
       <Photo modal={modal} setModal={setModal} />
@@ -42,6 +42,7 @@ const Main = styled.div`
   min-width: ${getSize(200)};
   padding: 0 ${getSize(20)} 0;
   text-align: center;
+  font-family: "MaruBuri", sans-serif;
 
   @media screen and (min-width: 640px) {
     padding: 0 ${getSize(20)} 0;
