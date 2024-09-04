@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Button from "./Button";
 import Close from "./icon/Close";
-import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { boxSize, position, xyValue, flex } from "../utils/sMixinUtils";
 
 function Modal({ imgUrl, modal, setModal, setCurrentImg }) {
@@ -21,6 +20,7 @@ function Modal({ imgUrl, modal, setModal, setCurrentImg }) {
       <SModalContainer>
         <SBtnBox>
           <Button onClick={handleClose}>
+            {/* X */}
             <Close width="24" height="24" stroke="black" strokeWidth="2" />
           </Button>
         </SBtnBox>
@@ -39,6 +39,7 @@ export default Modal;
 const SModalCom = styled.div`
   ${boxSize("100vw", "100vh")};
   ${position("fixed")};
+  /* ${position("absolute")}; */
   z-index: 100;
   /* animation: fadeIn; */
   display: ${({ $isOpen }) => ($isOpen ? "flex" : "none")};

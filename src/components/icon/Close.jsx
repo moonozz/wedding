@@ -14,16 +14,16 @@ function Heart({ stroke, color, width, height, strokeWidth }) {
       <path
         d="M5 5L27 27"
         stroke={stroke}
-        stroke-width={strokeWidth}
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M27 5L5 27"
         stroke={stroke}
-        stroke-width={strokeWidth}
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </Svg>
   );

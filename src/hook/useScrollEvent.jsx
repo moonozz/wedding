@@ -14,7 +14,7 @@ export const useScrollEvent = () => {
         }
         // else {
         //   setIsView(false);
-        // }
+        // } // 왜 버벅임?
       });
     };
 

@@ -1,14 +1,17 @@
-import React, { useState } from "react";
 import styled from "styled-components";
 import data from "../../data/data.json";
-import Modal from "../Modal";
 import { recordImg } from "../../utils/filter";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import { boxSize, position, flex, fontSize } from "../../utils/sMixinUtils";
 
-function PhotoList({ imgUrl, discript, modal, setModal }) {
-  const [currentImg, setCurrentImg] = useState("");
-
+function PhotoList({
+  imgUrl,
+  discript,
+  modal,
+  setModal,
+  currentImg,
+  setCurrentImg,
+}) {
   const imgData = data.img.slice(1);
 
   const handleModalOpen = (img) => {
@@ -32,16 +35,6 @@ function PhotoList({ imgUrl, discript, modal, setModal }) {
           );
         })}
       </SImageContainer>
-      {modal ? (
-        <Modal
-          imgUrl={currentImg}
-          modal={modal}
-          setModal={setModal}
-          setCurrentImg={setCurrentImg}
-        />
-      ) : (
-        ""
-      )}
     </SContainer>
   );
 }

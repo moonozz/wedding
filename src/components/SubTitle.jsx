@@ -4,20 +4,7 @@ import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { secTitle } from "../\butils/sMixinUtils";
 
 function SubTitle({ text, font }) {
-  return (
-    <STitle $font={font}>
-      {/* {typeof text === "string" ? (
-        text.endsWith(".svg") ? (
-          <img src={text} alt="" />
-        ) : (
-          text
-        )
-      ) : (
-        text
-      )} */}
-      {text}
-    </STitle>
-  );
+  return <STitle $font={font}>{text}</STitle>;
 }
 
 export default SubTitle;

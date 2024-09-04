@@ -10,11 +10,14 @@ import Location from "../../section/Location";
 import Account from "../../section/Account";
 import Footer from "../../section/Footer";
 import FixedBtn from "../../section/FixedBtn";
+import Modal from "../../components/Modal";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import { flex, boxSize, position } from "../../utils/sMixinUtils";
 
 function Sample01() {
   const [modal, setModal] = useState(false);
+  const [currentImg, setCurrentImg] = useState("");
+
   const subTitle = "Abril Fatface";
 
   return (
@@ -22,12 +25,28 @@ function Sample01() {
       <Title font={"Pretendard"} />
       <TitleComment font={subTitle} />
       <Introduce />
-      <Photo modal={modal} setModal={setModal} font={subTitle} />
+      <Photo
+        modal={modal}
+        setModal={setModal}
+        font={subTitle}
+        currentImg={currentImg}
+        setCurrentImg={setCurrentImg}
+      />
       <OurDay font={subTitle} />
       <Location font={subTitle} />
       <Account font={subTitle} />
       <Footer />
       <FixedBtn />
+      {modal ? (
+        <Modal
+          imgUrl={currentImg}
+          modal={modal}
+          setModal={setModal}
+          setCurrentImg={setCurrentImg}
+        />
+      ) : (
+        ""
+      )}
     </Main>
   );
 }
@@ -35,10 +54,10 @@ function Sample01() {
 export default Sample01;
 
 const Main = styled.div`
-  ${position("relative")}
-  ${flex("column", "", "")}
+  ${position("relative")};
+  ${flex("column", "", "")};
   background-color: #f4f4f4;
-  ${boxSize("100vw", "")}
+  ${boxSize("100vw", "")};
   max-width: ${getSize(640)};
   min-width: ${getSize(200)};
   padding: 0 ${getSize(20)} 0;
