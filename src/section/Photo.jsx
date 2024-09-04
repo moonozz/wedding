@@ -7,12 +7,12 @@ import SubTitle from "../components/SubTitle";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { paddingIgnore, animation } from "../utils/sMixinUtils";
 
-function Photo({ modal, setModal }) {
+function Photo({ modal, setModal, font }) {
   const { ref, isView } = useScrollEvent();
 
   return (
     <SContainer ref={ref} className={isView ? "frame-in" : ""}>
-      <SubTitle text={"Photo"} font={"Abril Fatface"} />
+      <SubTitle text={"Photo"} font={font} />
       <PhotoSwipe discript={"사진을 넘겨보세요."} />
       {/* <PhotoList
         discript={"사진을 클릭해보세요."}

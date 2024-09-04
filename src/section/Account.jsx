@@ -7,7 +7,7 @@ import Dropdown from "../components/Dropdown";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { boxSize, flex, animation } from "../utils/sMixinUtils";
 
-function Account() {
+function Account({ font }) {
   const { ref, isView } = useScrollEvent();
 
   const infoData = data.account;
@@ -16,7 +16,7 @@ function Account() {
 
   return (
     <SContainer ref={ref} className={isView ? "frame-in" : ""}>
-      <SubTitle text={"Account"} font={"Abril Fatface"} />
+      <SubTitle text={"Account"} font={font} />
       <SDropdownGroup>
         <Dropdown title={"신랑"} info={groomInfo} />
         <Dropdown title={"신부"} info={brideInfo} />

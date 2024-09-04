@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
-// import Title from "./Title";
-import Title from "../../section/Title";
+import Title from "./Title";
+// import Title from "../../section/Title";
 import TitleComment from "../../section/TitleComment";
 import Introduce from "../../section/Introduce";
 import Photo from "../../section/Photo";
@@ -15,16 +15,17 @@ import { flex, boxSize, position } from "../../utils/sMixinUtils";
 
 function Sample01() {
   const [modal, setModal] = useState(false);
+  const subTitle = "Abril Fatface";
 
   return (
     <Main>
       <Title font={"Pretendard"} />
-      <TitleComment />
+      <TitleComment font={subTitle} />
       <Introduce />
-      <Photo modal={modal} setModal={setModal} />
-      <OurDay />
-      <Location />
-      <Account />
+      <Photo modal={modal} setModal={setModal} font={subTitle} />
+      <OurDay font={subTitle} />
+      <Location font={subTitle} />
+      <Account font={subTitle} />
       <Footer />
       <FixedBtn />
     </Main>

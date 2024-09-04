@@ -13,7 +13,7 @@ import {
   animation,
 } from "../utils/sMixinUtils";
 
-function OurDay() {
+function OurDay({ font }) {
   const { ref, isView } = useScrollEvent();
 
   const groom = data.information[0].name.slice(-2);
@@ -21,7 +21,7 @@ function OurDay() {
 
   return (
     <SContainer ref={ref} className={isView ? "frame-in" : ""}>
-      <SubTitle text={"Our Day"} font={"Abril Fatface"} />
+      <SubTitle text={"Our Day"} font={font} />
       <Calendar />
       <SDDay>
         <p>{`${groom}, ${bride}의 결혼식이`}&nbsp;</p>
