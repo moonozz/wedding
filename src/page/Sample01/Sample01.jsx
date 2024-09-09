@@ -11,30 +11,32 @@ import Account from "../../section/Account";
 import Footer from "../../section/Footer";
 import FixedBtn from "../../section/FixedBtn";
 import Modal from "../../components/Modal";
-import { getSize, getVwSize } from "../../utils/sThemeUtils";
+import { getSize } from "../../utils/sThemeUtils";
 import { flex, boxSize, position } from "../../utils/sMixinUtils";
 
 function Sample01() {
   const [modal, setModal] = useState(false);
   const [currentImg, setCurrentImg] = useState("");
+  const subColor = "#f32a2a";
 
   const subTitle = "Abril Fatface";
 
   return (
     <Main>
       <Title font={"Pretendard"} />
-      <TitleComment font={subTitle} />
-      <Introduce />
+      <TitleComment font={subTitle} subColor={subColor} />
+      <Introduce subColor={subColor} />
       <Photo
         modal={modal}
         setModal={setModal}
         font={subTitle}
         currentImg={currentImg}
         setCurrentImg={setCurrentImg}
+        subColor={subColor}
       />
-      <OurDay font={subTitle} />
-      <Location font={subTitle} />
-      <Account font={subTitle} />
+      <OurDay font={subTitle} subColor={subColor} />
+      <Location font={subTitle} subColor={subColor} />
+      <Account font={subTitle} subColor={subColor} />
       <Footer />
       <FixedBtn />
       {modal ? (

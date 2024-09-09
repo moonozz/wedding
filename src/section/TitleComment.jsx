@@ -6,13 +6,13 @@ import SubTitle from "../components/SubTitle";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { defaultTxtStyle, animation } from "../utils/sMixinUtils";
 
-function Introduce() {
+function TitleComment({ subColor }) {
   const { ref, isView } = useScrollEvent();
 
   return (
     <SContainer>
       <div ref={ref} className={isView ? "frame-in" : ""}>
-        <SubTitle text={"***"} font={"Abril Fatface"} />
+        <SubTitle text={"***"} font={"Abril Fatface"} subColor={subColor} />
         <SScriptDiv>
           <p>
             작은 우연이 모여 서로를 알게 되고,
@@ -37,7 +37,7 @@ function Introduce() {
   );
 }
 
-export default Introduce;
+export default TitleComment;
 
 const SContainer = styled.section`
   padding: ${getVwSize(90)} 0;

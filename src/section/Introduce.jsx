@@ -8,7 +8,7 @@ import HeartIcon from "../components/icon/Heart";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { animation } from "../utils/sMixinUtils";
 
-function Introduce() {
+function Introduce({ subColor }) {
   // const ref = useRef(null);
   const { ref, isView } = useScrollEvent();
 
@@ -18,7 +18,7 @@ function Introduce() {
         text={
           <HeartIcon
             stroke="#f32a2a"
-            color="#f32a2a"
+            color={`${subColor}`}
             width={40}
             height={"auto"}
           />

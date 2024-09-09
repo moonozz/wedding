@@ -9,7 +9,7 @@ import List from "../components/location/List";
 import { boxSize, flex, buttonLine, fontSize } from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
-function Location({ font }) {
+function Location({ font, subColor }) {
   // const { onCopy } = useCopy();
 
   const locationData = data.location;
@@ -20,7 +20,7 @@ function Location({ font }) {
 
   return (
     <SContainer>
-      <SubTitle text={"Location"} font={font} />
+      <SubTitle text={"Location"} font={font} subColor={subColor} />
       <SAddress>
         <SHallName>{locationData.weddingHall}</SHallName>
         <SHallAddress>{locationData.address}</SHallAddress>
