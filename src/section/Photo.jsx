@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useScrollEvent } from "../hook/useScrollEvent";
 import PhotoSwipe from "../components/photo/PhotoSwipe";
+import PhotoAlbum from "../components/photo/PhotoAlbum";
 import PhotoList from "../components/photo/PhotoList";
 import SubTitle from "../components/SubTitle";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
@@ -14,7 +15,14 @@ function Photo({ modal, setModal, font, subColor, currentImg, setCurrentImg }) {
     <SContainer ref={ref} className={isView ? "frame-in" : ""}>
       <SubTitle text={"Photo"} font={font} subColor={subColor} />
       {/* <PhotoSwipe discript={"사진을 넘겨보세요."} /> */}
-      <PhotoList
+      {/* <PhotoList
+        discript={"사진을 클릭해보세요."}
+        modal={modal}
+        setModal={setModal}
+        currentImg={currentImg}
+        setCurrentImg={setCurrentImg}
+      /> */}
+      <PhotoAlbum
         discript={"사진을 클릭해보세요."}
         modal={modal}
         setModal={setModal}
