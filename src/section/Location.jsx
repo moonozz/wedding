@@ -3,7 +3,7 @@ import styled from "styled-components";
 import data from "../data/data.json";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 // import { useCopy } from "../hook/useCopy";
-import SubTitle from "../components/SubTitle";
+import { useSubTitle } from "../components/subTitle";
 import Map from "../components/location/Map";
 import List from "../components/location/List";
 import {
@@ -26,7 +26,7 @@ function Location({ subTitle, sectionColor }) {
 
   return (
     <SContainer $sectionColor={sectionColor}>
-      <SubTitle text={"Location"} font={subTitle.font} color={subTitle.color} />
+      {useSubTitle(subTitle.type, "Location", subTitle.font, subTitle.color)}
       <SAddress>
         <SHallName>{locationData.weddingHall}</SHallName>
         <SHallAddress>{locationData.address}</SHallAddress>

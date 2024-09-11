@@ -73,7 +73,7 @@ const Scontainer = styled.div`
   ${boxSize("80%", "auto")};
   ${flex("column", "", "")};
   ${defaultTxtStyle("1.6", "24", "")}
-  margin: ${getVwSize(20)} 0;
+  margin: ${getVwSize(40)} 0 ${getVwSize(20)};
 `;
 
 const SMonth = styled.div`

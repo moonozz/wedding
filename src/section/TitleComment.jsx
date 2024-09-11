@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import data from "../data/data.json";
 import { useScrollEvent } from "../hook/useScrollEvent";
-import SubTitle from "../components/SubTitle";
+import { useSubTitle } from "../components/subTitle";
 import { getKorDate, getWeek, getTime } from "../utils/filter";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import {
@@ -17,7 +17,7 @@ function TitleComment({ subTitle, sectionColor }) {
   return (
     <SContainer $sectionColor={sectionColor}>
       <div ref={ref} className={isView ? "frame-in" : ""}>
-        <SubTitle text={"***"} font={subTitle.font} color={subTitle.color} />
+        {useSubTitle(subTitle.type, "***", subTitle.font, subTitle.color)}
         <SHallInfo>
           <p>
             {data.information[0].EngName} ∙ {data.information[1].EngName}

@@ -1,10 +1,10 @@
-import { useEffect } from "react";
 import styled from "styled-components";
 import { useScrollEvent } from "../hook/useScrollEvent";
+import { useSubTitle } from "../components/subTitle";
 import PhotoSwipe from "../components/photo/PhotoSwipe";
 import PhotoAlbum from "../components/photo/PhotoAlbum";
 import PhotoList from "../components/photo/PhotoList";
-import SubTitle from "../components/SubTitle";
+import SubTitleTxt from "../components/subTitle/SubTitleTxt";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { paddingIgnore, animation } from "../utils/sMixinUtils";
 
@@ -22,7 +22,7 @@ function Photo({
   return (
     <SContainer $sectionColor={sectionColor} $padding={padding}>
       <div ref={ref} className={isView ? "frame-in" : ""}>
-        <SubTitle text={"Photo"} font={subTitle.font} color={subTitle.color} />
+        {useSubTitle(subTitle.type, "Photo", subTitle.font, subTitle.color)}
         {/* <PhotoSwipe discript={"사진을 넘겨보세요."} /> */}
         {/* <PhotoList
           discript={"사진을 클릭해보세요."}

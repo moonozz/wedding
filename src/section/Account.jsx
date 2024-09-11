@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
 import { useScrollEvent } from "../hook/useScrollEvent";
-import SubTitle from "../components/SubTitle";
+import { useSubTitle } from "../components/subTitle";
 import Dropdown from "../components/Dropdown";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { boxSize, flex, animation } from "../utils/sMixinUtils";
@@ -17,11 +17,7 @@ function Account({ subTitle, sectionColor, padding }) {
   return (
     <SContainer $sectionColor={sectionColor} $padding={padding}>
       <div ref={ref} className={isView ? "frame-in" : ""}>
-        <SubTitle
-          text={"Account"}
-          font={subTitle.font}
-          color={subTitle.color}
-        />
+        {useSubTitle(subTitle.type, "Account", subTitle.font, subTitle.color)}
         <SDropdownGroup>
           <Dropdown title={"신랑"} info={groomInfo} />
           <Dropdown title={"신부"} info={brideInfo} />

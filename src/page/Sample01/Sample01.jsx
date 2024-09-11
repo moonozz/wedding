@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import data from "../../data/data.json";
-import color from "./color.json";
+import colorData from "./color.json";
 import Title from "./Title";
 // import Title from "../../section/Title";
 import TitleComment from "../../section/TitleComment";
@@ -21,7 +21,7 @@ function Sample01() {
   const [modal, setModal] = useState(false);
   const [currentImg, setCurrentImg] = useState("");
   const subTitle = { color: "#f32a2a", font: "Abril Fatface", type: "text" };
-  const colorData = color;
+  // const colorData = color;
 
   return (
     <Main>

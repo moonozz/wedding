@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { getSize, getVwSize } from "../utils/sThemeUtils";
-import { secTitle } from "../utils/sMixinUtils";
+import { getSize, getVwSize } from "../../utils/sThemeUtils";
+import { secTitle } from "../../utils/sMixinUtils";
 
-function SubTitle({ text, font, color }) {
+function SubTitleTxt({ text, font, color }) {
   return (
     <STitle $font={font} $color={color}>
       {text}
@@ -11,7 +11,7 @@ function SubTitle({ text, font, color }) {
   );
 }
 
-export default SubTitle;
+export default SubTitleTxt;
 
 const STitle = styled.p`
   ${secTitle(({ $color }) => $color)};

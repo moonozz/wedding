@@ -73,11 +73,11 @@ const SImageContainer = styled.ul`
 const SDiscript = styled.p`
   ${fontSize("24")}
   margin: ${getVwSize(40)} 0;
-  padding-right: 12vw; // 사진 가운데 배치용
+  padding-right: ${getVwSize(50)}; // 사진 가운데 배치용
 
   @media screen and (min-width: 640px) {
     margin: ${getSize(40)} 0;
-    padding-right: 4rem;
+    padding-right: ${getSize(50)};
   }
 `;
 

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
 import { useScrollEvent } from "../hook/useScrollEvent";
-import SubTitle from "../components/SubTitle";
+import { useSubTitle } from "../components/subTitle";
 import Calendar from "../components/calendar/Calendar";
 import { getDday } from "../utils/filter";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
@@ -23,11 +23,7 @@ function OurDay({ subTitle, sectionColor }) {
   return (
     <SContainer $sectionColor={sectionColor}>
       <SAnimationDiv ref={ref} className={isView ? "frame-in" : ""}>
-        <SubTitle
-          text={"Our Day"}
-          font={subTitle.font}
-          color={subTitle.color}
-        />
+        {useSubTitle(subTitle.type, "Our Day", subTitle.font, subTitle.color)}
         <Calendar pointColor={sectionColor.pointColor} />
         <SDDay>
           <p>{`${groom}, ${bride}의 결혼식이`}&nbsp;</p>
