@@ -32,7 +32,7 @@ export default Name;
 
 const SContainer = styled.div`
   ${flex("column", "", "")};
-  padding: ${getVwSize(40)} 0 ${getVwSize(80)};
+  padding: ${getVwSize(40)} 0 ${getVwSize(40)};
   gap: 2vw;
   font-weight: 600;
 
@@ -46,7 +46,7 @@ const SContainer = styled.div`
   }
 
   @media screen and (min-width: 640px) {
-    padding: ${getSize(40)} 0 ${getSize(80)};
+    padding: ${getSize(40)} 0 ${getSize(40)};
     gap: 1.4rem;
   }
 `;

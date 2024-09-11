@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
-import { secTitle } from "../\butils/sMixinUtils";
+import { secTitle } from "../utils/sMixinUtils";
 
-function SubTitle({ text, font, subColor }) {
+function SubTitle({ text, font, color }) {
   return (
-    <STitle $font={font} $color={subColor}>
+    <STitle $font={font} $color={color}>
       {text}
     </STitle>
   );

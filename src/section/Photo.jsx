@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import styled from "styled-components";
 import { useScrollEvent } from "../hook/useScrollEvent";
 import PhotoSwipe from "../components/photo/PhotoSwipe";
@@ -8,27 +8,37 @@ import SubTitle from "../components/SubTitle";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { paddingIgnore, animation } from "../utils/sMixinUtils";
 
-function Photo({ modal, setModal, font, subColor, currentImg, setCurrentImg }) {
+function Photo({
+  modal,
+  setModal,
+  subTitle,
+  currentImg,
+  setCurrentImg,
+  sectionColor,
+  padding,
+}) {
   const { ref, isView } = useScrollEvent();
 
   return (
-    <SContainer ref={ref} className={isView ? "frame-in" : ""}>
-      <SubTitle text={"Photo"} font={font} subColor={subColor} />
-      {/* <PhotoSwipe discript={"사진을 넘겨보세요."} /> */}
-      {/* <PhotoList
-        discript={"사진을 클릭해보세요."}
-        modal={modal}
-        setModal={setModal}
-        currentImg={currentImg}
-        setCurrentImg={setCurrentImg}
-      /> */}
-      <PhotoAlbum
-        discript={"사진을 클릭해보세요."}
-        modal={modal}
-        setModal={setModal}
-        currentImg={currentImg}
-        setCurrentImg={setCurrentImg}
-      />
+    <SContainer $sectionColor={sectionColor} $padding={padding}>
+      <div ref={ref} className={isView ? "frame-in" : ""}>
+        <SubTitle text={"Photo"} font={subTitle.font} color={subTitle.color} />
+        {/* <PhotoSwipe discript={"사진을 넘겨보세요."} /> */}
+        {/* <PhotoList
+          discript={"사진을 클릭해보세요."}
+          modal={modal}
+          setModal={setModal}
+          currentImg={currentImg}
+          setCurrentImg={setCurrentImg}
+        /> */}
+        <PhotoAlbum
+          discript={"사진을 클릭해보세요."}
+          modal={modal}
+          setModal={setModal}
+          currentImg={currentImg}
+          setCurrentImg={setCurrentImg}
+        />
+      </div>
     </SContainer>
   );
 }
@@ -36,12 +46,16 @@ function Photo({ modal, setModal, font, subColor, currentImg, setCurrentImg }) {
 export default Photo;
 
 const SContainer = styled.section`
-  padding: ${getSize(30)} 0 ${getSize(90)};
+  padding: ${({ $padding }) => `${$padding.top}rem 0 ${$padding.bottom}rem`};
+  background-color: ${({ $sectionColor }) => $sectionColor.bg};
+  color: ${({ $sectionColor }) => $sectionColor.color};
   ${paddingIgnore};
   width: ${getVwSize(640)};
 
-  &.frame-in {
-    ${animation};
+  div {
+    &.frame-in {
+      ${animation};
+    }
   }
 
   @media screen and (min-width: 640px) {

@@ -1,18 +1,32 @@
 import styled from "styled-components";
 import data from "../data/data.json";
 import { useScrollEvent } from "../hook/useScrollEvent";
-import ScrollImg from "../components/ScrollImg";
 import SubTitle from "../components/SubTitle";
+import { getKorDate, getWeek, getTime } from "../utils/filter";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
-import { defaultTxtStyle, animation } from "../utils/sMixinUtils";
+import {
+  sectionPadding,
+  fontSize,
+  defaultTxtStyle,
+  animation,
+} from "../utils/sMixinUtils";
 
-function TitleComment({ subColor }) {
+function TitleComment({ subTitle, sectionColor }) {
   const { ref, isView } = useScrollEvent();
 
   return (
-    <SContainer>
+    <SContainer $sectionColor={sectionColor}>
       <div ref={ref} className={isView ? "frame-in" : ""}>
-        <SubTitle text={"***"} font={"Abril Fatface"} subColor={subColor} />
+        <SubTitle text={"***"} font={subTitle.font} color={subTitle.color} />
+        <SHallInfo>
+          <p>
+            {data.information[0].EngName} ∙ {data.information[1].EngName}
+          </p>
+          <p>
+            {getKorDate()} {getWeek(data.when, "kor")} {getTime("kor")}
+          </p>
+          <p>{data.location.weddingHall}</p>
+        </SHallInfo>
         <SScriptDiv>
           <p>
             작은 우연이 모여 서로를 알게 되고,
@@ -32,7 +46,7 @@ function TitleComment({ subColor }) {
           </p>
         </SScriptDiv>
       </div>
-      <ScrollImg imgUrl={data.img[7]} margin={100} />
+      {/* <ScrollImg imgUrl={data.img[7]} margin={100} /> */}
     </SContainer>
   );
 }
@@ -40,21 +54,38 @@ function TitleComment({ subColor }) {
 export default TitleComment;
 
 const SContainer = styled.section`
-  padding: ${getVwSize(90)} 0;
-  @media screen and (min-width: 640px) {
-    padding: ${getSize(90)} 0;
+  background-color: ${({ $sectionColor }) => $sectionColor.bg};
+  color: ${({ $sectionColor }) => $sectionColor.color};
+  ${sectionPadding};
+
+  div {
+    &.frame-in {
+      ${animation};
+    }
+  }
+`;
+
+const SHallInfo = styled.div`
+  padding: ${getVwSize(20)} 0 ${getVwSize(50)};
+
+  p:first-child {
+    font-weight: 900;
+    ${fontSize("24")};
+    margin-bottom: ${getVwSize(20)};
+  }
+  p {
+    ${fontSize("20")};
   }
 
-  &.frame-in {
-    ${animation};
+  @media screen and (min-width: 640px) {
+    padding: ${getSize(20)} 0 ${getSize(50)};
+
+    p:first-child {
+      margin-bottom: ${getSize(20)};
+    }
   }
 `;
 
 const SScriptDiv = styled.div`
   ${defaultTxtStyle("1.8", "24", "40")};
-  padding: ${getVwSize(40)} 0;
-
-  @media screen and (min-width: 640px) {
-    padding: ${getSize(40)} 0;
-  }
 `;

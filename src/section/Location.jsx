@@ -6,10 +6,16 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import SubTitle from "../components/SubTitle";
 import Map from "../components/location/Map";
 import List from "../components/location/List";
-import { boxSize, flex, buttonLine, fontSize } from "../utils/sMixinUtils";
+import {
+  boxSize,
+  flex,
+  buttonLine,
+  fontSize,
+  sectionPadding,
+} from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
-function Location({ font, subColor }) {
+function Location({ subTitle, sectionColor }) {
   // const { onCopy } = useCopy();
 
   const locationData = data.location;
@@ -19,8 +25,8 @@ function Location({ font, subColor }) {
   // };
 
   return (
-    <SContainer>
-      <SubTitle text={"Location"} font={font} subColor={subColor} />
+    <SContainer $sectionColor={sectionColor}>
+      <SubTitle text={"Location"} font={subTitle.font} color={subTitle.color} />
       <SAddress>
         <SHallName>{locationData.weddingHall}</SHallName>
         <SHallAddress>{locationData.address}</SHallAddress>
@@ -49,7 +55,9 @@ export default Location;
 const SContainer = styled.div`
   ${boxSize("100%", "auto")};
   ${flex("column", "", "")};
-  padding: ${getSize(60)} 0;
+  ${sectionPadding};
+  background-color: ${({ $sectionColor }) => $sectionColor.bg};
+  color: ${({ $sectionColor }) => $sectionColor.color};
 `;
 
 const SAddress = styled.div`

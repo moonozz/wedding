@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import styled from "styled-components";
 import { useScrollEvent } from "../hook/useScrollEvent";
 import Name from "../components/name/Name";
@@ -6,27 +5,27 @@ import Call from "../components/name/Call";
 import SubTitle from "../components/SubTitle";
 import HeartIcon from "../components/icon/Heart";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
-import { animation } from "../utils/sMixinUtils";
+import { sectionPadding, animation } from "../utils/sMixinUtils";
 
-function Introduce({ subColor }) {
-  // const ref = useRef(null);
+function Introduce({ subTitle, sectionColor }) {
   const { ref, isView } = useScrollEvent();
 
   return (
-    <SContainer ref={ref} className={isView ? "frame-in" : ""}>
-      <SubTitle
-        text={
-          <HeartIcon
-            stroke="#f32a2a"
-            color={`${subColor}`}
-            width={40}
-            height={"auto"}
-          />
-        }
-      />
-      <Name />
-      {/* <ScrollImg imgUrl={data.img[7]} /> */}
-      <Call />
+    <SContainer $sectionColor={sectionColor}>
+      <div ref={ref} className={isView ? "frame-in" : ""}>
+        <SubTitle
+          text={
+            <HeartIcon
+              stroke={`${subTitle.color}`}
+              color={`${subTitle.color}`}
+              width={40}
+              height={"auto"}
+            />
+          }
+        />
+        <Name />
+        <Call />
+      </div>
     </SContainer>
   );
 }
@@ -34,10 +33,14 @@ function Introduce({ subColor }) {
 export default Introduce;
 
 const SContainer = styled.section`
-  padding: ${getVwSize(90)} 0;
+  ${sectionPadding};
+  background-color: ${({ $sectionColor }) => $sectionColor.bg};
+  color: ${({ $sectionColor }) => $sectionColor.color};
 
-  &.frame-in {
-    ${animation};
+  div {
+    &.frame-in {
+      ${animation};
+    }
   }
 
   @media screen and (min-width: 640px) {

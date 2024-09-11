@@ -125,18 +125,26 @@ export const secTitle = (color = "black") => css`
 export const defaultTxtStyle = (
   lineHight = "1.8",
   fontSize = "2.4rem",
-  marginB = "4rem"
+  marginT = "4rem"
 ) => css`
   line-height: ${lineHight};
   p {
     font-size: ${getVwSize(`${fontSize}`)};
-    margin-bottom: ${getVwSize(`${marginB}`)};
+    margin-top: ${getVwSize(`${marginT}`)};
   }
   @media screen and (min-width: 640px) {
     p {
       font-size: ${getSize(`${fontSize}`)};
-      margin-bottom: ${getSize(`${marginB}`)};
+      margin-top: ${getSize(`${marginT}`)};
     }
+  }
+`;
+
+export const sectionPadding = css`
+  padding: ${getVwSize(80)} ${getVwSize(20)} ${getVwSize(90)};
+
+  @media screen and (min-width: 640px) {
+    padding: ${getSize(80)} ${getSize(20)} ${getSize(90)};
   }
 `;
 

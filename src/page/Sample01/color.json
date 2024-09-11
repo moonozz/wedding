@@ -1,0 +1,27 @@
+{
+  "titleComment": {
+    "bg": "#f4f4f4",
+    "color": "black"
+  },
+  "calendar": {
+    "bg": "#f4f4f4",
+    "color": "black",
+    "pointColor": "#f32a2a"
+  },
+  "introduce": {
+    "bg": "#f4f4f4",
+    "color": "black"
+  },
+  "photo": {
+    "bg": "#f4f4f4",
+    "color": "black"
+  },
+  "location": {
+    "bg": "#f4f4f4",
+    "color": "black"
+  },
+  "account": {
+    "bg": "#f4f4f4",
+    "color": "black"
+  }
+}

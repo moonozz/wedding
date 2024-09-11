@@ -8,7 +8,6 @@ import {
   boxSize,
   dim,
   fontSize,
-  paddingIgnore,
   flex,
 } from "../../utils/sMixinUtils";
 
@@ -39,15 +38,6 @@ function Title({ font }) {
           />
         </SImgBox>
       </SInner>
-      <SHallInfo>
-        <p>
-          {data.information[0].EngName} ∙ {data.information[1].EngName}
-        </p>
-        <p>
-          {getKorDate()} {getWeek(data.when, "kor")} {getTime("kor")}
-        </p>
-        <p>{data.location.weddingHall}</p>
-      </SHallInfo>
     </SContainer>
   );
 }
@@ -108,13 +98,11 @@ const SDiary = styled.div`
 `;
 
 const SInner = styled.div`
-  ${paddingIgnore};
   ${boxSize("100vw", "85vh")};
   /* ${boxSize("100vw", "88vh")}; */
 
   &::after {
     ${boxSize("100vw", "85vh")};
-    ${paddingIgnore};
     ${dim}
   }
 
@@ -136,24 +124,4 @@ const SImgBox = styled.div`
 const Img = styled.img`
   ${boxSize("100%", "100%")};
   object-fit: cover;
-`;
-
-const SHallInfo = styled.div`
-  padding: ${getVwSize(60)} 0 0;
-
-  p:first-child {
-    font-weight: 900;
-    ${fontSize("24")};
-    margin-bottom: ${getVwSize(20)};
-  }
-  p {
-    ${fontSize("20")};
-  }
-
-  @media screen and (min-width: 640px) {
-    padding: ${getSize(60)} 0 0;
-    p:first-child {
-      margin-bottom: ${getSize(20)};
-    }
-  }
 `;

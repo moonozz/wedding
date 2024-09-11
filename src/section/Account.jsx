@@ -7,7 +7,7 @@ import Dropdown from "../components/Dropdown";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { boxSize, flex, animation } from "../utils/sMixinUtils";
 
-function Account({ font, subColor }) {
+function Account({ subTitle, sectionColor, padding }) {
   const { ref, isView } = useScrollEvent();
 
   const infoData = data.account;
@@ -15,12 +15,18 @@ function Account({ font, subColor }) {
   const brideInfo = infoData[1];
 
   return (
-    <SContainer ref={ref} className={isView ? "frame-in" : ""}>
-      <SubTitle text={"Account"} font={font} subColor={subColor} />
-      <SDropdownGroup>
-        <Dropdown title={"신랑"} info={groomInfo} />
-        <Dropdown title={"신부"} info={brideInfo} />
-      </SDropdownGroup>
+    <SContainer $sectionColor={sectionColor} $padding={padding}>
+      <div ref={ref} className={isView ? "frame-in" : ""}>
+        <SubTitle
+          text={"Account"}
+          font={subTitle.font}
+          color={subTitle.color}
+        />
+        <SDropdownGroup>
+          <Dropdown title={"신랑"} info={groomInfo} />
+          <Dropdown title={"신부"} info={brideInfo} />
+        </SDropdownGroup>
+      </div>
     </SContainer>
   );
 }
@@ -30,9 +36,14 @@ export default Account;
 const SContainer = styled.section`
   ${boxSize("100%", "auto")};
   ${flex("column", "", "")};
-  padding: ${getSize(60)} 0 ${getSize(90)};
-  &.frame-in {
-    ${animation};
+  background-color: ${({ $sectionColor }) => $sectionColor.bg};
+  color: ${({ $sectionColor }) => $sectionColor.color};
+  padding: ${({ $padding }) => `${$padding.top}rem 2rem ${$padding.bottom}rem`};
+
+  div {
+    &.frame-in {
+      ${animation};
+    }
   }
 `;
 

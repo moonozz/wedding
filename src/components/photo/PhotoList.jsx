@@ -55,7 +55,10 @@ const SContainer = styled.div`
 
 const SImageContainer = styled.ul`
   columns: 2;
-  column-gap: 3rem;
+  column-gap: ${getVwSize(16)};
+  @media screen and (min-width: 640px) {
+    column-gap: ${getSize(16)};
+  }
 `;
 
 const SDiscript = styled.p`
@@ -71,7 +74,11 @@ const SImgLi = styled.li`
   ${flex("row", "center", "center")};
   ${position("relative")};
   ${boxSize("100%", "auto")}
-  margin-bottom: ${getSize(40)};
+  margin-bottom: ${getVwSize(16)};
+
+  @media screen and (min-width: 640px) {
+    margin-bottom: ${getSize(16)};
+  }
 `;
 
 const SImage = styled.img`

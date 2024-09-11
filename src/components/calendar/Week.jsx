@@ -3,14 +3,9 @@ import styled from "styled-components";
 import data from "../../data/data.json";
 import HeartIcon from "../icon/Heart";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
-import {
-  boxSize,
-  defaultTxtStyle,
-  position,
-  xyValue,
-} from "../../utils/sMixinUtils";
+import { boxSize, position, xyValue } from "../../utils/sMixinUtils";
 
-function Week({ el }) {
+function Week({ el, pointColor }) {
   const date = data.when;
   const day = new Date(date).getDate().toString();
 
@@ -26,8 +21,8 @@ function Week({ el }) {
                 </p>
                 <SHeartSpan>
                   <HeartIcon
-                    stroke="#f32a2a"
-                    color="#f32a2a"
+                    stroke={`${pointColor}`}
+                    color={`${pointColor}`}
                     width={60}
                     height={"auto"}
                   />
