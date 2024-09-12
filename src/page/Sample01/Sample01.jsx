@@ -21,7 +21,7 @@ function Sample01() {
   const [modal, setModal] = useState(false);
   const [currentImg, setCurrentImg] = useState("");
   const subTitle = { color: "#f32a2a", font: "Abril Fatface", type: "text" };
-  // const colorData = color;
+  const photoInfo = { type: "", text: "사진을 넘겨보세요." };
 
   return (
     <Main>
@@ -37,6 +37,7 @@ function Sample01() {
         setCurrentImg={setCurrentImg}
         sectionColor={colorData.photo}
         padding={{ top: "3", bottom: "9" }}
+        photoInfo={photoInfo}
       />
       <OurDay subTitle={subTitle} sectionColor={colorData.calendar} />
       <Location subTitle={subTitle} sectionColor={colorData.location} />

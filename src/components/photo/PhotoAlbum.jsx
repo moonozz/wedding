@@ -12,7 +12,7 @@ import {
 
 function PhotoAlbum({
   imgUrl,
-  discript,
+  text,
   modal,
   setModal,
   currentImg,
@@ -27,7 +27,7 @@ function PhotoAlbum({
 
   return (
     <SContainer>
-      <SDiscript>{discript}</SDiscript>
+      <SDiscript>{text}</SDiscript>
       <SImageContainer>
         {recordImg(imgData).map((el) => {
           return (

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useScrollEvent } from "../hook/useScrollEvent";
 import { useSubTitle } from "../components/subTitle";
+import { PhotoSection } from "../components/photo";
 import PhotoSwipe from "../components/photo/PhotoSwipe";
 import PhotoAlbum from "../components/photo/PhotoAlbum";
 import PhotoList from "../components/photo/PhotoList";
@@ -16,21 +17,27 @@ function Photo({
   setCurrentImg,
   sectionColor,
   padding,
+  photoInfo,
 }) {
   const { ref, isView } = useScrollEvent();
 
   return (
     <SContainer $sectionColor={sectionColor} $padding={padding}>
       <div ref={ref} className={isView ? "frame-in" : ""}>
-        {useSubTitle(subTitle.type, "Photo", subTitle.font, subTitle.color)}
-        {/* <PhotoSwipe discript={"사진을 넘겨보세요."} /> */}
-        {/* <PhotoList
-          discript={"사진을 클릭해보세요."}
-          modal={modal}
-          setModal={setModal}
-          currentImg={currentImg}
-          setCurrentImg={setCurrentImg}
-        /> */}
+        {useSubTitle({
+          type: subTitle.type,
+          text: "Photo",
+          font: subTitle.font,
+          color: sectionColor.pointColor,
+        })}
+        {PhotoSection({
+          type: photoInfo.type,
+          text: photoInfo.text,
+          modal,
+          setModal,
+          currentImg,
+          setCurrentImg,
+        })}
         <PhotoAlbum
           discript={"사진을 클릭해보세요."}
           modal={modal}

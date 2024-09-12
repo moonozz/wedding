@@ -4,7 +4,7 @@ import data from "../../data/data.json";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import { boxSize, position, flex, fontSize } from "../../utils/sMixinUtils";
 
-function PhotoSwipe({ imgUrl, discript }) {
+function PhotoSwipe({ imgUrl, text }) {
   // const containerRef = useRef(null);
   const imgData = data.img.slice(1);
 
@@ -37,7 +37,7 @@ function PhotoSwipe({ imgUrl, discript }) {
 
   return (
     <SContainer>
-      <SDiscript>{discript}</SDiscript>
+      <SDiscript>{text}</SDiscript>
 
       <SInner
         onTouchStart={handleTouchStart}

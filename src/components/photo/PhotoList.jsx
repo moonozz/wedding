@@ -6,7 +6,7 @@ import { boxSize, position, flex, fontSize } from "../../utils/sMixinUtils";
 
 function PhotoList({
   imgUrl,
-  discript,
+  text,
   modal,
   setModal,
   currentImg,
@@ -21,7 +21,7 @@ function PhotoList({
 
   return (
     <SContainer>
-      <SDiscript>{discript}</SDiscript>
+      <SDiscript>{text}</SDiscript>
       <SImageContainer>
         {recordImg(imgData).map((el) => {
           return (
