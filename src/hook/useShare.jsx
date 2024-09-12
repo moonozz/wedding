@@ -1,11 +1,11 @@
 import data from "../data/data.json";
-import { getKorDate, getWeek, getTime } from "../utils/filter";
+import { getDate, getWeek, getTime } from "../utils/filter";
 
 export const useShare = () => {
   // const [img, setImg] = useState("");
   // const img = data.img[0];
   const title = `${data.information[0].name}❤️${data.information[1].name} 결혼합니다.`;
-  const subTxt = `${getKorDate(2)} ${getWeek(data.when, "kor")}, ${getTime(
+  const subTxt = `${getDate("kor", 2)} ${getWeek(data.when, "kor")}, ${getTime(
     "kor"
   )}`;
 

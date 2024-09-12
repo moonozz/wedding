@@ -1,15 +1,18 @@
 import data from "../data/data.json";
 
-export const getKorDate = (yearlength) => {
+export const getDate = (type, yearlength) => {
   const when = new Date(data.when);
   const year = when.getFullYear();
   // const month = ("0" + (when.getMonth()+1)).slice(-2);
   const month = when.getMonth() + 1;
   const day = when.getDate();
 
-  if (yearlength === 2) {
-    return `${year.toString().slice(-2)}년 ${month}월 ${day}일`;
-  } else return `${year}년 ${month}월 ${day}일`;
+  const shortYear = year.toString().slice(-2);
+  const selectYear = yearlength === 2 ? shortYear : year;
+
+  if (type === "kor") {
+    return `${selectYear}년 ${month}월 ${day}일`;
+  } else return `${selectYear}. ${month}. ${day}`;
 };
 
 export const getWeek = (i, lan) => {

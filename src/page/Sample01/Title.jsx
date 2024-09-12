@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../../data/data.json";
-import { getKorDate, getWeek, getTime, getDday } from "../../utils/filter";
+import { getDate, getWeek, getTime, getDday } from "../../utils/filter";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import {
   position,
@@ -16,7 +16,7 @@ function Title({ font }) {
     <SContainer>
       <SDate $font={font}>
         <p>
-          {getKorDate(2)} {getWeek(data.when, "kor")}
+          {getDate("kor", 2)} {getWeek(data.when, "kor")}
         </p>
         <p>{data.time}</p>
         <SInfo>

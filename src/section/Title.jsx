@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../data/data.json";
-import { getKorDate, getWeek, getTime } from "../utils/filter";
+import { getDate, getWeek, getTime } from "../utils/filter";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { position, boxSize, dim, fontSize } from "../utils/sMixinUtils";
 import { TitleSection } from "../components/titleSection";
@@ -11,7 +11,7 @@ function Title({ font }) {
     <SContainer>
       <SDate $font={font}>
         <p>
-          {getKorDate(2)} {getWeek(data.when, "kor")}
+          {getDate("kor", 2)} {getWeek(data.when, "kor")}
         </p>
         <p>{data.time}</p>
       </SDate>
@@ -29,7 +29,7 @@ function Title({ font }) {
           {data.information[0].EngName} ∙ {data.information[1].EngName}
         </p>
         <p>
-          {getKorDate()} {getWeek(data.when, "kor")} {getTime("kor")}
+          {getDate("kor")} {getWeek(data.when, "kor")} {getTime("kor")}
         </p>
         <p>{data.location.weddingHall}</p>
       </SHallInfo>

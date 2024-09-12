@@ -2,7 +2,7 @@ import styled from "styled-components";
 import data from "../data/data.json";
 import { useScrollEvent } from "../hook/useScrollEvent";
 import { useSubTitle } from "../components/subTitle";
-import { getKorDate, getWeek, getTime } from "../utils/filter";
+import { getDate, getWeek, getTime } from "../utils/filter";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import {
   sectionPadding,
@@ -11,7 +11,7 @@ import {
   animation,
 } from "../utils/sMixinUtils";
 
-function TitleComment({ subTitle, sectionColor }) {
+function TitleComment({ subTitle, sectionColor, titleComment }) {
   const { ref, isView } = useScrollEvent();
 
   return (
@@ -19,7 +19,7 @@ function TitleComment({ subTitle, sectionColor }) {
       <div ref={ref} className={isView ? "frame-in" : ""}>
         {useSubTitle({
           type: subTitle.type,
-          text: "***",
+          text: titleComment,
           font: subTitle.font,
           color: sectionColor.pointColor,
         })}
@@ -28,7 +28,7 @@ function TitleComment({ subTitle, sectionColor }) {
             {data.information[0].EngName} ∙ {data.information[1].EngName}
           </p>
           <p>
-            {getKorDate()} {getWeek(data.when, "kor")} {getTime("kor")}
+            {getDate("kor")} {getWeek(data.when, "kor")} {getTime("kor")}
           </p>
           <p>{data.location.weddingHall}</p>
         </SHallInfo>
@@ -74,7 +74,7 @@ const SHallInfo = styled.div`
   padding: ${getVwSize(20)} 0 ${getVwSize(50)};
 
   p:first-child {
-    font-weight: 900;
+    font-weight: 700;
     ${fontSize("24")};
     margin-bottom: ${getVwSize(20)};
   }
