@@ -48,7 +48,7 @@ const SContentLi = styled.li`
 `;
 
 const SStopNm = styled.p`
-  font-weight: 900;
+  font-weight: 700;
   margin-bottom: ${getVwSize(10)};
 
   @media screen and (min-width: 640px) {

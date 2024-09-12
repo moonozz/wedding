@@ -16,6 +16,7 @@ export default SubTitleCircle;
 const STitle = styled.div`
   color: ${({ $color }) => $color};
   font-family: ${({ $font }) => `${$font}`}, sans-serif;
+  font-weight: 900;
 
   span {
     ${fontSize("24")}

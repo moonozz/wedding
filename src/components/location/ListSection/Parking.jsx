@@ -23,10 +23,6 @@ const SContainer = styled.ul`
   ${boxSize("100%", "auto")};
   ${defaultTxtStyle("", "20", "")};
   ${flex("column", "flex-start", "")};
-  margin-bottom: ${getVwSize(24)};
-  @media screen and (min-width: 640px) {
-    margin-bottom: ${getSize(24)} 0;
-  }
 `;
 
 const SContentLi = styled.li`

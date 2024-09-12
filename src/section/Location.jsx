@@ -76,6 +76,7 @@ const SAddress = styled.div`
 
 const SHallName = styled.p`
   ${fontSize("24")};
+  font-weight: 700;
 `;
 
 const SHallAddress = styled.p`

@@ -22,7 +22,8 @@ function OurDay({ subTitle, sectionColor }) {
 
   return (
     <SContainer $sectionColor={sectionColor}>
-      <SAnimationDiv ref={ref} className={isView ? "frame-in" : ""}>
+      {/* <SAnimationDiv ref={ref} className={isView ? "frame-in" : ""}> */}
+      <div ref={ref} className={isView ? "frame-in" : ""}>
         {useSubTitle({
           type: subTitle.type,
           text: "Our Day",
@@ -35,7 +36,7 @@ function OurDay({ subTitle, sectionColor }) {
           <p>{getDday()}</p>
           <p>일 남았습니다.</p>
         </SDDay>
-      </SAnimationDiv>
+      </div>
     </SContainer>
   );
 }
@@ -47,19 +48,21 @@ const SContainer = styled.section`
   /* padding: ${getSize(60)} 0 ${getSize(90)}; */
   background-color: ${({ $sectionColor }) => $sectionColor.bg};
   color: ${({ $sectionColor }) => $sectionColor.color};
-`;
 
-const SAnimationDiv = styled.div`
-  ${flex("column", "center", "center")};
-  ${boxSize("100%", "auto")};
-  &.frame-in {
-    ${animation}
+  div:first-child {
+    ${flex("column", "center", "center")};
+    ${boxSize("100%", "auto")};
+    &.frame-in {
+      ${animation}
+    }
   }
 `;
 
 const SDDay = styled.div`
   ${flex("row", "", "")};
-  ${defaultTxtStyle("1.6", "20", "")};
+  ${defaultTxtStyle("1.6", "24", "")};
+  font-weight: 700;
+  margin-top: ${getSize(20)};
   p:nth-child(2) {
     color: ${({ $sectionColor }) => $sectionColor.pointColor};
   }
