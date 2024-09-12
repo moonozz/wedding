@@ -17,7 +17,12 @@ function Account({ subTitle, sectionColor, padding }) {
   return (
     <SContainer $sectionColor={sectionColor} $padding={padding}>
       <div ref={ref} className={isView ? "frame-in" : ""}>
-        {useSubTitle(subTitle.type, "Account", subTitle.font, subTitle.color)}
+        {useSubTitle({
+          type: subTitle.type,
+          text: "Account",
+          font: subTitle.font,
+          color: sectionColor.pointColor,
+        })}
         <SDropdownGroup>
           <Dropdown title={"신랑"} info={groomInfo} />
           <Dropdown title={"신부"} info={brideInfo} />

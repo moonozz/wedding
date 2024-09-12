@@ -1,8 +1,8 @@
 import SubTitleCircle from "./SubTitleCircle";
 import SubTitleTxt from "./SubTitleTxt";
 
-const useSubTitle = (i, text, font, color) => {
-  switch (i) {
+const useSubTitle = ({ type, text, font, color }) => {
+  switch (type) {
     case "circle":
       return <SubTitleCircle text={text} font={font} color={color} />;
       break;

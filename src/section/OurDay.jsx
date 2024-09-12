@@ -23,9 +23,14 @@ function OurDay({ subTitle, sectionColor }) {
   return (
     <SContainer $sectionColor={sectionColor}>
       <SAnimationDiv ref={ref} className={isView ? "frame-in" : ""}>
-        {useSubTitle(subTitle.type, "Our Day", subTitle.font, subTitle.color)}
+        {useSubTitle({
+          type: subTitle.type,
+          text: "Our Day",
+          font: subTitle.font,
+          color: sectionColor.pointColor,
+        })}
         <Calendar pointColor={sectionColor.pointColor} />
-        <SDDay>
+        <SDDay $sectionColor={sectionColor}>
           <p>{`${groom}, ${bride}의 결혼식이`}&nbsp;</p>
           <p>{getDday()}</p>
           <p>일 남았습니다.</p>
@@ -56,6 +61,6 @@ const SDDay = styled.div`
   ${flex("row", "", "")};
   ${defaultTxtStyle("1.6", "20", "")};
   p:nth-child(2) {
-    color: ${({ theme }) => theme.color.red};
+    color: ${({ $sectionColor }) => $sectionColor.pointColor};
   }
 `;

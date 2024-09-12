@@ -24,8 +24,8 @@ function Introduce({ subTitle, sectionColor }) {
           }
         /> */}
         <HeartIcon
-          stroke={`${subTitle.color}`}
-          color={`${subTitle.color}`}
+          stroke={`${sectionColor.pointColor}`}
+          color={`${sectionColor.pointColor}`}
           width={40}
           height={"auto"}
         />

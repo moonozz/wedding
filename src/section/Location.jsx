@@ -26,7 +26,12 @@ function Location({ subTitle, sectionColor }) {
 
   return (
     <SContainer $sectionColor={sectionColor}>
-      {useSubTitle(subTitle.type, "Location", subTitle.font, subTitle.color)}
+      {useSubTitle({
+        type: subTitle.type,
+        text: "Location",
+        font: subTitle.font,
+        color: sectionColor.pointColor,
+      })}
       <SAddress>
         <SHallName>{locationData.weddingHall}</SHallName>
         <SHallAddress>{locationData.address}</SHallAddress>

@@ -17,7 +17,12 @@ function TitleComment({ subTitle, sectionColor }) {
   return (
     <SContainer $sectionColor={sectionColor}>
       <div ref={ref} className={isView ? "frame-in" : ""}>
-        {useSubTitle(subTitle.type, "***", subTitle.font, subTitle.color)}
+        {useSubTitle({
+          type: subTitle.type,
+          text: "***",
+          font: subTitle.font,
+          color: sectionColor.pointColor,
+        })}
         <SHallInfo>
           <p>
             {data.information[0].EngName} ∙ {data.information[1].EngName}
