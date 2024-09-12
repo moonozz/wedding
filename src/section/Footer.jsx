@@ -5,7 +5,7 @@ import { useShare } from "../hook/useShare";
 import { flex, boxSize, paddingIgnore, fontSize } from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
-function Footer() {
+function Footer({ font }) {
   const { handleShare } = useShare();
   // const imgUrl = `${process.env.PUBLIC_URL}/assets/${data.img[0]}`;
   const imgUrl = "https://ifh.cc/g/zSRt9K.jpg";
@@ -15,6 +15,7 @@ function Footer() {
       <SBtn
         $bgColor={"#fce777"}
         $fontColor={"black"}
+        $font={font}
         onClick={() => handleShare(imgUrl)}
       >
         카카오톡 공유하기
@@ -25,7 +26,7 @@ function Footer() {
           alert("청첩장 링크가 복사되었습니다.");
         }}
       >
-        <SBtn $bgColor={"black"} $fontColor={"white"}>
+        <SBtn $bgColor={"black"} $fontColor={"white"} $font={font}>
           청첩장 링크 복사하기
         </SBtn>
       </CopyToClipboard>
@@ -52,7 +53,7 @@ const SContainer = styled.section`
 const SBtn = styled.button`
   ${boxSize("100%", "auto")};
   ${fontSize(20)};
-  font-family: "MaruBuri", sans-serif;
+  font-family: ${({ $font }) => `${$font}`}, sans-serif;
   border-radius: ${getVwSize(8)};
   padding: ${getVwSize(16)};
   margin-bottom: ${getVwSize(16)};

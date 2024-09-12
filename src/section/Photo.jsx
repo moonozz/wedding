@@ -38,13 +38,6 @@ function Photo({
           currentImg,
           setCurrentImg,
         })}
-        <PhotoAlbum
-          discript={"사진을 클릭해보세요."}
-          modal={modal}
-          setModal={setModal}
-          currentImg={currentImg}
-          setCurrentImg={setCurrentImg}
-        />
       </div>
     </SContainer>
   );

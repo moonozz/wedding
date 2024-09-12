@@ -3,7 +3,6 @@ import styled from "styled-components";
 import data from "../../data/data.json";
 import colorData from "./color.json";
 import Title from "./Title";
-// import Title from "../../section/Title";
 import TitleComment from "../../section/TitleComment";
 import Introduce from "../../section/Introduce";
 import Photo from "../../section/Photo";
@@ -20,13 +19,23 @@ import { flex, boxSize, position } from "../../utils/sMixinUtils";
 function Sample01() {
   const [modal, setModal] = useState(false);
   const [currentImg, setCurrentImg] = useState("");
+  const titleComment = "***";
   const subTitle = { color: "#f32a2a", font: "Abril Fatface", type: "text" };
   const photoInfo = { type: "", text: "사진을 넘겨보세요." };
+  const emojiArr = [
+    ["🎉", "❤️"], // 버튼에 들어가는 텍스트
+    ["❤️", "🍀"], // 오른쪽 버튼 클릭시 보이는 이모지
+    ["🎉", "😎"], // 왼쪽 버튼 클릭시 보이는 이모지
+  ];
 
   return (
     <Main>
       <Title font={"Pretendard"} />
-      <TitleComment subTitle={subTitle} sectionColor={colorData.titleComment} />
+      <TitleComment
+        subTitle={subTitle}
+        sectionColor={colorData.titleComment}
+        titleComment={titleComment}
+      />
       <ScrollImg imgUrl={data.img[7]} />
       <Introduce subTitle={subTitle} sectionColor={colorData.introduce} />
       <Photo
@@ -44,10 +53,10 @@ function Sample01() {
       <Account
         subTitle={subTitle}
         sectionColor={colorData.account}
-        padding={{ top: "3", bottom: "9" }}
+        padding={{ top: "3", bottom: "6" }}
       />
-      <Footer />
-      <FixedBtn />
+      <Footer font={"MaruBuri"} />
+      <FixedBtn emojiArr={emojiArr} />
       {modal ? (
         <Modal
           imgUrl={currentImg}
