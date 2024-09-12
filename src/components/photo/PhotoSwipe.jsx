@@ -5,8 +5,8 @@ import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import { boxSize, position, flex, fontSize } from "../../utils/sMixinUtils";
 
 function PhotoSwipe({ imgUrl, text }) {
-  // const containerRef = useRef(null);
-  const imgData = data.img.slice(1);
+  // const imgData = data.img.slice(1);
+  const imgData = data.img;
 
   const [start, setStart] = useState(0);
   const [trans, setTrans] = useState(false);
@@ -38,7 +38,6 @@ function PhotoSwipe({ imgUrl, text }) {
   return (
     <SContainer>
       <SDiscript>{text}</SDiscript>
-
       <SInner
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
@@ -68,7 +67,7 @@ const SContainer = styled.div`
   overflow-x: hidden;
   user-select: none;
   -webkit-user-drag: none;
-  touch-action: auto;
+  touch-action: pan-y;
   padding-left: 12vw; // 사진 가운데 배치용
 
   @media screen and (min-width: 640px) {
@@ -79,7 +78,7 @@ const SContainer = styled.div`
 const SDiscript = styled.p`
   ${fontSize("24")}
   margin: ${getVwSize(40)} 0;
-  padding-right: 12vw; // 사진 가운데 배치용
+  padding-right: 12vw; // 텍스트 가운데 배치용
 
   @media screen and (min-width: 640px) {
     margin: ${getSize(40)} 0;
@@ -91,12 +90,12 @@ const SInner = styled.ul`
   display: block;
   ${flex("row", "", "")};
   ${position("relative")};
-  ${boxSize(`calc(${data.img.length - 1} * 80vw)`, "100%")};
+  ${boxSize(`calc(${data.img.length - 1} * 88vw)`, "100%")};
   /* -webkit-box-orient: horizontal; */
   /* transition-property: transform; */
   transform: ${({ $transform }) =>
     `translateX(-${
-      $transform * 80
+      $transform * 81.7
     }vw)`}; //만약 이미지 사이즈만큼하게 하려면 state를 추가해서 그걸 80에 대입해야할 것 같음
   transition: ${({ $trans }) => ($trans ? "transform 0.3s ease" : "none")};
 
@@ -109,13 +108,14 @@ const SImgLi = styled.li`
   ${flex("row", "center", "center")};
   ${position("relative")};
   overflow: hidden;
-  width: 80vw;
+  width: 88vw;
   height: 100vw;
   /* margin-right: 2rem; */
   margin-right: ${getSize(20)};
 
   @media screen and (min-width: 640px) {
     width: 56rem;
+    height: 840px;
   }
 `;
 

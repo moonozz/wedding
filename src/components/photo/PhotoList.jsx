@@ -12,7 +12,8 @@ function PhotoList({
   currentImg,
   setCurrentImg,
 }) {
-  const imgData = data.img.slice(1);
+  // const imgData = data.img.slice(1);
+  const imgData = data.img;
 
   const handleModalOpen = (img) => {
     setModal(true);

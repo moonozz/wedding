@@ -55,10 +55,14 @@ const SBtn = styled.button`
   ${fontSize(20)};
   font-family: ${({ $font }) => `${$font}`}, sans-serif;
   border-radius: ${getVwSize(8)};
-  padding: ${getVwSize(16)};
+  padding: ${getVwSize(24)};
   margin-bottom: ${getVwSize(16)};
   background-color: ${({ $bgColor }) => $bgColor};
   color: ${({ $fontColor }) => $fontColor};
+
+  @media screen and (min-width: 640px) {
+    padding: ${getSize(24)};
+  }
 `;
 
 const Stxt = styled.p`

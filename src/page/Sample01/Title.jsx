@@ -33,7 +33,7 @@ function Title({ font }) {
       <SInner>
         <SImgBox>
           <Img
-            src={`${process.env.PUBLIC_URL}/assets/${data.img[0]}`}
+            src={`${process.env.PUBLIC_URL}/assets/${data.img[7]}`}
             alt={`${data.information[0].name}과 ${data.information[1].name}의 청첩장 타이틀 이미지`}
           />
         </SImgBox>
