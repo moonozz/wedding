@@ -1,14 +1,13 @@
 import styled from "styled-components";
-import data from "../data/data.json";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useShare } from "../hook/useShare";
 import { flex, boxSize, paddingIgnore, fontSize } from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
-function Footer({ font }) {
+function Footer({ font, shareImgURL }) {
   const { handleShare } = useShare();
-  // const imgUrl = `${process.env.PUBLIC_URL}/assets/${data.img[0]}`;
-  const imgUrl = "https://ifh.cc/g/zSRt9K.jpg";
+  const windowUrl = window.document.URL.toString().split("/");
+  const sampleUrl = windowUrl[windowUrl.length - 1];
 
   return (
     <SContainer>
@@ -16,12 +15,13 @@ function Footer({ font }) {
         $bgColor={"#fce777"}
         $fontColor={"black"}
         $font={font}
-        onClick={() => handleShare(imgUrl)}
+        onClick={() => handleShare(shareImgURL, sampleUrl)}
       >
         카카오톡 공유하기
       </SBtn>
       <CopyToClipboard
-        text={"http://localhost:3000"}
+        // text={"http://localhost:3000"}
+        text={`http://localhost:3000/${sampleUrl}`}
         onCopy={() => {
           alert("청첩장 링크가 복사되었습니다.");
         }}

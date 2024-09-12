@@ -23,10 +23,11 @@ function Sample01() {
   const subTitle = { color: "#f32a2a", font: "Abril Fatface", type: "text" };
   const photoInfo = { type: "", text: "사진을 넘겨보세요." };
   const emojiArr = [
-    ["🎉", "❤️"], // 버튼에 들어가는 텍스트
-    ["❤️", "🍀"], // 오른쪽 버튼 클릭시 보이는 이모지
+    ["😎", "💗"], // 버튼에 들어가는 텍스트
+    ["🤵🏻‍♂️", "👰🏻‍♀️"], // 오른쪽 버튼 클릭시 보이는 이모지
     ["🎉", "😎"], // 왼쪽 버튼 클릭시 보이는 이모지
   ];
+  const shareImgURL = "https://ifh.cc/g/vyV3ov.jpg";
 
   return (
     <Main>
@@ -36,7 +37,7 @@ function Sample01() {
         sectionColor={colorData.titleComment}
         titleComment={titleComment}
       />
-      <ScrollImg imgUrl={data.img[7]} />
+      <ScrollImg imgUrl={data.img[6]} />
       <Introduce subTitle={subTitle} sectionColor={colorData.introduce} />
       <Photo
         modal={modal}
@@ -55,7 +56,7 @@ function Sample01() {
         sectionColor={colorData.account}
         padding={{ top: "3", bottom: "6" }}
       />
-      <Footer font={"MaruBuri"} />
+      <Footer font={"MaruBuri"} shareImgURL={shareImgURL} />
       <FixedBtn emojiArr={emojiArr} />
       {modal ? (
         <Modal
