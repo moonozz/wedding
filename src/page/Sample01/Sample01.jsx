@@ -3,7 +3,7 @@ import styled from "styled-components";
 import data from "../../data/data.json";
 import colorData from "./color.json";
 import Title from "./Title";
-import TitleComment from "../../section/TitleComment";
+import TitleComment from "./TitleComment";
 import Introduce from "../../section/Introduce";
 import Photo from "../../section/Photo";
 import OurDay from "../../section/OurDay";
