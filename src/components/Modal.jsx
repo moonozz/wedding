@@ -12,8 +12,18 @@ function Modal({ imgUrl, modal, setModal, setCurrentImg }) {
   };
 
   useEffect(() => {
-    document.body.style.overflow = "hidden";
+    document.body.style.overflowY = "hidden";
   }, []);
+
+  // useEffect(() => {
+  //   if (modal) {
+  //     document.body.style.overflow = "hidden"; // hidden 출력됨
+  //   }
+
+  //   return () => {
+  //     document.body.style.overflow = "auto";
+  //   };
+  // }, [modal]);
 
   return (
     <SModalCom $isOpen={modal}>
@@ -42,6 +52,7 @@ const SModalCom = styled.div`
   /* ${position("absolute")}; */
   z-index: 100;
   /* animation: fadeIn; */
+  touch-action: pan-x;
   display: ${({ $isOpen }) => ($isOpen ? "flex" : "none")};
   align-items: center;
   justify-content: center;

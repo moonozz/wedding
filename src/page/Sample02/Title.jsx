@@ -1,43 +1,30 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../../data/data.json";
-import { getKorDate, getWeek, getTime, getDday } from "../../utils/filter";
+import { getDate, getWeek, getTime, getDday } from "../../utils/filter";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import {
   position,
   boxSize,
-  dim,
   fontSize,
   flex,
+  paddingIgnore,
 } from "../../utils/sMixinUtils";
 
 function Title({ font }) {
   return (
     <SContainer>
-      <SDate $font={font}>
-        <p>
-          {getKorDate(2)} {getWeek(data.when, "kor")}
-        </p>
-        <p>{data.time}</p>
-        <SInfo>
-          <span>D - {getDday()}일</span>
-          <SDiary>
-            <span>{getTime("kor")}</span>
-            <span>
-              {data.information[0].name} {data.information[1].name} 결혼식
-            </span>
-            <span>{data.location.weddingHall}</span>
-          </SDiary>
-        </SInfo>
-      </SDate>
-      <SInner>
-        <SImgBox>
-          <Img
-            src={`${process.env.PUBLIC_URL}/assets/${data.img[0]}`}
-            alt={`${data.information[0].name}과 ${data.information[1].name}의 청첩장 타이틀 이미지`}
-          />
-        </SImgBox>
-      </SInner>
+      <STitleT>
+        <p>WE'RE</p>
+        <p>GETTING</p>
+      </STitleT>
+      <Img src={`${process.env.PUBLIC_URL}/assets/${data.img[5]}`} />
+      <STitleB $font={font}>Married</STitleB>
+      <SInfo>
+        <span>{data.information[0].EngName}</span>
+        <span>{getDate("", 2)}</span>
+        <span>{data.information[1].EngName}</span>
+      </SInfo>
     </SContainer>
   );
 }
@@ -45,83 +32,98 @@ function Title({ font }) {
 export default Title;
 
 const SContainer = styled.section`
-  ${position("relative")}
-`;
-
-const SDate = styled.div`
-  ${boxSize("100%", "auto")};
-  ${position("absolute")};
-  ${flex("column", "", "center")};
-  font-family: ${({ $font }) => `${$font}`}, sans-serif;
-  z-index: 10;
-  color: white;
-  margin: ${getVwSize(80)} 0 ${getVwSize(56)};
-  text-align: center;
-
-  p:nth-child(1) {
-    ${fontSize("30")};
-    font-weight: 300;
-  }
-  p:nth-child(2) {
-    ${fontSize("150")};
-    font-weight: 200;
-    line-height: 1.1;
-  }
+  padding: ${getVwSize(170)} ${getVwSize(170)} ${getVwSize(70)};
+  background-color: #e4e3d8;
+  ${position("relative")};
 
   @media screen and (min-width: 640px) {
-    margin: ${getSize(80)} 0 ${getSize(56)};
-    text-align: center;
+    padding: ${getSize(170)} ${getSize(170)} ${getSize(70)};
   }
 `;
 
-const SInfo = styled.div`
-  ${boxSize("100%", "auto")};
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  padding: ${getVwSize(40)} 0;
-  span {
-    ${fontSize("24")};
-  }
-  span:first-child {
+const STitleT = styled.div`
+  ${flex("column", "flex-start", "center")};
+  p {
+    ${fontSize(60)};
     font-weight: 700;
-  }
-
-  @media screen and (min-width: 640px) {
-    padding: ${getSize(40)} 0;
-  }
-`;
-
-const SDiary = styled.div`
-  ${flex("column", "baseline", "")};
-  padding: 0 ${getVwSize("10")};
-`;
-
-const SInner = styled.div`
-  ${boxSize("100vw", "85vh")};
-  /* ${boxSize("100vw", "88vh")}; */
-
-  &::after {
-    ${boxSize("100vw", "85vh")};
-    ${dim}
-  }
-
-  @media screen and (min-width: 640px) {
-    ${boxSize("640px", "85vh")};
-    &::after {
-      ${boxSize("640px", "85vh")};
-    }
-  }
-`;
-
-const SImgBox = styled.div`
-  ${boxSize("100vw", "85vh")};
-  @media screen and (min-width: 640px) {
-    ${boxSize("640px", "85vh")};
+    line-height: 1.1;
   }
 `;
 
 const Img = styled.img`
-  ${boxSize("100%", "100%")};
+  ${boxSize("100%", "60vw")};
+  border-radius: 1rem;
+  margin: ${getVwSize(24)} 0 ${getVwSize(10)};
   object-fit: cover;
+
+  @media screen and (min-width: 640px) {
+    ${boxSize("100%", "384px")};
+    margin: ${getSize(24)} 0 ${getSize(10)};
+  }
+`;
+
+const STitleB = styled.p`
+  font-family: ${({ $font }) => `${$font}`}, sans-serif;
+  ${fontSize(90)};
+  margin-right: 2rem;
+`;
+
+const SInfo = styled.div`
+  ${paddingIgnore};
+  ${boxSize("100vw", "auto")};
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 ${getVwSize(50)};
+  margin: ${getVwSize(100)} 0 0;
+  span {
+    ${fontSize(20)};
+    font-weight: 500;
+  }
+  span:first-child {
+    text-align: left;
+  }
+  span:last-child {
+    text-align: right;
+  }
+
+  @media screen and (min-width: 640px) {
+    ${boxSize("640px", "auto")};
+    padding: 0 ${getSize(50)};
+    margin: ${getSize(100)} 0 0;
+  }
+`;
+
+const SDate = styled.p`
+  ${fontSize(20)};
+  font-weight: 500;
+  margin: ${getVwSize(90)} 0 0;
+
+  @media screen and (min-width: 640px) {
+    margin: ${getVwSize(90)} 0 0;
+  }
+`;
+
+const SName = styled.div`
+  ${position("absolute")};
+  bottom: ${getVwSize(100)};
+  right: 0;
+  ${boxSize("100vw", "auto")};
+  ${flex("row", "", "space-between")};
+  /* ${flex("column", "", "center")}; */
+  ${paddingIgnore};
+  padding: 0 ${getVwSize(50)};
+  /* margin-top: ${getVwSize(90)}; */
+  margin-top: ${getVwSize(10)};
+  p {
+    ${fontSize(20)};
+    font-weight: 500;
+  }
+
+  @media screen and (min-width: 640px) {
+    ${boxSize("640px", "auto")};
+    padding: 0 ${getSize(50)};
+    /* margin-top: ${getSize(90)}; */
+    margin-top: ${getSize(10)};
+    bottom: ${getSize(100)};
+  }
 `;

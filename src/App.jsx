@@ -2,7 +2,8 @@ import "./App.css";
 import { useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { fontSize } from "./\butils/sMixinUtils";
+import { getSize } from "./utils/sThemeUtils";
+import { fontSize, flex } from "./\butils/sMixinUtils";
 
 function App() {
   useEffect(() => {
@@ -15,6 +16,7 @@ function App() {
     <SContainer>
       <SBtn>
         <Link to="/sample01">샘플01 보러가기</Link>
+        <Link to="/sample02">샘플02 보러가기</Link>
       </SBtn>
     </SContainer>
   );
@@ -22,8 +24,12 @@ function App() {
 
 export default App;
 
-const SContainer = styled.div``;
+const SContainer = styled.div`
+  padding: ${getSize(20)};
+`;
 
 const SBtn = styled.button`
-  ${fontSize("24")}
+  ${flex("column", "", "")};
+  ${fontSize("24")};
+  gap: ${getSize(20)};
 `;

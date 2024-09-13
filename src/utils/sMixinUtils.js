@@ -56,7 +56,6 @@ export const xyValue = (
 `;
 
 export const dim = css`
-  /* ::after { */
   position: absolute;
   top: 0;
   right: 0;
@@ -64,7 +63,6 @@ export const dim = css`
   left: 0;
   content: "";
   background-color: rgb(0, 0, 0, 0.2);
-  /* } */
 `;
 
 export const sPosterTxt = css`
@@ -141,10 +139,10 @@ export const defaultTxtStyle = (
 `;
 
 export const sectionPadding = css`
-  padding: ${getVwSize(80)} ${getVwSize(20)} ${getVwSize(90)};
+  padding: ${getVwSize(100)} ${getVwSize(20)} ${getVwSize(120)};
 
   @media screen and (min-width: 640px) {
-    padding: ${getSize(80)} ${getSize(20)} ${getSize(90)};
+    padding: ${getSize(100)} ${getSize(20)} ${getSize(120)};
   }
 `;
 
