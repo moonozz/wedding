@@ -41,10 +41,10 @@ const SContainer = styled.div`
 
 const STitle = styled.p`
   ${fontSize("24")}
-  margin-bottom: ${getVwSize(32)};
+  margin-bottom: ${getVwSize(30)};
   font-weight: 900;
 
   @media screen and (min-width: 640px) {
-    margin-bottom: ${getSize(40)};
+    margin-bottom: ${getSize(30)};
   }
 `;

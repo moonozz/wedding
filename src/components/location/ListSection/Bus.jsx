@@ -35,33 +35,33 @@ export default Bus;
 
 const SContainer = styled.ul`
   ${boxSize("100%", "auto")};
-  ${defaultTxtStyle("", "20", "")};
+  ${defaultTxtStyle("", "24", "")};
 `;
 
 const SContentLi = styled.li`
   ${flex("column", "flex-start", "")};
-  margin-bottom: ${getVwSize(24)};
+  margin-bottom: ${getVwSize(32)};
 
   @media screen and (min-width: 640px) {
-    margin-bottom: ${getSize(24)} 0;
+    margin-bottom: ${getSize(32)};
   }
 `;
 
 const SStopNm = styled.p`
-  font-weight: 700;
-  margin-bottom: ${getVwSize(10)};
+  /* font-weight: 700; */
+  margin: ${getVwSize(10)} 0;
 
   @media screen and (min-width: 640px) {
-    margin-bottom: ${getSize(10)} 0;
+    margin: ${getSize(10)} 0;
   }
 `;
 
 const STagGroup = styled.div`
-  ${flex("row", "", "")};
-  padding: ${getVwSize(4)} 0;
+  ${flex("row", "baseline", "")};
+  padding: ${getVwSize(4)} 0 ${getVwSize(8)} 0;
 
   @media screen and (min-width: 640px) {
-    padding: ${getSize(4)} 0;
+    padding: ${getSize(4)} 0 ${getSize(8)} 0;
   }
 `;
 

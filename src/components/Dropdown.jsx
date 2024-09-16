@@ -29,9 +29,9 @@ function Dropdown({ title, info }) {
         {info.map((el, idx) => {
           return (
             <SLi key={idx}>
-              <p>
+              <SLiTag>
                 {el.tag} {el.name}
-              </p>
+              </SLiTag>
               <SAccount>
                 <p>
                   {el.account[0]} {el.account[1]}
@@ -57,7 +57,7 @@ export default Dropdown;
 
 const SContainer = styled.div`
   ${flex("column", "", "")};
-  ${defaultTxtStyle("", "20", "")}
+  /* ${defaultTxtStyle("", "24", "")} */
   /* ${fontSize("20")}; */
   background-color: ${({ theme }) => theme.color.white};
   border-radius: ${getVwSize(8)};
@@ -71,37 +71,51 @@ const SContainer = styled.div`
 const STitleDiv = styled.div`
   ${flex("row", "center", "space-between")};
   ${position("relative")};
-  padding: ${getVwSize(24)};
+  padding: ${getVwSize(30)} ${getVwSize(32)};
 
   @media screen and (min-width: 640px) {
-    padding: ${getSize(24)};
+    padding: ${getSize(30)} ${getSize(32)};
   }
 `;
 
 const STitle = styled.p`
-  ${fontSize("20")};
+  ${fontSize("24")};
 `;
 
 const SGroup = styled.ul`
-  ${boxSize("100%", "auto")};
   overflow: hidden;
   max-height: ${({ $dropdown }) => ($dropdown ? "1000px" : "0px")};
   opacity: ${({ $dropdown }) => ($dropdown ? "1" : "0")};
   transition: max-height 0.2s ease, opacity 0.3s ease;
+  border-top: 0.5px solid rgb(0, 0, 0, 0.2);
+  margin: 0 ${getVwSize(32)};
+
+  @media screen and (min-width: 640px) {
+    margin: 0 ${getSize(32)};
+  }
 `;
 
 const SLi = styled.li`
   ${flex("column", "baseline", "")};
-  ${fontSize("20")};
-  padding: ${getVwSize(16)} ${getVwSize(24)};
+  margin: ${getVwSize(32)} 0;
 
   @media screen and (min-width: 640px) {
-    padding: ${getSize(16)} ${getSize(24)};
+    margin: ${getSize(32)} 0;
+  }
+`;
+
+const SLiTag = styled.p`
+  ${fontSize("20")};
+  margin-bottom: ${getVwSize(10)};
+  @media screen and (min-width: 640px) {
+    ${fontSize("20")};
+    margin-bottom: ${getSize(10)};
   }
 `;
 
 const SAccount = styled.div`
   ${boxSize("100%", "auto")};
+  ${defaultTxtStyle("", "24", "")}
   ${flex("row", "baseline", "space-between")};
 `;
 
@@ -121,7 +135,7 @@ const STitleSvg = styled.span`
     ${position("absolute")};
     width: 2%;
     top: 50%;
-    right: 4.6vw;
+    right: 6.1vw;
     transform: ${({ $dropdown }) =>
       $dropdown ? "rotateZ(-45deg)" : "rotateZ(45deg)"};
     transition: transform 0.3s ease;
@@ -133,7 +147,7 @@ const STitleSvg = styled.span`
     ${position("absolute")};
     width: 2%;
     top: 50%;
-    right: 3.5vw;
+    right: 5vw;
     transform: ${({ $dropdown }) =>
       $dropdown ? "rotateZ(45deg)" : "rotateZ(-45deg)"};
     transition: transform 0.3s ease;
@@ -141,11 +155,11 @@ const STitleSvg = styled.span`
 
   @media screen and (min-width: 640px) {
     &::before {
-      right: 3.75rem;
+      right: 4.15rem;
     }
 
     &::after {
-      right: 3rem;
+      right: 3.4rem;
     }
   }
 `;

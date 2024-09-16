@@ -98,26 +98,29 @@ const SDiary = styled.div`
 `;
 
 const SInner = styled.div`
-  ${boxSize("100vw", "85vh")};
-  /* ${boxSize("100vw", "88vh")}; */
+  ${boxSize("100vw", "89vh")};
+  max-height: 1200px;
 
   &::after {
-    ${boxSize("100vw", "85vh")};
+    ${boxSize("100vw", "89vh")};
     ${dim}
+    max-height: 1200px;
   }
 
   @media screen and (min-width: 640px) {
-    ${boxSize("640px", "85vh")};
+    ${boxSize("640px", "89vh")};
     &::after {
-      ${boxSize("640px", "85vh")};
+      ${boxSize("640px", "89vh")};
     }
   }
 `;
 
 const SImgBox = styled.div`
-  ${boxSize("100vw", "85vh")};
+  ${boxSize("100vw", "89vh")};
+  max-height: 1200px;
+
   @media screen and (min-width: 640px) {
-    ${boxSize("640px", "85vh")};
+    ${boxSize("640px", "89vh")};
   }
 `;
 

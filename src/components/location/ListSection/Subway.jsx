@@ -32,7 +32,7 @@ export default Subway;
 
 const SContainer = styled.ul`
   ${boxSize("100%", "auto")};
-  ${defaultTxtStyle("", "20", "")};
+  ${defaultTxtStyle("", "24", "")};
 `;
 
 const SContentLi = styled.li`
@@ -44,7 +44,7 @@ const SLineDiv = styled.div`
 `;
 
 const STagGroup = styled.div`
-  ${flex("row", "", "")};
+  ${flex("row", "baseline", "")};
   margin: ${getVwSize(10)} 0;
 
   @media screen and (min-width: 640px) {
@@ -53,7 +53,11 @@ const STagGroup = styled.div`
 `;
 
 const STagP = styled.p`
-  margin-right: ${getSize(8)};
+  margin-right: ${getVwSize(16)};
+
+  @media screen and (min-width: 640px) {
+    margin-right: ${getSize(16)};
+  }
 `;
 
 const SDiscript = styled.p`
@@ -64,6 +68,6 @@ const SDiscript = styled.p`
 
   @media screen and (min-width: 640px) {
     padding-left: ${getSize(24)};
-    margin-bottom: ${getSize(40)};
+    margin-bottom: ${getSize(32)};
   }
 `;

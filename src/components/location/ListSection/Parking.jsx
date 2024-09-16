@@ -21,14 +21,14 @@ export default Parking;
 
 const SContainer = styled.ul`
   ${boxSize("100%", "auto")};
-  ${defaultTxtStyle("", "20", "")};
+  ${defaultTxtStyle("", "24", "")};
   ${flex("column", "flex-start", "")};
 `;
 
 const SContentLi = styled.li`
-  padding: ${getVwSize(4)} 0;
+  padding: ${getVwSize(4)} 0 ${getVwSize(8)};
 
   @media screen and (min-width: 640px) {
-    padding: ${getSize(4)} 0;
+    padding: ${getSize(4)} 0 ${getVwSize(8)};
   }
 `;
