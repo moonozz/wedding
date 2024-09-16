@@ -15,7 +15,7 @@ import {
 } from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
-function Location({ subTitle, sectionColor }) {
+function Location({ subTitle, sectionColor, font }) {
   // const { onCopy } = useCopy();
 
   const locationData = data.location;
@@ -44,7 +44,7 @@ function Location({ subTitle, sectionColor }) {
             alert("주소가 복사되었습니다.");
           }}
         >
-          <SCopy>주소 복사하기</SCopy>
+          <SCopy $font={font}>주소 복사하기</SCopy>
         </CopyToClipboard>
       </SAddress>
       <Map />
@@ -87,6 +87,7 @@ const SHallAddress = styled.p`
 const SCopy = styled.button`
   ${buttonLine("20", "black")}
   margin: ${getVwSize(8)} 0 ${getVwSize(10)};
+  font-family: ${({ $font }) => `${$font}`}, sans-serif;
 
   @media screen and (min-width: 640px) {
     margin: ${getSize(8)} 0 ${getSize(10)};

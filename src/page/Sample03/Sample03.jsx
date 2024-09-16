@@ -22,6 +22,7 @@ function Sample03() {
   const subTitle = { color: "#B9AB8D", font: "Pretendard", type: "circle" };
   const photoInfo = { type: "album", text: "사진을 클릭해보세요." };
   const shareImgURL = "https://ifh.cc/g/5Jv2t9.jpg";
+  const fontFamily = "Pretendard";
 
   return (
     <Main>
@@ -44,11 +45,16 @@ function Sample03() {
         padding={{ top: "8", bottom: "0" }}
         photoInfo={photoInfo}
       />
-      <Location subTitle={subTitle} sectionColor={colorData.location} />
+      <Location
+        subTitle={subTitle}
+        sectionColor={colorData.location}
+        font={fontFamily}
+      />
       <Account
         subTitle={subTitle}
         sectionColor={colorData.account}
         padding={{ top: "8", bottom: "6" }}
+        font={fontFamily}
       />
       <Footer font={"Pretendard"} shareImgURL={shareImgURL} />
       {modal ? (

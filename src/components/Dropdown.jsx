@@ -11,7 +11,7 @@ import {
 } from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
-function Dropdown({ title, info }) {
+function Dropdown({ title, info, font }) {
   const [dropdown, setDropdown] = useState(false);
 
   const handleClick = () => {
@@ -42,7 +42,7 @@ function Dropdown({ title, info }) {
                     alert("계좌번호가 복사되었습니다.");
                   }}
                 >
-                  <SCopy>복사하기</SCopy>
+                  <SCopy $font={font}>복사하기</SCopy>
                 </CopyToClipboard>
               </SAccount>
             </SLi>
@@ -122,6 +122,7 @@ const SAccount = styled.div`
 const SCopy = styled.button`
   ${buttonLine("20", "black")}
   margin: ${getVwSize(8)} 0 ${getVwSize(10)};
+  font-family: ${({ $font }) => `${$font}`}, sans-serif;
 
   @media screen and (min-width: 640px) {
     margin: ${getSize(8)} 0 ${getSize(10)};

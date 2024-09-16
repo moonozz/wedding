@@ -28,6 +28,7 @@ function Sample01() {
     ["🎉", "😎"], // 왼쪽 버튼 클릭시 보이는 이모지
   ];
   const shareImgURL = "https://ifh.cc/g/vyV3ov.jpg";
+  const fontFamily = "GowunBatang-Regular";
 
   return (
     <Main>
@@ -50,13 +51,18 @@ function Sample01() {
         photoInfo={photoInfo}
       />
       <OurDay subTitle={subTitle} sectionColor={colorData.calendar} />
-      <Location subTitle={subTitle} sectionColor={colorData.location} />
+      <Location
+        subTitle={subTitle}
+        sectionColor={colorData.location}
+        font={fontFamily}
+      />
       <Account
         subTitle={subTitle}
         sectionColor={colorData.account}
         padding={{ top: "3", bottom: "6" }}
+        font={fontFamily}
       />
-      <Footer font={"MaruBuri"} shareImgURL={shareImgURL} />
+      <Footer font={fontFamily} shareImgURL={shareImgURL} />
       <FixedBtn emojiArr={emojiArr} />
       {modal ? (
         <Modal
@@ -77,12 +83,11 @@ export default Sample01;
 const Main = styled.div`
   ${position("relative")};
   ${flex("column", "", "")};
-  /* background-color: #f4f4f4; */
   ${boxSize("100vw", "")};
   max-width: ${getSize(640)};
   min-width: ${getSize(200)};
   text-align: center;
-  font-family: "MaruBuri", sans-serif;
+  font-family: "GowunBatang-Regular", sans-serif;
 
   @media screen and (min-width: 640px) {
     ${boxSize("100%", "")}

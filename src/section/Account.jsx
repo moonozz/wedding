@@ -7,7 +7,7 @@ import Dropdown from "../components/Dropdown";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { boxSize, flex, animation } from "../utils/sMixinUtils";
 
-function Account({ subTitle, sectionColor, padding }) {
+function Account({ subTitle, sectionColor, padding, font }) {
   const { ref, isView } = useScrollEvent();
 
   const infoData = data.account;
@@ -24,8 +24,8 @@ function Account({ subTitle, sectionColor, padding }) {
           color: sectionColor.pointColor,
         })}
         <SDropdownGroup>
-          <Dropdown title={"신랑"} info={groomInfo} />
-          <Dropdown title={"신부"} info={brideInfo} />
+          <Dropdown title={"신랑"} info={groomInfo} font={font} />
+          <Dropdown title={"신부"} info={brideInfo} font={font} />
         </SDropdownGroup>
       </div>
     </SContainer>

@@ -52,7 +52,7 @@ const SContainer = styled.section`
 
 const SBtn = styled.button`
   ${boxSize("100%", "auto")};
-  ${fontSize(20)};
+  ${fontSize(24)};
   font-family: ${({ $font }) => `${$font}`}, sans-serif;
   border-radius: ${getVwSize(8)};
   padding: ${getVwSize(24)};
