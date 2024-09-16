@@ -23,6 +23,7 @@ function Sample02() {
   const photoInfo = { type: "album", text: "사진을 클릭해보세요." };
   const shareImgURL = "https://ifh.cc/g/5Jv2t9.jpg";
   const fontFamily = "Pretendard";
+  const calenderBg = "color";
 
   return (
     <Main>
@@ -33,7 +34,11 @@ function Sample02() {
         titleComment={titleComment}
       />
       <ScrollImg imgUrl={data.img[6]} />
-      <OurDay subTitle={subTitle} sectionColor={colorData.calendar} />
+      <OurDay
+        subTitle={subTitle}
+        sectionColor={colorData.calendar}
+        calenderBg={calenderBg}
+      />
       <Introduce subTitle={subTitle} sectionColor={colorData.introduce} />
       <Photo
         modal={modal}

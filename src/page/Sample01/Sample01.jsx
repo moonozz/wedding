@@ -29,6 +29,7 @@ function Sample01() {
   ];
   const shareImgURL = "https://ifh.cc/g/vyV3ov.jpg";
   const fontFamily = "GowunBatang-Regular";
+  const calenderBg = "color";
 
   return (
     <Main>
@@ -50,7 +51,11 @@ function Sample01() {
         padding={{ top: "3", bottom: "9" }}
         photoInfo={photoInfo}
       />
-      <OurDay subTitle={subTitle} sectionColor={colorData.calendar} />
+      <OurDay
+        subTitle={subTitle}
+        sectionColor={colorData.calendar}
+        calenderBg={calenderBg}
+      />
       <Location
         subTitle={subTitle}
         sectionColor={colorData.location}

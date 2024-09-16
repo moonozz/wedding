@@ -7,7 +7,8 @@
   "calendar": {
     "bg": "#f4f4f4",
     "color": "black",
-    "pointColor": "#f32a2a"
+    "pointColor": "#f32a2a",
+    "pointTxtColor": "white"
   },
   "introduce": {
     "bg": "#f4f4f4",
