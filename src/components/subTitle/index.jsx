@@ -6,6 +6,9 @@ const useSubTitle = ({ type, text, font, color }) => {
     case "circle":
       return <SubTitleCircle text={text} font={font} color={color} />;
       break;
+    case "()":
+      return <SubTitleTxt text={`(${text})`} font={font} color={color} />;
+      break;
     default:
       return <SubTitleTxt text={text} font={font} color={color} />;
   }

@@ -61,7 +61,7 @@ function Sample02() {
         padding={{ top: "8", bottom: "6" }}
         font={fontFamily}
       />
-      <Footer font={"Pretendard"} shareImgURL={shareImgURL} />
+      <Footer font={fontFamily} shareImgURL={shareImgURL} />
       {modal ? (
         <Modal
           imgUrl={currentImg}

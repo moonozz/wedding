@@ -19,10 +19,11 @@ function Sample03() {
   const [modal, setModal] = useState(false);
   const [currentImg, setCurrentImg] = useState("");
   const titleComment = "240330";
-  const subTitle = { color: "#B9AB8D", font: "Pretendard", type: "circle" };
-  const photoInfo = { type: "album", text: "사진을 클릭해보세요." };
+  const subTitle = { color: "#B9AB8D", font: "NanumMyeongjoBold", type: "()" };
+  const photoInfo = { type: "swipe", text: "사진을 클릭해보세요." };
   const shareImgURL = "https://ifh.cc/g/5Jv2t9.jpg";
-  const fontFamily = "Pretendard";
+  const fontFamily = "NanumMyeongjo";
+  const calenderBg = "photo";
 
   return (
     <Main>
@@ -32,9 +33,14 @@ function Sample03() {
         sectionColor={colorData.titleComment}
         titleComment={titleComment}
       />
-      <ScrollImg imgUrl={data.img[6]} />
-      <OurDay subTitle={subTitle} sectionColor={colorData.calendar} />
+      <OurDay
+        subTitle={subTitle}
+        sectionColor={colorData.calendar}
+        calenderBg={calenderBg}
+        imgUrl={data.img[8]}
+      />
       <Introduce subTitle={subTitle} sectionColor={colorData.introduce} />
+      <ScrollImg imgUrl={data.img[6]} />
       <Photo
         modal={modal}
         setModal={setModal}
@@ -42,7 +48,7 @@ function Sample03() {
         currentImg={currentImg}
         setCurrentImg={setCurrentImg}
         sectionColor={colorData.photo}
-        padding={{ top: "8", bottom: "0" }}
+        padding={{ top: "8", bottom: "9" }}
         photoInfo={photoInfo}
       />
       <Location
@@ -56,7 +62,7 @@ function Sample03() {
         padding={{ top: "8", bottom: "6" }}
         font={fontFamily}
       />
-      <Footer font={"Pretendard"} shareImgURL={shareImgURL} />
+      <Footer font={fontFamily} shareImgURL={shareImgURL} />
       {modal ? (
         <Modal
           imgUrl={currentImg}
@@ -81,7 +87,7 @@ const Main = styled.div`
   max-width: ${getSize(640)};
   min-width: ${getSize(200)};
   text-align: center;
-  font-family: "Pretendard", sans-serif;
+  font-family: "NanumMyeongjo", sans-serif;
   overflow-y: ${({ modal }) => (modal ? "hidden" : "auto")};
 
   @media screen and (min-width: 640px) {

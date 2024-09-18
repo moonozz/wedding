@@ -16,6 +16,7 @@ export default SubTitleTxt;
 const STitle = styled.p`
   ${secTitle(({ $color }) => $color)};
   font-family: ${({ $font }) => `${$font}`}, sans-serif;
+  font-weight: 800;
   img {
     width: ${getVwSize(40)};
     height: auto;

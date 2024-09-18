@@ -5,13 +5,13 @@ import CallLi from "./CallLi";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import { flex, boxSize, defaultTxtStyle } from "../../utils/sMixinUtils";
 
-function Call() {
+function Call(sectionColor) {
   const groom = data.information[0];
   const bride = data.information[1];
 
   return (
     <SContainer>
-      <SGroup>
+      <SGroup $sectionColor={sectionColor}>
         <p>신랑측</p>
         <ul>
           <CallLi tag={"신랑"} name={groom.name} phone={groom.phone} />
@@ -27,7 +27,7 @@ function Call() {
           />
         </ul>
       </SGroup>
-      <SGroup>
+      <SGroup $sectionColor={sectionColor}>
         <p>신부측</p>
         <ul>
           <CallLi tag={"신부"} name={bride.name} phone={bride.phone} />
@@ -58,7 +58,8 @@ const SContainer = styled.div`
 const SGroup = styled.div`
   p:first-child {
     padding-bottom: ${getVwSize(24)};
-    border-bottom: 0.5px solid rgb(0, 0, 0, 0.5);
+    border-bottom: 0.5px solid;
+    border-color: {({$sectionColor}) => $sectionColor.color}
 
     @media screen and (min-width: 640px) {
       padding-bottom: ${getSize(24)};

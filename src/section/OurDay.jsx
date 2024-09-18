@@ -12,31 +12,42 @@ import {
   defaultTxtStyle,
   sectionPadding,
   animation,
+  dim,
+  position,
 } from "../utils/sMixinUtils";
 
-function OurDay({ subTitle, sectionColor }) {
+function OurDay({ subTitle, sectionColor, calenderBg, imgUrl }) {
   const { ref, isView } = useScrollEvent();
 
   const groom = data.information[0].name.slice(-2);
   const bride = data.information[1].name.slice(-2);
 
   return (
-    <SContainer $sectionColor={sectionColor}>
+    <SContainer>
       {/* <SAnimationDiv ref={ref} className={isView ? "frame-in" : ""}> */}
-      <div ref={ref} className={isView ? "frame-in" : ""}>
-        {useSubTitle({
-          type: subTitle.type,
-          text: "Our Day",
-          font: subTitle.font,
-          color: sectionColor.pointColor,
-        })}
-        <Calendar pointColor={sectionColor.pointColor} />
-        <SDDay $sectionColor={sectionColor}>
-          <p>{`${groom}, ${bride}의 결혼식이`}&nbsp;</p>
-          <p>{getDday()}</p>
-          <p>일 남았습니다.</p>
-        </SDDay>
-      </div>
+      <SBg
+        $sectionColor={sectionColor}
+        $calenderBg={calenderBg}
+        $imgUrl={imgUrl}
+      >
+        <div ref={ref} className={isView ? "frame-in" : ""}>
+          {useSubTitle({
+            type: subTitle.type,
+            text: "Our Day",
+            font: subTitle.font,
+            color: sectionColor.pointColor,
+          })}
+          <Calendar
+            pointColor={sectionColor.pointColor}
+            pointTxtColor={sectionColor.pointTxtColor}
+          />
+          <SDDay $sectionColor={sectionColor}>
+            <p>{`${groom}, ${bride}의 결혼식이`}&nbsp;</p>
+            <p>{getDday()}</p>
+            <p>일 남았습니다.</p>
+          </SDDay>
+        </div>
+      </SBg>
     </SContainer>
   );
 }
@@ -44,11 +55,8 @@ function OurDay({ subTitle, sectionColor }) {
 export default OurDay;
 
 const SContainer = styled.section`
-  ${sectionPadding};
-  /* padding: ${getSize(60)} 0 ${getSize(90)}; */
-  background-color: ${({ $sectionColor }) => $sectionColor.bg};
-  color: ${({ $sectionColor }) => $sectionColor.color};
-
+  ${boxSize("100%", "100%")};
+  ${position("relative")};
   div:first-child {
     ${flex("column", "center", "center")};
     ${boxSize("100%", "auto")};
@@ -56,6 +64,30 @@ const SContainer = styled.section`
       ${animation}
     }
   }
+
+  @media screen and (min-width: 640px) {
+    ${boxSize("64rem", "")};
+  }
+`;
+
+const SBg = styled.div`
+  ${sectionPadding};
+  ${({ $calenderBg, $sectionColor, $imgUrl }) =>
+    $calenderBg === "photo"
+      ? `
+        background-image: url(${process.env.PUBLIC_URL}/assets/${$imgUrl});
+        color: ${$sectionColor.color};
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &::before {
+          ${dim}
+        }
+      `
+      : `
+        background-color: ${$sectionColor.bg};
+        color: ${$sectionColor.color};
+      `}
 `;
 
 const SDDay = styled.div`

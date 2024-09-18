@@ -17,6 +17,7 @@ function App() {
       <SBtn>
         <Link to="/sample01">샘플01 보러가기</Link>
         <Link to="/sample02">샘플02 보러가기</Link>
+        <Link to="/sample03">샘플03 보러가기</Link>
       </SBtn>
     </SContainer>
   );

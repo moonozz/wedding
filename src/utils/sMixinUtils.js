@@ -62,7 +62,7 @@ export const dim = css`
   bottom: 0;
   left: 0;
   content: "";
-  background-color: rgb(0, 0, 0, 0.2);
+  background-color: rgb(0, 0, 0, 0.25);
 `;
 
 export const sPosterTxt = css`

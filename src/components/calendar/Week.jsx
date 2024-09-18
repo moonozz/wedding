@@ -5,7 +5,7 @@ import HeartIcon from "../icon/Heart";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import { boxSize, position, xyValue } from "../../utils/sMixinUtils";
 
-function Week({ el, pointColor }) {
+function Week({ el, pointColor, pointTxtColor }) {
   const date = data.when;
   const day = new Date(date).getDate().toString();
 
@@ -16,7 +16,13 @@ function Week({ el, pointColor }) {
           if (i === day) {
             return (
               <SDayLi key={idx}>
-                <p style={{ color: "#fff", zIndex: 10, position: "relative" }}>
+                <p
+                  style={{
+                    color: pointTxtColor,
+                    zIndex: 10,
+                    position: "relative",
+                  }}
+                >
                   {i}
                 </p>
                 <SHeartSpan>

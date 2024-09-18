@@ -30,7 +30,7 @@ function Introduce({ subTitle, sectionColor }) {
           height={"auto"}
         />
         <Name />
-        <Call />
+        <Call sectionColor={sectionColor} />
       </div>
     </SContainer>
   );

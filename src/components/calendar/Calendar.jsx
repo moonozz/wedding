@@ -5,7 +5,7 @@ import Week from "./Week";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import { flex, boxSize, defaultTxtStyle } from "../../utils/sMixinUtils";
 
-function Calendar({ pointColor }) {
+function Calendar({ pointColor, pointTxtColor }) {
   const [month, setMonth] = useState([]);
 
   const date = data.when;
@@ -60,7 +60,14 @@ function Calendar({ pointColor }) {
           </SWeekUl>
         </li>
         {month.map((el, idx) => {
-          return <Week key={idx} el={el} pointColor={pointColor} />;
+          return (
+            <Week
+              key={idx}
+              el={el}
+              pointColor={pointColor}
+              pointTxtColor={pointTxtColor}
+            />
+          );
         })}
       </SMonthUl>
     </Scontainer>

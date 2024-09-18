@@ -49,9 +49,10 @@ const SContainer = styled.section`
 `;
 
 const SDate = styled.div`
-  ${boxSize("100%", "auto")};
+  ${boxSize("100vw", "auto")};
   ${position("absolute")};
   ${flex("column", "", "center")};
+  /* padding: 0 ${getVwSize(24)}; */
   font-family: ${({ $font }) => `${$font}`}, sans-serif;
   z-index: 10;
   color: white;
@@ -69,7 +70,9 @@ const SDate = styled.div`
   }
 
   @media screen and (min-width: 640px) {
+    ${boxSize("640px", "auto")};
     margin: ${getSize(80)} 0 ${getSize(56)};
+    /* padding: 0 ${getSize(24)}; */
     text-align: center;
   }
 `;
@@ -103,12 +106,12 @@ const SInner = styled.div`
 
   &::after {
     ${boxSize("100vw", "89vh")};
-    ${dim}
+    ${dim};
     max-height: 1200px;
   }
 
   @media screen and (min-width: 640px) {
-    ${boxSize("640px", "89vh")};
+    /* ${boxSize("640px", "89vh")}; */
     &::after {
       ${boxSize("640px", "89vh")};
     }
