@@ -92,38 +92,3 @@ const SInfo = styled.div`
     margin: ${getSize(100)} 0 0;
   }
 `;
-
-const SDate = styled.p`
-  ${fontSize(20)};
-  font-weight: 500;
-  margin: ${getVwSize(90)} 0 0;
-
-  @media screen and (min-width: 640px) {
-    margin: ${getVwSize(90)} 0 0;
-  }
-`;
-
-const SName = styled.div`
-  ${position("absolute")};
-  bottom: ${getVwSize(100)};
-  right: 0;
-  ${boxSize("100vw", "auto")};
-  ${flex("row", "", "space-between")};
-  /* ${flex("column", "", "center")}; */
-  ${paddingIgnore};
-  padding: 0 ${getVwSize(50)};
-  /* margin-top: ${getVwSize(90)}; */
-  margin-top: ${getVwSize(10)};
-  p {
-    ${fontSize(20)};
-    font-weight: 500;
-  }
-
-  @media screen and (min-width: 640px) {
-    ${boxSize("640px", "auto")};
-    padding: 0 ${getSize(50)};
-    /* margin-top: ${getSize(90)}; */
-    margin-top: ${getSize(10)};
-    bottom: ${getSize(100)};
-  }
-`;
