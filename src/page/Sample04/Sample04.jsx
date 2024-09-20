@@ -15,32 +15,26 @@ import ScrollImg from "../../components/ScrollImg";
 import { getSize } from "../../utils/sThemeUtils";
 import { flex, boxSize, position } from "../../utils/sMixinUtils";
 
-function Sample03() {
+function Sample04() {
   const [modal, setModal] = useState(false);
   const [currentImg, setCurrentImg] = useState("");
   const titleComment = "240330";
-  const subTitle = { color: "#B9AB8D", font: "NanumMyeongjoBold", type: "()" };
+  const subTitle = { color: "#B9AB8D", font: "Pretendard", type: "circle" };
   const photoInfo = { type: "swipe", text: "사진을 넘겨보세요." };
   const shareImgURL = "https://ifh.cc/g/5Jv2t9.jpg";
-  const fontFamily = "NanumMyeongjo";
+  const fontFamily = "Pretendard";
   const calenderBg = "photo";
 
   return (
     <Main>
-      <Title font={"Pinyon Script"} />
+      <Title />
       <TitleComment
         subTitle={subTitle}
         sectionColor={colorData.titleComment}
         titleComment={titleComment}
       />
-      <OurDay
-        subTitle={subTitle}
-        sectionColor={colorData.calendar}
-        calenderBg={calenderBg}
-        imgUrl={data.img[8]}
-      />
-      <Introduce subTitle={subTitle} sectionColor={colorData.introduce} />
       <ScrollImg imgUrl={data.img[6]} />
+      <Introduce subTitle={subTitle} sectionColor={colorData.introduce} />
       <Photo
         modal={modal}
         setModal={setModal}
@@ -50,6 +44,12 @@ function Sample03() {
         sectionColor={colorData.photo}
         padding={{ top: "8", bottom: "9" }}
         photoInfo={photoInfo}
+      />
+      <OurDay
+        subTitle={subTitle}
+        sectionColor={colorData.calendar}
+        calenderBg={calenderBg}
+        imgUrl={data.img[7]}
       />
       <Location
         subTitle={subTitle}
@@ -77,7 +77,7 @@ function Sample03() {
   );
 }
 
-export default Sample03;
+export default Sample04;
 
 const Main = styled.div`
   ${position("relative")};
@@ -87,7 +87,7 @@ const Main = styled.div`
   max-width: ${getSize(640)};
   min-width: ${getSize(200)};
   text-align: center;
-  font-family: "NanumMyeongjo", sans-serif;
+  font-family: "Pretendard", sans-serif;
   overflow-y: ${({ modal }) => (modal ? "hidden" : "auto")};
 
   @media screen and (min-width: 640px) {
