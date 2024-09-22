@@ -13,7 +13,7 @@ import Footer from "../../section/Footer";
 import Modal from "../../components/Modal";
 import ScrollImg from "../../components/ScrollImg";
 import { getSize } from "../../utils/sThemeUtils";
-import { flex, boxSize, position } from "../../utils/sMixinUtils";
+import { flex, boxSize, position, fontSize } from "../../utils/sMixinUtils";
 
 function Sample04() {
   const [modal, setModal] = useState(false);
@@ -24,6 +24,11 @@ function Sample04() {
   const shareImgURL = "https://ifh.cc/g/5Jv2t9.jpg";
   const fontFamily = "Pretendard";
   const calenderBg = "photo";
+  const music = [
+    true,
+    `Reverie by Scott Buckley – released under CC-BY 4.0.
+          www.scottbuckley.com.au`,
+  ];
 
   return (
     <Main>
@@ -62,7 +67,7 @@ function Sample04() {
         padding={{ top: "8", bottom: "6" }}
         font={fontFamily}
       />
-      <Footer font={fontFamily} shareImgURL={shareImgURL} />
+      <Footer font={fontFamily} shareImgURL={shareImgURL} music={music} />
       {modal ? (
         <Modal
           imgUrl={currentImg}

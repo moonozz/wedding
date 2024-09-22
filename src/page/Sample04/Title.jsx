@@ -7,25 +7,33 @@ import {
   position,
   boxSize,
   fontSize,
-  flex,
   dim,
   xyValue,
 } from "../../utils/sMixinUtils";
 
 function Title({ font }) {
   const contentRef = useRef(null);
+  const audioRef = useRef(null);
   const [width, setWidth] = useState(0);
   const [playBar, setPlayBar] = useState("0");
-  const [play, setPlay] = useState(true);
+  const [isPlay, setIsPlay] = useState(false);
 
   const imgUrl = `${process.env.PUBLIC_URL}/assets/${data.img[1]}`;
   const pauseImgUrl = [
     `${process.env.PUBLIC_URL}/assets/pause.svg`,
     `${process.env.PUBLIC_URL}/assets/play.svg`,
   ];
+  const audioUrl = `${process.env.PUBLIC_URL}/assets/sb_reverie.mp3`;
 
   const handleBgmPlay = () => {
-    setPlay(!play);
+    if (audioRef.current.paused) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+
+    setIsPlay(!isPlay);
   };
 
   const handlePlayBar = () => {
@@ -45,7 +53,22 @@ function Title({ font }) {
       setWidth(contentRef.current.offsetWidth);
       handlePlayBar();
     }
+
+    if (!audioRef.current) return;
+    if (isPlay) {
+      audioRef.current.play();
+    }
+    // else audioRef.current.pause();
   }, [contentRef.current, playBar]);
+
+  useEffect(() => {
+    if (isPlay) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+      // audioRef.current.currentTime = 0;
+    }
+  }, [isPlay]);
 
   return (
     <SContainer>
@@ -69,6 +92,7 @@ function Title({ font }) {
           <span>{getDate("eng", 2)}</span>
         </SPlayBarGroup>
         <SBtnArea>
+          <SAudio ref={audioRef} src={audioUrl} controls loop />
           <SPrev>
             <SBtnImg
               src={`${process.env.PUBLIC_URL}/assets/prev.svg`}
@@ -76,7 +100,7 @@ function Title({ font }) {
             />
           </SPrev>
           <SPause onClick={handleBgmPlay}>
-            {play ? (
+            {isPlay ? (
               <SBtnImg src={pauseImgUrl[0]} alt={"노래 일시정지하는 버튼"} />
             ) : (
               <SBtnImg src={pauseImgUrl[1]} alt={"노래를 재생하는 버튼"} />
@@ -106,8 +130,7 @@ const SBg = styled.div`
   ${position("absolute")};
   /* z-index: 0; */
   ${boxSize("100vw", "100%")};
-
-  max-height: 1000px;
+  max-height: 1100px;
   background-image: url(${({ $imgUrl }) => `${$imgUrl}`}););
   background-position: center center;
   background-size: cover;
@@ -222,6 +245,10 @@ const SBtnArea = styled.div`
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-items: center;
+`;
+
+const SAudio = styled.audio`
+  display: none;
 `;
 
 const SPrev = styled.button`

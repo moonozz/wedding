@@ -4,7 +4,7 @@ import { useShare } from "../hook/useShare";
 import { flex, boxSize, paddingIgnore, fontSize } from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
-function Footer({ font, shareImgURL }) {
+function Footer({ font, shareImgURL, music }) {
   const { handleShare } = useShare();
   const windowUrl = window.document.URL.toString().split("/");
   const sampleUrl = windowUrl[windowUrl.length - 1];
@@ -31,6 +31,7 @@ function Footer({ font, shareImgURL }) {
         </SBtn>
       </CopyToClipboard>
       <Stxt>ⓒweddingmoon</Stxt>
+      {music && music[0] ? <SCC>{music[1]}</SCC> : ""}
     </SContainer>
   );
 }
@@ -68,4 +69,8 @@ const SBtn = styled.button`
 const Stxt = styled.p`
   ${fontSize(18)};
   padding: ${getVwSize(60)} 0 ${getVwSize(20)};
+`;
+
+const SCC = styled.p`
+  ${fontSize(12)};
 `;
