@@ -16,8 +16,17 @@ function Title({ font }) {
   const contentRef = useRef(null);
   const [width, setWidth] = useState(0);
   const [playBar, setPlayBar] = useState("0");
+  const [play, setPlay] = useState(true);
 
   const imgUrl = `${process.env.PUBLIC_URL}/assets/${data.img[1]}`;
+  const pauseImgUrl = [
+    `${process.env.PUBLIC_URL}/assets/pause.svg`,
+    `${process.env.PUBLIC_URL}/assets/play.svg`,
+  ];
+
+  const handleBgmPlay = () => {
+    setPlay(!play);
+  };
 
   const handlePlayBar = () => {
     if (getDday() <= 0) {
@@ -60,7 +69,25 @@ function Title({ font }) {
           <span>{getDate("eng", 2)}</span>
         </SPlayBarGroup>
         <SBtnArea>
-          <></>
+          <SPrev>
+            <SBtnImg
+              src={`${process.env.PUBLIC_URL}/assets/prev.svg`}
+              alt={"노래를 처음부터 재생하는 버튼"}
+            />
+          </SPrev>
+          <SPause onClick={handleBgmPlay}>
+            {play ? (
+              <SBtnImg src={pauseImgUrl[0]} alt={"노래 일시정지하는 버튼"} />
+            ) : (
+              <SBtnImg src={pauseImgUrl[1]} alt={"노래를 재생하는 버튼"} />
+            )}
+          </SPause>
+          <SNext>
+            <SBtnImg
+              src={`${process.env.PUBLIC_URL}/assets/next.svg`}
+              alt={"다음 노래를 재생하는 버튼"}
+            />
+          </SNext>
         </SBtnArea>
       </SContent>
     </SContainer>
@@ -191,5 +218,41 @@ const SBar = styled.span`
 `;
 
 const SBtnArea = styled.div`
-  ${flex("row", "", "")};
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+`;
+
+const SPrev = styled.button`
+  width: ${getVwSize(40)};
+  height: auto;
+
+  @media screen and (min-width: 640px) {
+    width: ${getSize(40)};
+  }
+`;
+
+const SPause = styled.button`
+  width: ${getVwSize(32)};
+  height: ${getVwSize(40)};
+
+  @media screen and (min-width: 640px) {
+    width: ${getSize(32)};
+    height: ${getSize(40)};
+  }
+`;
+
+const SNext = styled.button`
+  width: ${getVwSize(40)};
+  height: auto;
+  opacity: 30%;
+
+  @media screen and (min-width: 640px) {
+    width: ${getSize(40)};
+  }
+`;
+
+const SBtnImg = styled.img`
+  ${boxSize("100%", "100%")};
 `;
