@@ -30,10 +30,20 @@ function Title({ font }) {
       audioRef.current.play();
     } else {
       audioRef.current.pause();
-      audioRef.current.currentTime = 0;
     }
 
     setIsPlay(!isPlay);
+  };
+
+  const handleBgmPrev = () => {
+    audioRef.current.currentTime = 0;
+
+    if (isPlay) {
+      setIsPlay(true);
+      audioRef.current.play();
+    } else {
+      setIsPlay(false);
+    }
   };
 
   const handlePlayBar = () => {
@@ -58,7 +68,6 @@ function Title({ font }) {
     if (isPlay) {
       audioRef.current.play();
     }
-    // else audioRef.current.pause();
   }, [contentRef.current, playBar]);
 
   useEffect(() => {
@@ -66,7 +75,6 @@ function Title({ font }) {
       audioRef.current.play();
     } else {
       audioRef.current.pause();
-      // audioRef.current.currentTime = 0;
     }
   }, [isPlay]);
 
@@ -93,7 +101,7 @@ function Title({ font }) {
         </SPlayBarGroup>
         <SBtnArea>
           <SAudio ref={audioRef} src={audioUrl} controls loop />
-          <SPrev>
+          <SPrev onClick={handleBgmPrev}>
             <SBtnImg
               src={`${process.env.PUBLIC_URL}/assets/prev.svg`}
               alt={"노래를 처음부터 재생하는 버튼"}

@@ -12,6 +12,7 @@ import Account from "../../section/Account";
 import Footer from "../../section/Footer";
 import Modal from "../../components/Modal";
 import ScrollImg from "../../components/ScrollImg";
+import Toast from "../../components/Toast";
 import { getSize } from "../../utils/sThemeUtils";
 import { flex, boxSize, position, fontSize } from "../../utils/sMixinUtils";
 
@@ -29,9 +30,11 @@ function Sample04() {
     `Reverie by Scott Buckley – released under CC-BY 4.0.
           www.scottbuckley.com.au`,
   ];
+  const toastMsg = "음악이 준비되어 있습니다. 재생버튼을 눌러주세요.";
 
   return (
     <Main>
+      <Toast text={toastMsg} />
       <Title />
       <TitleComment
         subTitle={subTitle}
