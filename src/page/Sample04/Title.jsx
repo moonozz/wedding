@@ -53,7 +53,7 @@ function Title({ font }) {
     } else if (getDday() > 0) {
       const playWidth = (width / 500) * getDday();
       const widthPer = (parseFloat(playWidth) / width) * 100;
-      setPlayBar(widthPer);
+      setPlayBar(100 - widthPer);
       // console.log("getDday 0보다 큼", widthPer);
     }
   };
