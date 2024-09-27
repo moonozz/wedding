@@ -1,0 +1,36 @@
+{
+  "titleComment": {
+    "bg": "#F6F1F1",
+    "color": "black",
+    "pointColor": "#D8444F"
+  },
+  "calendar": {
+    "bg": "#20282E",
+    "color": "white",
+    "pointColor": "#D8444F",
+    "pointTxtColor": "white"
+  },
+  "introduce": {
+    "bg": "#F6F1F1",
+    "color": "black",
+    "pointColor": "#D8444F"
+  },
+  "photo": {
+    "bg": "#F8DFE4",
+    "color": "black",
+    "pointColor": "#D8444F"
+  },
+  "location": {
+    "bg": "#FDF3F3",
+    "color": "black",
+    "pointColor": "#D8444F"
+  },
+  "account": {
+    "bg": "#F8DFE4",
+    "color": "black",
+    "pointColor": "#D8444F"
+  },
+  "childImg": {
+    "bg": "#FCEAEA"
+  }
+}
