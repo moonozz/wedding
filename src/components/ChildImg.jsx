@@ -93,25 +93,25 @@ const SBgPaper = styled.div`
 
 const heartAniRight = keyframes`
   0%{
-    transform: scale(1.2);
+    transform: scale(1.3);
   }
   50% {
     transform: scale(1);
   }
   100% {
-    transform: scale(1.2);
+    transform: scale(1.3);
   }
 `;
 
 const heartAniLeft = keyframes`
   0%{
-    transform: scale(1.1);
-  }
-  50% {
     transform: scale(1);
   }
+  50% {
+    transform: scale(1.2);
+  }
   100% {
-    transform: scale(1.1);
+    transform: scale(1);
   }
 `;
 
@@ -126,11 +126,11 @@ const SHeartGroup = styled.div`
   }
 
   img:nth-child(odd) {
-    animation: ${heartAniRight} 1.5s linear infinite;
+    animation: ${heartAniRight} 1.2s linear infinite;
   }
 
   img:nth-child(even) {
-    animation: ${heartAniLeft} 1.5s linear infinite;
+    animation: ${heartAniLeft} 1.2s linear infinite;
   }
 
   img:nth-child(1) {
