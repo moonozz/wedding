@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../../data/data.json";
-import { getDate, getWeek, getTime, getDday } from "../../utils/filter";
+import { getDate } from "../../utils/filter";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import {
   position,

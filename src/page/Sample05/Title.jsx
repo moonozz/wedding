@@ -6,7 +6,6 @@ import {
   position,
   boxSize,
   fontSize,
-  dim,
   xyValue,
   flex,
 } from "../../utils/sMixinUtils";

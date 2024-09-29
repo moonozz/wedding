@@ -4,7 +4,7 @@ import Name from "../components/name/Name";
 import Call from "../components/name/Call";
 // import SubTitleTxt from "../components/subTitle/SubTitleTxt";
 import HeartIcon from "../components/icon/Heart";
-import { getSize, getVwSize } from "../utils/sThemeUtils";
+import { getSize } from "../utils/sThemeUtils";
 import { sectionPadding, animation } from "../utils/sMixinUtils";
 
 function Introduce({ subTitle, sectionColor }) {

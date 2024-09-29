@@ -2,10 +2,6 @@ import styled from "styled-components";
 import { useScrollEvent } from "../hook/useScrollEvent";
 import { useSubTitle } from "../components/subTitle";
 import { PhotoSection } from "../components/photo";
-import PhotoSwipe from "../components/photo/PhotoSwipe";
-import PhotoAlbum from "../components/photo/PhotoAlbum";
-import PhotoList from "../components/photo/PhotoList";
-import SubTitleTxt from "../components/subTitle/SubTitleTxt";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { paddingIgnore, animation } from "../utils/sMixinUtils";
 

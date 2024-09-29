@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { boxSize, position, xyValue } from "../utils/sMixinUtils";
@@ -6,54 +5,19 @@ import { boxSize, position, xyValue } from "../utils/sMixinUtils";
 function ChildImg({ bgColor }) {
   const heartImg = ["01", "02", "03", "04", "05", "06", "07", "08"];
 
-  // useEffect(() => {
-  //   heartImg.map((el) => {
-  //     console.log(`${process.env.PUBLIC_URL}/assets/heart-${el}.png`);
-  //   });
-  // }, []);
-
   return (
     <SContainer $bgColor={bgColor.bg}>
       <SBgPaper />
       <SHeartGroup>
-        {/* {heartImg.map((el) => {
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/heart-${el}.png`}
-            alt={"하트 이미지"}
-          />;
-        })} */}
-        <img
-          src={`${process.env.PUBLIC_URL}/assets/heart-01.png`}
-          alt={"하트 이미지"}
-        />
-        <img
-          src={`${process.env.PUBLIC_URL}/assets/heart-02.png`}
-          alt={"하트 이미지"}
-        />
-        <img
-          src={`${process.env.PUBLIC_URL}/assets/heart-03.png`}
-          alt={"하트 이미지"}
-        />
-        <img
-          src={`${process.env.PUBLIC_URL}/assets/heart-04.png`}
-          alt={"하트 이미지"}
-        />
-        <img
-          src={`${process.env.PUBLIC_URL}/assets/heart-05.png`}
-          alt={"하트 이미지"}
-        />
-        <img
-          src={`${process.env.PUBLIC_URL}/assets/heart-06.png`}
-          alt={"하트 이미지"}
-        />
-        <img
-          src={`${process.env.PUBLIC_URL}/assets/heart-07.png`}
-          alt={"하트 이미지"}
-        />
-        <img
-          src={`${process.env.PUBLIC_URL}/assets/heart-08.png`}
-          alt={"하트 이미지"}
-        />
+        {heartImg.map((el, idx) => {
+          return (
+            <img
+              key={idx}
+              src={`${process.env.PUBLIC_URL}/assets/heart-${el}.png`}
+              alt={"하트 이미지"}
+            />
+          );
+        })}
       </SHeartGroup>
       <SChildImg
         src={`${process.env.PUBLIC_URL}/assets/imgChild.png`}

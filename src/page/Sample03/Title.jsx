@@ -1,15 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import data from "../../data/data.json";
-import { getDate, getWeek, getTime, getDday } from "../../utils/filter";
+import { getDate, getWeek, getTime } from "../../utils/filter";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
-import {
-  position,
-  boxSize,
-  fontSize,
-  flex,
-  xyValue,
-} from "../../utils/sMixinUtils";
+import { position, fontSize, flex, xyValue } from "../../utils/sMixinUtils";
 
 function Title({ font }) {
   const imgUrl = [

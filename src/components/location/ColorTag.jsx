@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { getSize, getVwSize } from "../../utils/sThemeUtils";
+import { getVwSize } from "../../utils/sThemeUtils";
 import { fontSize } from "../../utils/sMixinUtils";
 
 function ColorTag({ lineColor }) {

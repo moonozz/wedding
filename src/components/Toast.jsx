@@ -11,13 +11,6 @@ function Toast({ text }) {
     setIsToast(!isToast);
     setIsAnimation(!isAnimation);
 
-    // const slideOutTimer = setTimeout(() => {
-    //   setIsToast(false);
-    //   setTimeout(() => setIsAnimation(false), 1000);
-    // }, 5000);
-
-    // return () => clearTimeout(slideOutTimer);
-
     const slideOutTimer = setTimeout(() => {
       setIsAnimation(false);
     }, 4000);

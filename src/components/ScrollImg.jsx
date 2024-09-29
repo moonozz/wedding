@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { boxSize, position, paddingIgnore } from "../\butils/sMixinUtils";
 
 function ScrollImg({ imgUrl }) {

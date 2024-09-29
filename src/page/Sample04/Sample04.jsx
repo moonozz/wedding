@@ -14,7 +14,7 @@ import Modal from "../../components/Modal";
 import ScrollImg from "../../components/ScrollImg";
 import Toast from "../../components/Toast";
 import { getSize } from "../../utils/sThemeUtils";
-import { flex, boxSize, position, fontSize } from "../../utils/sMixinUtils";
+import { flex, boxSize, position } from "../../utils/sMixinUtils";
 
 function Sample04() {
   const [modal, setModal] = useState(false);

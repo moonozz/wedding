@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useScrollEvent } from "../../hook/useScrollEvent";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";

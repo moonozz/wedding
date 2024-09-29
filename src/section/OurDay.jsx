@@ -5,7 +5,7 @@ import { useScrollEvent } from "../hook/useScrollEvent";
 import { useSubTitle } from "../components/subTitle";
 import Calendar from "../components/calendar/Calendar";
 import { getDday } from "../utils/filter";
-import { getSize, getVwSize } from "../utils/sThemeUtils";
+import { getSize } from "../utils/sThemeUtils";
 import {
   boxSize,
   flex,

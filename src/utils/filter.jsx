@@ -35,11 +35,6 @@ export const getTime = (lan) => {
   }
 };
 
-export const getName = (gender) => {
-  const male = data.information[0].EngName.split(" ");
-  const female = data.information[1].EngName.split(" ");
-};
-
 export const recordImg = (img) => {
   const recordImg = [];
 

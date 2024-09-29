@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import Button from "./Button";
 import Close from "./icon/Close";
-import { boxSize, position, xyValue, flex } from "../utils/sMixinUtils";
+import { boxSize, position, xyValue } from "../utils/sMixinUtils";
 
 function Modal({ imgUrl, modal, setModal, setCurrentImg }) {
   const handleClose = () => {
@@ -14,16 +14,6 @@ function Modal({ imgUrl, modal, setModal, setCurrentImg }) {
   useEffect(() => {
     document.body.style.overflowY = "hidden";
   }, []);
-
-  // useEffect(() => {
-  //   if (modal) {
-  //     document.body.style.overflow = "hidden"; // hidden 출력됨
-  //   }
-
-  //   return () => {
-  //     document.body.style.overflow = "auto";
-  //   };
-  // }, [modal]);
 
   return (
     <SModalCom $isOpen={modal}>

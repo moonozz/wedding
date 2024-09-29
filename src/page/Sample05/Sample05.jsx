@@ -11,10 +11,9 @@ import Location from "../../section/Location";
 import Account from "../../section/Account";
 import Footer from "../../section/Footer";
 import Modal from "../../components/Modal";
-import ScrollImg from "../../components/ScrollImg";
 import ChildImg from "../../components/ChildImg";
 import { getSize } from "../../utils/sThemeUtils";
-import { flex, boxSize, position, fontSize } from "../../utils/sMixinUtils";
+import { flex, boxSize, position } from "../../utils/sMixinUtils";
 
 function Sample05() {
   const [modal, setModal] = useState(false);
