@@ -39,13 +39,13 @@ function Map() {
 export default Map;
 
 const SContainer = styled.div`
-  ${boxSize("100vw", "70vw")};
+  ${boxSize("100vw", "55vw")};
   /* background-color: black; */
   ${paddingIgnore};
   margin-bottom: ${getVwSize(60)};
 
   @media screen and (min-width: 640px) {
-    ${boxSize("64rem", "35rem")};
+    ${boxSize("64rem", "30rem")};
     margin-bottom: ${getSize(60)};
   }
 `;

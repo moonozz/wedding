@@ -34,7 +34,7 @@ function Sample05() {
         titleComment={titleComment}
       />
       <ChildImg bgColor={colorData.childImg} />
-      <Introduce subTitle={subTitle} sectionColor={colorData.introduce} />
+      <Introduce sectionColor={colorData.introduce} />
       <OurDay
         subTitle={subTitle}
         sectionColor={colorData.calendar}

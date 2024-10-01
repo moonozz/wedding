@@ -19,9 +19,9 @@ function Sample03() {
   const [modal, setModal] = useState(false);
   const [currentImg, setCurrentImg] = useState("");
   const titleComment = "240330";
-  const subTitle = { color: "#B9AB8D", font: "NanumMyeongjoBold", type: "()" };
+  const subTitle = { font: "NanumMyeongjoBold", type: "()" };
   const photoInfo = { type: "swipe", text: "사진을 넘겨보세요." };
-  const shareImgURL = "https://ifh.cc/g/5Jv2t9.jpg";
+  const shareImgURL = "https://ifh.cc/g/zch9xJ.png";
   const fontFamily = "NanumMyeongjo";
   const calenderBg = "photo";
 
@@ -39,8 +39,9 @@ function Sample03() {
         calenderBg={calenderBg}
         imgUrl={data.img[8]}
       />
-      <Introduce subTitle={subTitle} sectionColor={colorData.introduce} />
+      <Introduce sectionColor={colorData.introduce} />
       <ScrollImg imgUrl={data.img[6]} />
+
       <Photo
         modal={modal}
         setModal={setModal}

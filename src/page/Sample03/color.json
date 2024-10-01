@@ -1,33 +1,33 @@
 {
   "titleComment": {
-    "bg": "#F8DFE4",
+    "bg": "#FFFBF2",
     "color": "black",
-    "pointColor": "#D8444F"
+    "pointColor": "#656599"
   },
   "calendar": {
-    "bg": "#D0C3A6",
+    "bg": "#F3F0E9",
     "color": "white",
-    "pointColor": "#F8DFE4",
-    "pointTxtColor": "#D8444F"
+    "pointColor": "#F8B769",
+    "pointTxtColor": "#656599"
   },
   "introduce": {
-    "bg": "#1D2229",
-    "color": "white",
-    "pointColor": "#F8DFE4"
+    "bg": "#FBF5E6",
+    "color": "black",
+    "pointColor": "#656599"
   },
   "photo": {
-    "bg": "#EFF0EE",
+    "bg": "#FFFBF2",
     "color": "black",
-    "pointColor": "#D8444F"
+    "pointColor": "#656599"
   },
   "location": {
-    "bg": "#F8DFE4",
+    "bg": "#FBF5E6",
     "color": "black",
-    "pointColor": "#D8444F"
+    "pointColor": "#656599"
   },
   "account": {
-    "bg": "#20282E",
+    "bg": "#F1EADA",
     "color": "black",
-    "pointColor": "#F8DFE4"
+    "pointColor": "#656599"
   }
 }

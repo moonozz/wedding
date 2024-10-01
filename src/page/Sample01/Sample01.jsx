@@ -40,7 +40,7 @@ function Sample01() {
         titleComment={titleComment}
       />
       <ScrollImg imgUrl={data.img[6]} />
-      <Introduce subTitle={subTitle} sectionColor={colorData.introduce} />
+      <Introduce sectionColor={colorData.introduce} />
       <Photo
         modal={modal}
         setModal={setModal}

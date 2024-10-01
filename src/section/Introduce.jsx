@@ -7,22 +7,12 @@ import HeartIcon from "../components/icon/Heart";
 import { getSize } from "../utils/sThemeUtils";
 import { sectionPadding, animation } from "../utils/sMixinUtils";
 
-function Introduce({ subTitle, sectionColor }) {
+function Introduce({ sectionColor }) {
   const { ref, isView } = useScrollEvent();
 
   return (
     <SContainer $sectionColor={sectionColor}>
       <div ref={ref} className={isView ? "frame-in" : ""}>
-        {/* <SubTitleTxt
-          text={
-            <HeartIcon
-              stroke={`${subTitle.color}`}
-              color={`${subTitle.color}`}
-              width={40}
-              height={"auto"}
-            />
-          }
-        /> */}
         <HeartIcon
           stroke={`${sectionColor.pointColor}`}
           color={`${sectionColor.pointColor}`}

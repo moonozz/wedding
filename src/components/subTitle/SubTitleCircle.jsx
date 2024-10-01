@@ -22,12 +22,12 @@ const STitle = styled.div`
     ${fontSize("24")}
     border-radius: 100%;
     border: 0.1rem solid ${({ $color }) => $color};
-    padding: ${getVwSize(8)} ${getVwSize(26)};
+    padding: ${getVwSize(16)} ${getVwSize(26)};
   }
 
   @media screen and (min-width: 640px) {
     span {
-      padding: ${getSize(8)} ${getSize(26)};
+      padding: ${getSize(16)} ${getSize(26)};
     }
   }
 `;

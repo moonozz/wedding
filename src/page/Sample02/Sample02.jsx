@@ -39,7 +39,7 @@ function Sample02() {
         sectionColor={colorData.calendar}
         calenderBg={calenderBg}
       />
-      <Introduce subTitle={subTitle} sectionColor={colorData.introduce} />
+      <Introduce sectionColor={colorData.introduce} />
       <Photo
         modal={modal}
         setModal={setModal}

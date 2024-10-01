@@ -13,25 +13,27 @@ function Title({ font }) {
 
   return (
     <SContainer>
-      <STxtInvite $font={font}>
-        <p>invite you</p>
-        <STopImgGroup $width={250}>
-          <span>&#40;</span>
-          <SImg $width={180} $imgUrl={imgUrl[0]} />
-          <span>&#41;</span>
-        </STopImgGroup>
-        <p>,</p>
-      </STxtInvite>
-      <SCeleb>celebrate</SCeleb>
-      <SOurW $font={font}>
-        <p>our</p>
-        <STopImgGroup $width={210} $right={250}>
-          <span>&#40;</span>
-          <SImg $width={140} $imgUrl={imgUrl[1]} />
-          <span>&#41;</span>
-        </STopImgGroup>
-        <p>wedding</p>
-      </SOurW>
+      <STopTxt>
+        <STxtInvite $font={font}>
+          <p>invite you</p>
+          <STopImgGroup $width={250}>
+            <span>&#40;</span>
+            <SImg $width={180} $imgUrl={imgUrl[0]} />
+            <span>&#41;</span>
+          </STopImgGroup>
+          <p>,</p>
+        </STxtInvite>
+        <SCeleb>celebrate</SCeleb>
+        <SOurW $font={font}>
+          <p>our</p>
+          <STopImgGroup $width={210} $right={250}>
+            <span>&#40;</span>
+            <SImg $width={140} $imgUrl={imgUrl[1]} />
+            <span>&#41;</span>
+          </STopImgGroup>
+          <p>wedding</p>
+        </SOurW>
+      </STopTxt>
       <SBottomTxt>
         <div>
           <p>
@@ -52,13 +54,18 @@ function Title({ font }) {
 export default Title;
 
 const SContainer = styled.section`
-  padding: ${getVwSize(50)} ${getVwSize(40)} ${getVwSize(50)};
-  background-color: #eff0ee;
+  ${flex("column", "", "space-between")};
+  height: 88vh;
+  padding: ${getVwSize(70)} ${getVwSize(40)};
+  background-color: #f1eada;
+  color: #656599;
 
   @media screen and (min-width: 640px) {
-    padding: ${getSize(50)} ${getSize(40)} ${getSize(50)};
+    padding: ${getSize(70)} ${getSize(40)};
   }
 `;
+
+const STopTxt = styled.div``;
 
 const STxtInvite = styled.div`
   ${position("relative")};
@@ -113,6 +120,7 @@ const SImg = styled.div`
   background-size: cover;
   border-radius: ${getVwSize(8)};
   margin: 0 ${getVwSize(4)};
+  filter: grayscale(1);
 
   @media screen and (min-width: 640px) {
     width: ${({ $width, theme }) => getSize($width)({ theme })};
@@ -162,7 +170,7 @@ const SBottomTxt = styled.div`
   width: 100%;
   text-align: left;
   line-height: 1.5;
-  margin-top: ${getVwSize(500)};
+  /* margin-top: ${getVwSize(500)}; */
 
   div:last-child {
     text-align: right;
@@ -174,6 +182,6 @@ const SBottomTxt = styled.div`
 
   @media screen and (min-width: 640px) {
     width: calc(640px - ${getSize(80)});
-    margin-top: ${getSize(500)};
+    /* margin-top: ${getSize(500)}; */
   }
 `;

@@ -17,7 +17,7 @@ function Toast({ text }) {
 
     const removeToastTimer = setTimeout(() => {
       setIsToast(false);
-    }, 5000);
+    }, 4500);
 
     return () => {
       clearTimeout(slideOutTimer);
@@ -42,9 +42,6 @@ const slideIn = keyframes`
   0% {
     transform: translateY(-100%);
   }
-  70% {
-    opacity: 0;
-  }
   100% {
     transform: translateY(0%);
     opacity: 1;
@@ -54,9 +51,6 @@ const slideIn = keyframes`
 const slideOut = keyframes`
   0% {
     transform: translateY(0%)
-  }
-  70% {
-    opacity: 0.5;
   }
   100% {
     transform: translateY(-100%)
@@ -69,7 +63,7 @@ const SContainer = styled.div`
   z-index: 20;
   position: fixed;
   ${xyValue("0", "", "0", "")};
-  animation: ${({ $animation }) => ($animation ? slideIn : slideOut)} 2s
+  animation: ${({ $animation }) => ($animation ? slideIn : slideOut)} 1.2s
     ease-in-out forwards;
 
   @media screen and (min-width: 640px) {
@@ -79,7 +73,7 @@ const SContainer = styled.div`
 `;
 
 const STxt = styled.p`
-  ${fontSize(16)};
+  ${fontSize(20)};
   background-color: rgb(0, 0, 0, 0.5);
   color: white;
   border-radius: 5rem;
