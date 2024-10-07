@@ -21,7 +21,7 @@ function Sample05() {
   const titleComment = "240330";
   const subTitle = { color: "#B9AB8D", font: "panchang", type: "underline" };
   const photoInfo = { type: "swipe", text: "사진을 넘겨보세요." };
-  const shareImgURL = "https://ifh.cc/g/5Jv2t9.jpg";
+  const shareImgURL = "https://ifh.cc/g/t5maKq.jpg";
   const fontFamily = "Pretendard";
   const calenderBg = "color";
 
