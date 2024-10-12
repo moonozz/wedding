@@ -1,15 +1,15 @@
 import styled from "styled-components";
-import data from "../../data/data.json";
-import { useScrollEvent } from "../../hook/useScrollEvent";
-import { useSubTitle } from "../../components/subTitle";
-import { getDate, getWeek, getTime } from "../../utils/filter";
-import { getSize, getVwSize } from "../../utils/sThemeUtils";
+import data from "../data/data.json";
+import { useScrollEvent } from "../hook/useScrollEvent";
+import { useSubTitle } from "../components/subTitle";
+import { getDate, getWeek, getTime } from "../utils/filter";
+import { getSize, getVwSize } from "../utils/sThemeUtils";
 import {
   sectionPadding,
   fontSize,
   defaultTxtStyle,
   animation,
-} from "../../utils/sMixinUtils";
+} from "../utils/sMixinUtils";
 
 function TitleComment({ subTitle, sectionColor, titleComment }) {
   const { ref, isView } = useScrollEvent();

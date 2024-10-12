@@ -12,6 +12,12 @@ export const getDate = (type, yearlength) => {
 
   if (type === "kor") {
     return `${selectYear}년 ${month}월 ${day}일`;
+  } else if (type === "onlyNum") {
+    const twoMonth = String(month).split("");
+    return twoMonth.length === 1
+      ? `${shortYear}0${month}${day}`
+      : `${shortYear}${month}${day}`;
+    // return `${selectYear}${month}`
   } else return `${selectYear}. ${month}. ${day}`;
 };
 

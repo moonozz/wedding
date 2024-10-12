@@ -3,7 +3,7 @@ import styled from "styled-components";
 import data from "../../data/data.json";
 import colorData from "./color.json";
 import Title from "./Title";
-import TitleComment from "./TitleComment";
+import TitleComment from "../../section/TitleComment";
 import Introduce from "../../section/Introduce";
 import Photo from "../../section/Photo";
 import OurDay from "../../section/OurDay";
@@ -12,13 +12,14 @@ import Account from "../../section/Account";
 import Footer from "../../section/Footer";
 import Modal from "../../components/Modal";
 import ScrollImg from "../../components/ScrollImg";
+import { getDate } from "../../utils/filter";
 import { getSize } from "../../utils/sThemeUtils";
 import { flex, boxSize, position } from "../../utils/sMixinUtils";
 
 function Sample03() {
   const [modal, setModal] = useState(false);
   const [currentImg, setCurrentImg] = useState("");
-  const titleComment = "240330";
+  const titleComment = `${getDate("onlyNum")}`;
   const subTitle = { font: "NanumMyeongjoBold", type: "()" };
   const photoInfo = { type: "swipe", text: "사진을 넘겨보세요." };
   const shareImgURL = "https://ifh.cc/g/zch9xJ.png";
