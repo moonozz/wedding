@@ -9,6 +9,7 @@ import Photo from "../../section/Photo";
 import OurDay from "../../section/OurDay";
 import Location from "../../section/Location";
 import Account from "../../section/Account";
+import CountBtn from "../../components/CountBtn";
 import Footer from "../../section/Footer";
 import Modal from "../../components/Modal";
 import ScrollImg from "../../components/ScrollImg";
@@ -20,6 +21,8 @@ import { flex, boxSize, position } from "../../utils/sMixinUtils";
 function Sample04() {
   const [modal, setModal] = useState(false);
   const [currentImg, setCurrentImg] = useState("");
+  const [count, setCount] = useState(0);
+
   const titleComment = `${getDate("onlyNum")}`;
   const subTitle = { color: "#B9AB8D", font: "Pretendard", type: "circle" };
   const photoInfo = { type: "swipe", text: "사진을 넘겨보세요." };
@@ -32,6 +35,7 @@ function Sample04() {
           www.scottbuckley.com.au`,
   ];
   const toastMsg = "음악이 준비되어 있습니다. 재생버튼을 눌러주세요.";
+  const emojiArr = ["🤵🏻‍♂️", "👰🏻‍♀️", "🎉", "💗", "💐", "🍀", "💒", "🤍", "💍"];
 
   return (
     <Main>
@@ -71,6 +75,7 @@ function Sample04() {
         padding={{ top: "8", bottom: "6" }}
         font={fontFamily}
       />
+      <CountBtn count={count} setCount={setCount} emojiArr={emojiArr} />
       <Footer font={fontFamily} shareImgURL={shareImgURL} music={music} />
       {modal ? (
         <Modal

@@ -9,6 +9,7 @@ import Photo from "../../section/Photo";
 import OurDay from "../../section/OurDay";
 import Location from "../../section/Location";
 import Account from "../../section/Account";
+import CountBtn from "../../components/CountBtn";
 import Footer from "../../section/Footer";
 import Modal from "../../components/Modal";
 import ChildImg from "../../components/ChildImg";
@@ -19,12 +20,15 @@ import { flex, boxSize, position } from "../../utils/sMixinUtils";
 function Sample05() {
   const [modal, setModal] = useState(false);
   const [currentImg, setCurrentImg] = useState("");
+  const [count, setCount] = useState(0);
+
   const titleComment = `${getDate("onlyNum")}`;
   const subTitle = { color: "#B9AB8D", font: "panchang", type: "underline" };
   const photoInfo = { type: "swipe", text: "사진을 넘겨보세요." };
   const shareImgURL = "https://ifh.cc/g/9q2tcY.jpg";
   const fontFamily = "Pretendard";
   const calenderBg = "color";
+  const emojiArr = ["🤵🏻‍♂️", "👰🏻‍♀️", "🎉", "💗", "💐", "🍀", "💒", "🤍", "💍"];
 
   return (
     <Main>
@@ -63,6 +67,7 @@ function Sample05() {
         padding={{ top: "8", bottom: "6" }}
         font={fontFamily}
       />
+      <CountBtn count={count} setCount={setCount} emojiArr={emojiArr} />
       <Footer font={fontFamily} shareImgURL={shareImgURL} />
       {modal ? (
         <Modal

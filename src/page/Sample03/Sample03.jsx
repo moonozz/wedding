@@ -9,6 +9,7 @@ import Photo from "../../section/Photo";
 import OurDay from "../../section/OurDay";
 import Location from "../../section/Location";
 import Account from "../../section/Account";
+import CountBtn from "../../components/CountBtn";
 import Footer from "../../section/Footer";
 import Modal from "../../components/Modal";
 import ScrollImg from "../../components/ScrollImg";
@@ -19,12 +20,15 @@ import { flex, boxSize, position } from "../../utils/sMixinUtils";
 function Sample03() {
   const [modal, setModal] = useState(false);
   const [currentImg, setCurrentImg] = useState("");
+  const [count, setCount] = useState(0);
+
   const titleComment = `${getDate("onlyNum")}`;
   const subTitle = { font: "NanumMyeongjoBold", type: "()" };
   const photoInfo = { type: "swipe", text: "사진을 넘겨보세요." };
   const shareImgURL = "https://ifh.cc/g/zch9xJ.png";
   const fontFamily = "NanumMyeongjo";
   const calenderBg = "photo";
+  const emojiArr = ["🤵🏻‍♂️", "👰🏻‍♀️", "🎉", "💗", "💐", "🍀", "💒", "🤍", "💍"];
 
   return (
     <Main>
@@ -64,6 +68,7 @@ function Sample03() {
         padding={{ top: "8", bottom: "6" }}
         font={fontFamily}
       />
+      <CountBtn count={count} setCount={setCount} emojiArr={emojiArr} />
       <Footer font={fontFamily} shareImgURL={shareImgURL} />
       {modal ? (
         <Modal

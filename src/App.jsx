@@ -1,4 +1,5 @@
 import "./App.css";
+import JSConfetti from "js-confetti";
 import { useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -26,6 +27,8 @@ function App() {
 }
 
 export default App;
+
+export const confetti = new JSConfetti();
 
 const SContainer = styled.div`
   padding: ${getSize(20)};

@@ -17,7 +17,6 @@ export const getDate = (type, yearlength) => {
     return twoMonth.length === 1
       ? `${shortYear}0${month}${day}`
       : `${shortYear}${month}${day}`;
-    // return `${selectYear}${month}`
   } else return `${selectYear}. ${month}. ${day}`;
 };
 
