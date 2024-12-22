@@ -22,9 +22,9 @@ export const useShare = (data) => {
           imageUrl: imgUrl,
           link: {
             // mobileWebUrl: "http://192.168.35.233:3000",
-            mobileWebUrl: `http://192.168.35.233:3000/${Url}`,
+            mobileWebUrl: `https://weddingmoon.netlify.app/${Url}`,
             // webUrl: "http://localhost:3000",
-            webUrl: `http://localhost:3000/${Url}`,
+            webUrl: `https://weddingmoon.netlify.app/${Url}`,
           },
         },
       });
