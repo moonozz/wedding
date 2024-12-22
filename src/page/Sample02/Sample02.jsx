@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import data from "../../data/data.json";
-import colorData from "./color.json";
+import data from "./data.json";
 import Title from "./Title";
 import TitleComment from "../../section/TitleComment";
 import Introduce from "../../section/Introduce";
@@ -35,34 +34,34 @@ function Sample02() {
       <Title font={"Pinyon Script"} />
       <TitleComment
         subTitle={subTitle}
-        sectionColor={colorData.titleComment}
+        sectionColor={data.color.titleComment}
         titleComment={titleComment}
       />
       <ScrollImg imgUrl={data.img[6]} />
       <OurDay
         subTitle={subTitle}
-        sectionColor={colorData.calendar}
+        sectionColor={data.color.calendar}
         calenderBg={calenderBg}
       />
-      <Introduce sectionColor={colorData.introduce} />
+      <Introduce sectionColor={data.color.introduce} />
       <Photo
         modal={modal}
         setModal={setModal}
         subTitle={subTitle}
         currentImg={currentImg}
         setCurrentImg={setCurrentImg}
-        sectionColor={colorData.photo}
+        sectionColor={data.color.photo}
         padding={{ top: "8", bottom: "0" }}
         photoInfo={photoInfo}
       />
       <Location
         subTitle={subTitle}
-        sectionColor={colorData.location}
+        sectionColor={data.color.location}
         font={fontFamily}
       />
       <Account
         subTitle={subTitle}
-        sectionColor={colorData.account}
+        sectionColor={data.color.account}
         padding={{ top: "8", bottom: "6" }}
         font={fontFamily}
       />

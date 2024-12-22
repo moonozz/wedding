@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import data from "../../data/data.json";
-import colorData from "./color.json";
+import data from "./data.json";
 import Title from "./Title";
 import TitleComment from "../../section/TitleComment";
 import Introduce from "../../section/Introduce";
@@ -35,14 +34,14 @@ function Sample05() {
       <Title />
       <TitleComment
         subTitle={subTitle}
-        sectionColor={colorData.titleComment}
+        sectionColor={data.color.titleComment}
         titleComment={titleComment}
       />
-      <ChildImg bgColor={colorData.childImg} />
-      <Introduce sectionColor={colorData.introduce} />
+      <ChildImg bgColor={data.color.childImg} />
+      <Introduce sectionColor={data.color.introduce} />
       <OurDay
         subTitle={subTitle}
-        sectionColor={colorData.calendar}
+        sectionColor={data.color.calendar}
         calenderBg={calenderBg}
         imgUrl={data.img[7]}
       />
@@ -52,18 +51,18 @@ function Sample05() {
         subTitle={subTitle}
         currentImg={currentImg}
         setCurrentImg={setCurrentImg}
-        sectionColor={colorData.photo}
+        sectionColor={data.color.photo}
         padding={{ top: "8", bottom: "9" }}
         photoInfo={photoInfo}
       />
       <Location
         subTitle={subTitle}
-        sectionColor={colorData.location}
+        sectionColor={data.color.location}
         font={fontFamily}
       />
       <Account
         subTitle={subTitle}
-        sectionColor={colorData.account}
+        sectionColor={data.color.account}
         padding={{ top: "8", bottom: "6" }}
         font={fontFamily}
       />

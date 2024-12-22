@@ -1,0 +1,143 @@
+{
+  "id": "sample02",
+  "when": "2025/03/30",
+  "time": "15:30",
+  "img": [
+    "img-01.jpg",
+    "img-02.jpg",
+    "img-03.jpg",
+    "img-04.jpg",
+    "img-05.jpg",
+    "img-06.jpg",
+    "img-07.jpg",
+    "img-08.jpg",
+    "img-09.jpg",
+    "img-10.jpg",
+    "img-11.jpg",
+    "img-12.jpg",
+    "img-13.jpg",
+    "img-14.jpg"
+  ],
+  "date": "2017/03/16",
+  "information": [
+    {
+      "type": "male",
+      "name": "박보검",
+      "EngName": "Park Bo Gum",
+      "phone": "01000000011",
+      "father": "박형식",
+      "fatherPhone": "01000000012",
+      "mother": "김은혜",
+      "motherPhone": "01000000013"
+    },
+    {
+      "type": "female",
+      "name": "수지",
+      "EngName": "Su Ji",
+      "phone": "01000000021",
+      "father": "故 수혁",
+      "mother": "이효은",
+      "motherPhone": "01000000023"
+    }
+  ],
+  "account": [
+    [
+      {
+        "tag": "신랑",
+        "name": "박보검",
+        "account": ["우리은행", "1002-111-111111"]
+      },
+      {
+        "tag": "아버지",
+        "name": "박형식",
+        "account": ["우리은행", "1002-111-111112"]
+      },
+      {
+        "tag": "어머니",
+        "name": "김은혜",
+        "account": ["우리은행", "1002-111-111113"]
+      }
+    ],
+    [
+      {
+        "tag": "신부",
+        "name": "수지",
+        "account": ["우리은행", "1002-111-111121"]
+      },
+      {
+        "tag": "어머니",
+        "name": "이효은",
+        "account": ["우리은행", "1002-111-111123"]
+      }
+    ]
+  ],
+  "location": {
+    "address": "서울 성동구 왕십리광장로 17",
+    "weddingHall": "디노체컨벤션웨딩홀 7층",
+    "subway": [
+      {
+        "line": ["경의중앙선", "분당선"],
+        "discript": "왕십리역 12번 출구 개찰구를 나오셔서 좌측 안쪽 엘리베이터 이용"
+      },
+      {
+        "line": ["2호선", "5호선"],
+        "discript": "왕십리역 6-1번 출구로 나오셔서 횡단보도 건너 롯데리아 옆 엘리베이터 이용"
+      }
+    ],
+    "bus": [
+      {
+        "name": "성동보건소, 소방서",
+        "number": [
+          ["간선", "110A, 141, 145, 148, 421"],
+          ["지선", "2015, 2222"],
+          ["직행", "1000, 1004"]
+        ]
+      },
+      {
+        "name": "성동구청, 성동결찰서",
+        "number": [
+          ["간선", "110A, 141, 145, 148, 421"],
+          ["지선", "2015, 2222"]
+        ]
+      },
+      "하차 후 왕십리역 5번출구 방향으로 이동 후 엔터식스 7층"
+    ],
+    "parking": [
+      "∙ 엔터식스 내 주차장 이용(3층 ~ 5층)",
+      "∙ 주차 요원의 안내를 받으세요."
+    ]
+  },
+  "color": {
+    "titleComment": {
+      "bg": "#564E3D",
+      "color": "white",
+      "pointColor": "white"
+    },
+    "calendar": {
+      "bg": "#D0C3A6",
+      "color": "white",
+      "pointColor": "#564E3D",
+      "pointTxtColor": "white"
+    },
+    "introduce": {
+      "bg": "#fff",
+      "color": "black",
+      "pointColor": "#B9AB8D"
+    },
+    "photo": {
+      "bg": "#E4E3D8",
+      "color": "black",
+      "pointColor": "#564E3D"
+    },
+    "location": {
+      "bg": "#fff",
+      "color": "black",
+      "pointColor": "#B9AB8D"
+    },
+    "account": {
+      "bg": "#f4f4f4",
+      "color": "black",
+      "pointColor": "#564E3D"
+    }
+  }
+}

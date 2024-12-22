@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import data from "../../data/data.json";
-import colorData from "./color.json";
+import data from "./data.json";
 import Title from "./Title";
 import TitleComment from "./TitleComment";
 import Introduce from "../../section/Introduce";
@@ -36,34 +35,34 @@ function Sample01() {
       <Title font={"Pretendard"} />
       <TitleComment
         subTitle={subTitle}
-        sectionColor={colorData.titleComment}
+        sectionColor={data.color.titleComment}
         titleComment={titleComment}
       />
       <ScrollImg imgUrl={data.img[6]} />
-      <Introduce sectionColor={colorData.introduce} />
+      <Introduce sectionColor={data.color.introduce} />
       <Photo
         modal={modal}
         setModal={setModal}
         subTitle={subTitle}
         currentImg={currentImg}
         setCurrentImg={setCurrentImg}
-        sectionColor={colorData.photo}
+        sectionColor={data.color.photo}
         padding={{ top: "3", bottom: "9" }}
         photoInfo={photoInfo}
       />
       <OurDay
         subTitle={subTitle}
-        sectionColor={colorData.calendar}
+        sectionColor={data.color.calendar}
         calenderBg={calenderBg}
       />
       <Location
         subTitle={subTitle}
-        sectionColor={colorData.location}
+        sectionColor={data.color.location}
         font={fontFamily}
       />
       <Account
         subTitle={subTitle}
-        sectionColor={colorData.account}
+        sectionColor={data.color.account}
         padding={{ top: "3", bottom: "6" }}
         font={fontFamily}
       />
