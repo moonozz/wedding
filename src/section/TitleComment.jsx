@@ -28,9 +28,9 @@ function TitleComment({ data, subTitle, sectionColor, titleComment }) {
             {data.information[0].EngName} ∙ {data.information[1].EngName}
           </p>
           <p>
-            {getDate("", 4)}&nbsp; &nbsp;{getWeek(data.when, "eng")}
+            {getDate(data.when, "", 4)}&nbsp; &nbsp;{getWeek(data.when, "eng")}
             &nbsp; &nbsp;
-            {getTime("eng")}
+            {getTime(data.time, "eng")}
           </p>
           <p>{data.location.weddingHall}</p>
         </SHallInfo>

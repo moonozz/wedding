@@ -37,5 +37,5 @@ const SContainer = styled.div`
 const SBtn = styled.button`
   ${flex("column", "", "")};
   ${fontSize("24")};
-  gap: ${getSize(20)};
+  gap: ${getSize(40)};
 `;

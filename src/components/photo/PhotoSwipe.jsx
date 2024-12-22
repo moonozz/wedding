@@ -7,15 +7,11 @@ import { boxSize, position, flex, fontSize } from "../../utils/sMixinUtils";
 function PhotoSwipe({ dataImg, text }) {
   // const imgData = data.img.slice(1);
   // const imgData = data.img;
-  const dataImgLength = dataImg.length;
-
-  useEffect(() => {
-    console.log(dataImg.length);
-  }, []);
-
   const [start, setStart] = useState(0);
   const [trans, setTrans] = useState(false);
   const [currentId, setCurrentId] = useState(0);
+
+  const dataImgLength = dataImg.length;
 
   const handleTouchStart = (e) => {
     setStart(e.changedTouches[0].clientX);
