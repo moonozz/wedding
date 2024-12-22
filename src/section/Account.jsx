@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import data from "../data/data.json";
+// import data from "../data/data.json";
 import { useScrollEvent } from "../hook/useScrollEvent";
 import { useSubTitle } from "../components/subTitle";
 import Dropdown from "../components/Dropdown";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { boxSize, flex, animation } from "../utils/sMixinUtils";
 
-function Account({ subTitle, sectionColor, padding, font }) {
+function Account({ data, subTitle, sectionColor, padding, font }) {
   const { ref, isView } = useScrollEvent();
 
   const infoData = data.account;

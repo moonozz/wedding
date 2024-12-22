@@ -5,6 +5,7 @@ import PhotoList from "./PhotoList";
 const PhotoSection = ({
   type,
   text,
+  dataImg,
   modal,
   setModal,
   currentImg,
@@ -15,6 +16,7 @@ const PhotoSection = ({
       return (
         <PhotoAlbum
           text={text}
+          dataImg={dataImg}
           modal={modal}
           setModal={setModal}
           currentImg={currentImg}
@@ -26,6 +28,7 @@ const PhotoSection = ({
       return (
         <PhotoList
           text={text}
+          dataImg={dataImg}
           modal={modal}
           setModal={setModal}
           currentImg={currentImg}
@@ -34,7 +37,7 @@ const PhotoSection = ({
       );
       break;
     default:
-      return <PhotoSwipe text={text} />;
+      return <PhotoSwipe text={text} dataImg={dataImg} />;
   }
 };
 

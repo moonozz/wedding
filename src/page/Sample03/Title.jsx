@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import data from "../../data/data.json";
+// import data from "../../data/data.json";
+import data from "./data.json";
 import { getDate, getWeek, getTime } from "../../utils/filter";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import { position, fontSize, flex, xyValue } from "../../utils/sMixinUtils";
@@ -37,9 +38,9 @@ function Title({ font }) {
       <SBottomTxt>
         <div>
           <p>
-            {getDate("eng", 4)} {getWeek(data.when, "eng")}
+            {getDate(data.when, "eng", 4)} {getWeek(data.when, "eng")}
           </p>
-          <p>{getTime("eng")}</p>
+          <p>{getTime(data.time, "eng")}</p>
           <p>{data.location.weddingHall}</p>
         </div>
         <div>

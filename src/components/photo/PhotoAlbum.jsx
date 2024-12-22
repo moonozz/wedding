@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import data from "../../data/data.json";
+// import data from "../../data/data.json";
 import { recordImg } from "../../utils/filter";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import {
@@ -11,15 +11,15 @@ import {
 } from "../../utils/sMixinUtils";
 
 function PhotoAlbum({
-  imgUrl,
   text,
+  dataImg,
   modal,
   setModal,
   currentImg,
   setCurrentImg,
 }) {
   // const imgData = data.img.slice(1);
-  const imgData = data.img;
+  // const imgData = data.img;
 
   const handleModalOpen = (img) => {
     setModal(true);
@@ -30,7 +30,7 @@ function PhotoAlbum({
     <SContainer>
       <SDiscript>{text}</SDiscript>
       <SImageContainer>
-        {recordImg(imgData).map((el) => {
+        {recordImg(dataImg).map((el) => {
           return (
             <SImgLi key={el}>
               <SImage

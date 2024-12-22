@@ -22,7 +22,7 @@ function Sample04() {
   const [currentImg, setCurrentImg] = useState("");
   const [count, setCount] = useState(0);
 
-  const titleComment = `${getDate("onlyNum")}`;
+  const titleComment = `${getDate(data.when, "onlyNum")}`;
   const subTitle = { color: "#B9AB8D", font: "Pretendard", type: "circle" };
   const photoInfo = { type: "swipe", text: "사진을 넘겨보세요." };
   const shareImgURL = "https://ifh.cc/g/vYvW18.jpg";
@@ -41,13 +41,15 @@ function Sample04() {
       <Toast text={toastMsg} />
       <Title />
       <TitleComment
+        data={data}
         subTitle={subTitle}
         sectionColor={data.color.titleComment}
         titleComment={titleComment}
       />
       <ScrollImg imgUrl={data.img[6]} />
-      <Introduce sectionColor={data.color.introduce} />
+      <Introduce data={data} sectionColor={data.color.introduce} />
       <Photo
+        dataImg={data.img}
         modal={modal}
         setModal={setModal}
         subTitle={subTitle}
@@ -58,24 +60,32 @@ function Sample04() {
         photoInfo={photoInfo}
       />
       <OurDay
+        data={data}
         subTitle={subTitle}
         sectionColor={data.color.calendar}
         calenderBg={calenderBg}
         imgUrl={data.img[7]}
       />
       <Location
+        data={data}
         subTitle={subTitle}
         sectionColor={data.color.location}
         font={fontFamily}
       />
       <Account
+        data={data}
         subTitle={subTitle}
         sectionColor={data.color.account}
         padding={{ top: "8", bottom: "6" }}
         font={fontFamily}
       />
       <CountBtn count={count} setCount={setCount} emojiArr={emojiArr} />
-      <Footer font={fontFamily} shareImgURL={shareImgURL} music={music} />
+      <Footer
+        data={data}
+        font={fontFamily}
+        shareImgURL={shareImgURL}
+        music={music}
+      />
       {modal ? (
         <Modal
           imgUrl={currentImg}

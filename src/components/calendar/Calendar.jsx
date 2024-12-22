@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import data from "../../data/data.json";
+// import data from "../../data/data.json";
 import Week from "./Week";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import { flex, boxSize, defaultTxtStyle } from "../../utils/sMixinUtils";
 
-function Calendar({ pointColor, pointTxtColor }) {
+function Calendar({ dataWhen, pointColor, pointTxtColor }) {
   const [month, setMonth] = useState([]);
 
-  const date = data.when;
-  const dateYear = new Date(date).getFullYear();
-  const dateMonth = new Date(date).getMonth();
+  // const date = dataWhen;
+  const dateYear = new Date(dataWhen).getFullYear();
+  const dateMonth = new Date(dataWhen).getMonth();
 
   const firstWeek = new Date(dateYear, dateMonth, 1).getDay(); // 1일의 요일 구하기
   const lastDay = new Date(dateYear, dateMonth + 1, 0).getDate(); // dateMonth의 마지막 날짜 구하기
@@ -63,6 +63,7 @@ function Calendar({ pointColor, pointTxtColor }) {
           return (
             <Week
               key={idx}
+              dataWhen={dataWhen}
               el={el}
               pointColor={pointColor}
               pointTxtColor={pointTxtColor}

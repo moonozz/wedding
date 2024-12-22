@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import data from "../data/data.json";
 import { useScrollEvent } from "../hook/useScrollEvent";
 import { useSubTitle } from "../components/subTitle";
 import Calendar from "../components/calendar/Calendar";
@@ -16,7 +15,7 @@ import {
   position,
 } from "../utils/sMixinUtils";
 
-function OurDay({ subTitle, sectionColor, calenderBg, imgUrl }) {
+function OurDay({ data, subTitle, sectionColor, calenderBg, imgUrl }) {
   const { ref, isView } = useScrollEvent();
 
   const groom = data.information[0].name.slice(-2);
@@ -38,12 +37,13 @@ function OurDay({ subTitle, sectionColor, calenderBg, imgUrl }) {
             color: sectionColor.pointColor,
           })}
           <Calendar
+            dataWhen={data.when}
             pointColor={sectionColor.pointColor}
             pointTxtColor={sectionColor.pointTxtColor}
           />
           <SDDay $sectionColor={sectionColor}>
             <p>{`${groom}, ${bride}의 결혼식이`}&nbsp;</p>
-            <p>{getDday()}</p>
+            <p>{getDday(data.when)}</p>
             <p>일 남았습니다.</p>
           </SDDay>
         </div>

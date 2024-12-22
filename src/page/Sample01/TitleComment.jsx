@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import data from "../../data/data.json";
 import { useScrollEvent } from "../../hook/useScrollEvent";
 import { useSubTitle } from "../../components/subTitle";
 import { getDate, getWeek, getTime } from "../../utils/filter";
@@ -11,7 +10,7 @@ import {
   animation,
 } from "../../utils/sMixinUtils";
 
-function TitleComment({ subTitle, sectionColor, titleComment }) {
+function TitleComment({ data, subTitle, sectionColor, titleComment }) {
   const { ref, isView } = useScrollEvent();
 
   return (
@@ -28,7 +27,8 @@ function TitleComment({ subTitle, sectionColor, titleComment }) {
             {data.information[0].EngName} ∙ {data.information[1].EngName}
           </p>
           <p>
-            {getDate("kor")} {getWeek(data.when, "kor")} {getTime("kor")}
+            {getDate(data.when, "kor")} {getWeek(data.when, "kor")}{" "}
+            {getTime(data.time, "kor")}
           </p>
           <p>{data.location.weddingHall}</p>
         </SHallInfo>

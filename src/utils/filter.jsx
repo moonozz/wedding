@@ -1,7 +1,5 @@
-import data from "../data/data.json";
-
-export const getDate = (type, yearlength) => {
-  const when = new Date(data.when);
+export const getDate = (data, type, yearlength) => {
+  const when = new Date(data);
   const year = when.getFullYear();
   // const month = ("0" + (when.getMonth()+1)).slice(-2);
   const month = when.getMonth() + 1;
@@ -28,8 +26,8 @@ export const getWeek = (i, lan) => {
   return lan === "kor" ? `${KorWeek[dayIndex]}요일` : EngWeek[dayIndex];
 };
 
-export const getTime = (lan) => {
-  const time = data.time.split(":");
+export const getTime = (data, lan) => {
+  const time = data.split(":");
   const isAM = time[0] < 12;
   const timeCal = time[0] % 12 || 12;
 
@@ -53,8 +51,8 @@ export const recordImg = (img) => {
   return recordImg;
 };
 
-export const getDday = () => {
-  const weddingDay = new Date(data.when);
+export const getDday = (data) => {
+  const weddingDay = new Date(data);
   const today = new Date();
   const dday = weddingDay - today;
 

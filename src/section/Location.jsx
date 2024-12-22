@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import data from "../data/data.json";
+// import data from "../data/data.json";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 // import { useCopy } from "../hook/useCopy";
 import { useSubTitle } from "../components/subTitle";
@@ -15,7 +15,7 @@ import {
 } from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
-function Location({ subTitle, sectionColor, font }) {
+function Location({ data, subTitle, sectionColor, font }) {
   // const { onCopy } = useCopy();
 
   const locationData = data.location;

@@ -7,7 +7,7 @@ import HeartIcon from "../components/icon/Heart";
 import { getSize } from "../utils/sThemeUtils";
 import { sectionPadding, animation } from "../utils/sMixinUtils";
 
-function Introduce({ sectionColor }) {
+function Introduce({ data, sectionColor }) {
   const { ref, isView } = useScrollEvent();
 
   return (
@@ -19,8 +19,8 @@ function Introduce({ sectionColor }) {
           width={40}
           height={"auto"}
         />
-        <Name />
-        <Call sectionColor={sectionColor} />
+        <Name data={data} />
+        <Call data={data} sectionColor={sectionColor} />
       </div>
     </SContainer>
   );

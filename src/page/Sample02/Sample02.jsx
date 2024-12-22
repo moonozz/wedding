@@ -21,7 +21,7 @@ function Sample02() {
   const [currentImg, setCurrentImg] = useState("");
   const [count, setCount] = useState(0);
 
-  const titleComment = `${getDate("onlyNum")}`;
+  const titleComment = `${getDate(data.when, "onlyNum")}`;
   const subTitle = { color: "#B9AB8D", font: "Pretendard", type: "circle" };
   const photoInfo = { type: "album", text: "사진을 클릭해보세요." };
   const shareImgURL = "https://ifh.cc/g/5Jv2t9.jpg";
@@ -33,18 +33,21 @@ function Sample02() {
     <Main>
       <Title font={"Pinyon Script"} />
       <TitleComment
+        data={data}
         subTitle={subTitle}
         sectionColor={data.color.titleComment}
         titleComment={titleComment}
       />
       <ScrollImg imgUrl={data.img[6]} />
       <OurDay
+        data={data}
         subTitle={subTitle}
         sectionColor={data.color.calendar}
         calenderBg={calenderBg}
       />
-      <Introduce sectionColor={data.color.introduce} />
+      <Introduce data={data} sectionColor={data.color.introduce} />
       <Photo
+        dataImg={data.img}
         modal={modal}
         setModal={setModal}
         subTitle={subTitle}
@@ -55,18 +58,20 @@ function Sample02() {
         photoInfo={photoInfo}
       />
       <Location
+        data={data}
         subTitle={subTitle}
         sectionColor={data.color.location}
         font={fontFamily}
       />
       <Account
+        data={data}
         subTitle={subTitle}
         sectionColor={data.color.account}
         padding={{ top: "8", bottom: "6" }}
         font={fontFamily}
       />
       <CountBtn count={count} setCount={setCount} emojiArr={emojiArr} />
-      <Footer font={fontFamily} shareImgURL={shareImgURL} />
+      <Footer data={data} font={fontFamily} shareImgURL={shareImgURL} />
       {modal ? (
         <Modal
           imgUrl={currentImg}

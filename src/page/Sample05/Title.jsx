@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import data from "../../data/data.json";
+// import data from "../../data/data.json";
+import data from "./data.json";
 import { getDate, getWeek, getTime } from "../../utils/filter";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import {
@@ -32,11 +33,11 @@ function Title({ font }) {
         />
         <SBottomTxt>
           <p>
-            {getDate("", 4)}
+            {getDate(data.when, "", 4)}
             <br />
             {getWeek(data.when, "Eng")}
           </p>
-          <p>{getTime("eng")}</p>
+          <p>{getTime(data.time, "eng")}</p>
         </SBottomTxt>
       </SContent>
     </SContainer>

@@ -6,6 +6,7 @@ import { getSize, getVwSize } from "../utils/sThemeUtils";
 import { paddingIgnore, animation } from "../utils/sMixinUtils";
 
 function Photo({
+  dataImg,
   modal,
   setModal,
   subTitle,
@@ -29,6 +30,7 @@ function Photo({
         {PhotoSection({
           type: photoInfo.type,
           text: photoInfo.text,
+          dataImg,
           modal,
           setModal,
           currentImg,

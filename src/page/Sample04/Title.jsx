@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import data from "../../data/data.json";
+// import data from "../../data/data.json";
+import data from "./data.json";
 import { getDate, getWeek, getTime, getDday } from "../../utils/filter";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import {
@@ -47,11 +48,11 @@ function Title({ font }) {
   };
 
   const handlePlayBar = () => {
-    if (getDday() <= 0) {
+    if (getDday(data.when) <= 0) {
       setPlayBar("100");
       // console.log("getDday 0보다 작음", playBar);
-    } else if (getDday() > 0) {
-      const playWidth = (width / 500) * getDday();
+    } else if (getDday(data.when) > 0) {
+      const playWidth = (width / 500) * getDday(data.when);
       const widthPer = (parseFloat(playWidth) / width) * 100;
       setPlayBar(100 - widthPer);
       // console.log("getDday 0보다 큼", widthPer);
@@ -86,18 +87,19 @@ function Title({ font }) {
         <SAlbum src={imgUrl} />
         <STxt>
           <p>
-            {getDate("eng", 4)} {getWeek(data.when, "kor")} {getTime("eng")}
+            {getDate(data.when, "eng", 4)} {getWeek(data.when, "kor")}{" "}
+            {getTime(data.time, "eng")}
           </p>
           <p>invite you, celebrate our wedding</p>
           <p>Park Bo Gum, Su Ji</p>
         </STxt>
         <SPlayBarGroup>
-          <span>D - {getDday()}</span>
+          <span>D - {getDday(data.when)}</span>
           <SPlayBar ref={contentRef}>
             <SBarBack />
             <SBar $playBar={playBar} />
           </SPlayBar>
-          <span>{getDate("eng", 2)}</span>
+          <span>{getDate(data.when, "eng", 2)}</span>
         </SPlayBarGroup>
         <SBtnArea>
           <SAudio ref={audioRef} src={audioUrl} controls loop />

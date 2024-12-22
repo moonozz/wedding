@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import data from "../../data/data.json";
+// import data from "../../data/data.json";
 import { flex, fontSize } from "../../utils/sMixinUtils";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 
-function Name() {
+function Name({ data }) {
   const introDataMale = data.information[0];
   const introDataFemale = data.information[1];
 

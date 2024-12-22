@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import data from "../../data/data.json";
+// import data from "../../data/data.json";
 import HeartIcon from "../icon/Heart";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import { boxSize, position, xyValue } from "../../utils/sMixinUtils";
 
-function Week({ el, pointColor, pointTxtColor }) {
-  const date = data.when;
-  const day = new Date(date).getDate().toString();
+function Week({ dataWhen, el, pointColor, pointTxtColor }) {
+  // const date = data.when;
+  const day = new Date(dataWhen).getDate().toString();
 
   return (
     <SWeekLi>

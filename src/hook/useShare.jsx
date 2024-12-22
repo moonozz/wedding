@@ -1,7 +1,7 @@
-import data from "../data/data.json";
+// import data from "../data/data.json";
 import { getDate, getWeek, getTime } from "../utils/filter";
 
-export const useShare = () => {
+export const useShare = (data) => {
   const title = `${data.information[0].name}❤️${data.information[1].name} 결혼합니다.`;
   const subTxt = `${getDate("kor", 2)} ${getWeek(data.when, "kor")}, ${getTime(
     "kor"

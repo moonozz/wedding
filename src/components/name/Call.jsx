@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import data from "../../data/data.json";
 import CallLi from "./CallLi";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import { flex, boxSize, defaultTxtStyle } from "../../utils/sMixinUtils";
 
-function Call(sectionColor) {
+function Call({ data, sectionColor }) {
   const groom = data.information[0];
   const bride = data.information[1];
 

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import data from "../../data/data.json";
+// import data from "../../data/data.json";
+import data from "./data.json";
 import { getDate } from "../../utils/filter";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import {
@@ -22,7 +23,7 @@ function Title({ font }) {
       <STitleB $font={font}>Married</STitleB>
       <SInfo>
         <span>{data.information[0].EngName}</span>
-        <span>{getDate("", 2)}</span>
+        <span>{getDate(data.when, "", 2)}</span>
         <span>{data.information[1].EngName}</span>
       </SInfo>
     </SContainer>

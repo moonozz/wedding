@@ -4,8 +4,8 @@ import { useShare } from "../hook/useShare";
 import { flex, boxSize, paddingIgnore, fontSize } from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
-function Footer({ font, shareImgURL, music }) {
-  const { handleShare } = useShare();
+function Footer({ data, font, shareImgURL, music }) {
+  const { handleShare } = useShare(data);
   const windowUrl = window.document.URL.toString().split("/");
   const sampleUrl = windowUrl[windowUrl.length - 1];
 

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import data from "../../data/data.json";
+// import data from "../../data/data.json";
+import data from "./data.json";
 import { getDate, getWeek, getTime, getDday } from "../../utils/filter";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import {
@@ -16,13 +17,13 @@ function Title({ font }) {
     <SContainer>
       <SDate $font={font}>
         <p>
-          {getDate("kor", 2)} {getWeek(data.when, "kor")}
+          {getDate(data.when, "kor", 2)} {getWeek(data.when, "kor")}
         </p>
         <p>{data.time}</p>
         <SInfo>
-          <span>D - {getDday()}일</span>
+          <span>D - {getDday(data.when)}일</span>
           <SDiary>
-            <span>{getTime("kor")}</span>
+            <span>{getTime(data.time, "kor")}</span>
             <span>
               {data.information[0].name} {data.information[1].name} 결혼식
             </span>

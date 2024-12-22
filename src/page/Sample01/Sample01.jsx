@@ -34,13 +34,15 @@ function Sample01() {
     <Main>
       <Title font={"Pretendard"} />
       <TitleComment
+        data={data}
         subTitle={subTitle}
         sectionColor={data.color.titleComment}
         titleComment={titleComment}
       />
       <ScrollImg imgUrl={data.img[6]} />
-      <Introduce sectionColor={data.color.introduce} />
+      <Introduce data={data} sectionColor={data.color.introduce} />
       <Photo
+        dataImg={data.img}
         modal={modal}
         setModal={setModal}
         subTitle={subTitle}
@@ -51,22 +53,25 @@ function Sample01() {
         photoInfo={photoInfo}
       />
       <OurDay
+        data={data}
         subTitle={subTitle}
         sectionColor={data.color.calendar}
         calenderBg={calenderBg}
       />
       <Location
+        data={data}
         subTitle={subTitle}
         sectionColor={data.color.location}
         font={fontFamily}
       />
       <Account
+        data={data}
         subTitle={subTitle}
         sectionColor={data.color.account}
         padding={{ top: "3", bottom: "6" }}
         font={fontFamily}
       />
-      <Footer font={fontFamily} shareImgURL={shareImgURL} />
+      <Footer data={data} font={fontFamily} shareImgURL={shareImgURL} />
       <FixedBtn emojiArr={emojiArr} />
       {modal ? (
         <Modal

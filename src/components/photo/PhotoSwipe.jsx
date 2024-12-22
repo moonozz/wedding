@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import data from "../../data/data.json";
 import { getSize, getVwSize } from "../../utils/sThemeUtils";
 import { boxSize, position, flex, fontSize } from "../../utils/sMixinUtils";
 
-function PhotoSwipe({ imgUrl, text }) {
+function PhotoSwipe({ dataImg, text }) {
   // const imgData = data.img.slice(1);
-  const imgData = data.img;
+  // const imgData = data.img;
+  const dataImgLength = dataImg.length;
+
+  useEffect(() => {
+    console.log(dataImg.length);
+  }, []);
 
   const [start, setStart] = useState(0);
   const [trans, setTrans] = useState(false);
@@ -22,7 +27,7 @@ function PhotoSwipe({ imgUrl, text }) {
     const touchEnd = e.changedTouches[0].clientX;
     const offset = start - touchEnd;
 
-    if (offset > 50 && currentId < imgData.length - 1) {
+    if (offset > 50 && currentId < dataImg.length - 1) {
       // 아래 페이지 표기가 이미지갯수보다 넘지 않게 하기 (예: 15/14)
       setTrans(true);
       setCurrentId((prev) => prev + 1);
@@ -43,8 +48,9 @@ function PhotoSwipe({ imgUrl, text }) {
         onTouchMove={handleTouchMove}
         $transform={currentId}
         $trans={trans}
+        $dataLength={dataImgLength}
       >
-        {imgData?.map((el) => {
+        {dataImg?.map((el) => {
           return (
             <SImgLi key={el}>
               <SImage src={`${process.env.PUBLIC_URL}/assets/${el}`} alt={el} />
@@ -53,7 +59,7 @@ function PhotoSwipe({ imgUrl, text }) {
         })}
       </SInner>
       <SPage>
-        {currentId + 1} / {imgData.length}
+        {currentId + 1} / {dataImg.length}
       </SPage>
     </SContainer>
   );
@@ -90,7 +96,8 @@ const SInner = styled.ul`
   display: block;
   ${flex("row", "", "")};
   ${position("relative")};
-  ${boxSize(`calc(${data.img.length - 1} * 88vw)`, "100%")};
+  /* ${boxSize(`calc(${data.img.length - 1} * 88vw)`, "100%")}; */
+  ${({ $dataLength }) => boxSize(`calc(${$dataLength - 1} * 88vw)`, "100%")};
   /* -webkit-box-orient: horizontal; */
   /* transition-property: transform; */
   transform: ${({ $transform }) =>
