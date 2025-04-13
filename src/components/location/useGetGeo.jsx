@@ -8,6 +8,9 @@ const useGetGeo = () => {
   const [err, setErr] = useState(null);
   const hallAddress = addressData.location.address;
 
+  // const host = window.location.hostname === "localhost" ? "" : "api";
+  // export const apiCclient = axios.create({baseURL: host});
+
   useEffect(() => {
     const fetchAddress = async () => {
       setLoading(true);
