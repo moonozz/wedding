@@ -1,14 +1,10 @@
-[build]
-  command = "npm run start"  
-  functions = "netlify/functions"
-  publish = "public" 
-
 [[redirects]]
-  from = "/api/search-address"
-  to = "/.netlify/functions/kakaoSearch"
+  from = "/proxy/*"
+  to = "https://dapi.kakao.com/:splat"
   status = 200
+  force = true
+  headers = { Authorization = `KakaoAK ${process.env.REACT_APP_KAKAO_API_KEY}` }
 
-# SPA 지원
 [[redirects]]
   from = "/*"
   to = "/index.html"
