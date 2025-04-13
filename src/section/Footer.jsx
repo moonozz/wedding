@@ -5,7 +5,7 @@ import { flex, boxSize, paddingIgnore, fontSize } from "../utils/sMixinUtils";
 import { getSize, getVwSize } from "../utils/sThemeUtils";
 
 function Footer({ data, font, shareImgURL, music }) {
-  const { handleShare } = useShare(data);
+  const { handleShare } = useShare();
   const windowUrl = window.document.URL.toString().split("/");
   const sampleUrl = windowUrl[windowUrl.length - 1];
 
@@ -15,13 +15,13 @@ function Footer({ data, font, shareImgURL, music }) {
         $bgColor={"#fce777"}
         $fontColor={"black"}
         $font={font}
-        onClick={() => handleShare(shareImgURL, sampleUrl)}
+        onClick={() => handleShare(data, shareImgURL, sampleUrl)}
       >
         카카오톡 공유하기
       </SBtn>
       <CopyToClipboard
-        // text={"http://localhost:3000"}
-        text={`http://localhost:3000/${sampleUrl}`}
+        // text={`http://localhost:3000/${sampleUrl}`}
+        text={window.location.href}
         onCopy={() => {
           alert("청첩장 링크가 복사되었습니다.");
         }}

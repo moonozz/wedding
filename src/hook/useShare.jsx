@@ -1,13 +1,14 @@
 // import data from "../data/data.json";
 import { getDate, getWeek, getTime } from "../utils/filter";
 
-export const useShare = (data) => {
-  const title = `${data.information[0].name}❤️${data.information[1].name} 결혼합니다.`;
-  const subTxt = `${getDate("kor", 2)} ${getWeek(data.when, "kor")}, ${getTime(
-    "kor"
-  )}`;
+export const useShare = () => {
+  const handleShare = (data, imgUrl, Url) => {
+    const title = `${data.information[0].name}❤️${data.information[1].name} 결혼합니다.`;
+    const subTxt = `${getDate(data.when, "kor", 2)} ${getWeek(
+      data.when,
+      "kor"
+    )}, ${getTime(data.time, "kor")}`;
 
-  const handleShare = (imgUrl, Url) => {
     if (window.Kakao) {
       const kakao = window.Kakao;
       if (!kakao.isInitialized()) {
