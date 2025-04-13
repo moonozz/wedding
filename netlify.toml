@@ -1,14 +1,13 @@
-[build]
-  command = "npm run build"
-  publish = "build"
-  functions = "netlify/functions"
-
 [[redirects]]
   from = "/api/search-address"
   to = "/.netlify/functions/kakaoSearch"
   status = 200
 
+# SPA 지원
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[build]
+  functions = "netlify/functions"
