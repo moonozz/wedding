@@ -3,7 +3,6 @@
   to = "/.netlify/functions/kakaoSearch"
   status = 200
 
-# SPA 지원
 [[redirects]]
   from = "/*"
   to = "/index.html"

@@ -123,7 +123,7 @@ const useGetGeo = () => {
             ? {
                 Authorization: `KakaoAK ${process.env.REACT_APP_KAKAO_API_KEY}`,
               }
-            : {}, // Netlify Function 쪽에서는 헤더를 함수 내부에서 붙이니까 클라이언트는 헤더 필요 없음
+            : {},
         });
 
         const data = await res.json();
