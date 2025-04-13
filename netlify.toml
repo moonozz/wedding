@@ -1,27 +1,15 @@
-# SPA router support.
+[build]
+  command = "npm run start"  
+  functions = "netlify/functions"
+  publish = "public" 
+
+[[redirects]]
+  from = "/api/search-address"
+  to = "/.netlify/functions/kakaoSearch"
+  status = 200
+
+# SPA 지원
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-# api redirect.
-[[redirects]]
-  from = "/proxy/*"
-  to = "https://dapi.kakao.com/:splat"
-  status = 200
-  force = true
-  headers = { Access-Control-Allow-Origin = “*”, Authorization = “Bearer api-key”}
-
-[[headers]]
-Define which paths this specific [[headers]] block will cover.
-for = “/*”
-[headers.values]
-Access-Control-Allow-Origin = “**”
-Authorization = “Bearer api-key”
-
-[[headers]]
-Define which paths this specific [[headers]] block will cover.
-for = “/api/*”
-[headers.values]
-Access-Control-Allow-Origin = “**”
-Authorization = “Bearer api-key”
