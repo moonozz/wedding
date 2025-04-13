@@ -9,5 +9,10 @@
   from = "/api/*"
   to = "https://dapi.kakao.com/:splat"
   status = 200
-  headers = { Access-Control-Allow-Origin = “*”, Authorization = “Bearer api-key”}
+  force = true
+
+[[redirects]]
+  from = "/proxy/*"
+  to = "https://weddingmoon.netlify.app/:splat"
+  status = 200
   force = true
