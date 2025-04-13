@@ -8,8 +8,10 @@ const useGetGeo = () => {
   const [err, setErr] = useState(null);
   const hallAddress = addressData.location.address;
 
-  // const host = window.location.hostname === "localhost" ? "" : "api";
-  // export const apiCclient = axios.create({baseURL: host});
+  const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
+  const url = `${PROXY}/v2/local/search/address.json?query=${encodeURIComponent(
+    hallAddress
+  )}`;
 
   useEffect(() => {
     const fetchAddress = async () => {
@@ -18,7 +20,8 @@ const useGetGeo = () => {
 
       try {
         const response = await fetch(
-          `https://dapi.kakao.com/v2/local/search/address.json?query=${hallAddress}`,
+          url,
+          // `https://dapi.kakao.com/v2/local/search/address.json?query=${hallAddress}`,
           {
             method: "GET",
             headers: {
