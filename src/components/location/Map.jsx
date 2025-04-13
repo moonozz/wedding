@@ -31,6 +31,8 @@ function Map() {
         map: map,
       });
     }
+    console.log("성공");
+    console.log(mapOptions);
   }, [geoData]);
 
   return <SContainer id="map" ref={mapRef} />;

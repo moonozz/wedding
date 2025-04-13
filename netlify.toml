@@ -6,13 +6,8 @@
 
 # api redirect.
 [[redirects]]
-  from = "/api/*"
+  from = "/proxy/*"
   to = "https://dapi.kakao.com/:splat"
   status = 200
   force = true
-
-[[redirects]]
-  from = "/proxy/*"
-  to = "https://weddingmoon.netlify.app/:splat"
-  status = 200
-  force = true
+  
