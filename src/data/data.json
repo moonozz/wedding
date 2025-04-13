@@ -1,5 +1,16 @@
 {
-  "when": "2025/03/30",
+  "id": "sample01",
+  "type": "sample01",
+  "content": {
+    "photoInfo": {
+      "type": "album",
+      "text": "사진을 클릭해보세요."
+    },
+    "shareImgUrl": "",
+    "calenderBg": "color",
+    "emojiArr": ["🤵🏻‍♂️", "👰🏻‍♀️", "🎉", "💗", "💐", "🍀", "💒", "🤍", "💍"]
+  },
+  "when": "2025/05/30",
   "time": "15:30",
   "img": [
     "img-01.jpg",
