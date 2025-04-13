@@ -1,12 +1,13 @@
+[build]
+  functions = "netlify/functions"
+
 [[redirects]]
   from = "/api/search-address"
   to = "/.netlify/functions/kakaoSearch"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-[build]
-  functions = "netlify/functions"
