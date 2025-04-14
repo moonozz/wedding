@@ -7,7 +7,7 @@ import { getSize, getVwSize } from "../utils/sThemeUtils";
 function Footer({ data, font, shareImgURL, music }) {
   const { handleShare } = useShare();
   const windowUrl = window.document.URL.toString().split("/");
-  const sampleUrl = windowUrl[windowUrl.length - 1];
+  const Url = windowUrl[windowUrl.length - 1];
 
   return (
     <SContainer>
@@ -15,7 +15,7 @@ function Footer({ data, font, shareImgURL, music }) {
         $bgColor={"#fce777"}
         $fontColor={"black"}
         $font={font}
-        onClick={() => handleShare(data, shareImgURL, sampleUrl)}
+        onClick={() => handleShare(data, shareImgURL, Url)}
       >
         카카오톡 공유하기
       </SBtn>
