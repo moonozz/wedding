@@ -26,7 +26,7 @@ function Sample01() {
     ["🤵🏻‍♂️", "👰🏻‍♀️"], // 오른쪽 버튼 클릭시 보이는 이모지
     ["🎉", "😎"], // 왼쪽 버튼 클릭시 보이는 이모지
   ];
-  const shareImgURL = "https://ifh.cc/g/vyV3ov.jpg";
+  const shareImgURL = "https://ifh.cc/v-XRWqqp.jpg";
   const fontFamily = "GowunBatang-Regular";
   const calenderBg = "color";
 

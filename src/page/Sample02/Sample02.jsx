@@ -24,7 +24,7 @@ function Sample02() {
   const titleComment = `${getDate(data.when, "onlyNum")}`;
   const subTitle = { color: "#B9AB8D", font: "Pretendard", type: "circle" };
   const photoInfo = { type: "album", text: "사진을 클릭해보세요." };
-  const shareImgURL = "https://ifh.cc/g/5Jv2t9.jpg";
+  const shareImgURL = "https://ifh.cc/g/PcWmoA.jpg";
   const fontFamily = "Pretendard";
   const calenderBg = "color";
   const emojiArr = ["🤵🏻‍♂️", "👰🏻‍♀️", "🎉", "💗", "💐", "🍀", "💒", "🤍", "💍"];

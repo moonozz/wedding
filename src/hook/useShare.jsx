@@ -11,9 +11,22 @@ export const useShare = () => {
 
     if (window.Kakao) {
       const kakao = window.Kakao;
+
+      const isLocal = window.location.hostname === "localhost";
+      const shareUrl = isLocal
+        ? window.location.href
+        : `https://weddingmoon.netlify.app/${Url}`;
+
       if (!kakao.isInitialized()) {
         kakao.init(process.env.REACT_APP_KAKAO_JS_KEY);
       }
+
+      console.log("공유 데이터 확인:");
+      console.log("title:", title);
+      console.log("description:", subTxt);
+      console.log("imageUrl:", imgUrl);
+      console.log("link:", shareUrl);
+      console.log("Kakao init 상태:", kakao.isInitialized());
 
       kakao.Share.sendDefault({
         objectType: "feed",
@@ -22,10 +35,8 @@ export const useShare = () => {
           description: subTxt,
           imageUrl: imgUrl,
           link: {
-            // mobileWebUrl: "http://192.168.35.233:3000",
-            mobileWebUrl: `https://weddingmoon.netlify.app/${Url}`,
-            // webUrl: "http://localhost:3000",
-            webUrl: `https://weddingmoon.netlify.app/${Url}`,
+            mobileWebUrl: shareUrl,
+            webUrl: shareUrl,
           },
         },
       });
